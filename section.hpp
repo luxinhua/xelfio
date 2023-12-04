@@ -12,4 +12,16 @@ private:
 
 };
 
+class Sections{
+public:
+    Sections() = default;
+    ~Sections() = default;
+
+private:
+    std::vector<Section> m_sections;
+
+};
+
+
+
 #endif

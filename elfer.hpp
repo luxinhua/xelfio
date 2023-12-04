@@ -2,8 +2,8 @@
 #define __ELFER_H__
 
 #include "elf_header.hpp"
-#include "section_header.hpp"
-#include "segment_header.hpp"
+#include "section_header_table.hpp"
+#include "segment_header_table.hpp"
 #include "program_header.hpp"
 #include "section.hpp"
 #include "segment.hpp"
@@ -14,17 +14,21 @@ public:
     ~Elfer() = default;
 
     void load(std::string);
+    void dump();
 
 private:
-    void dumpHex(std::string);
 
-private:
     ElfHeader m_elfHeader;
     ProgramHeader  m_programHeader;
-    std::vector<SectionHeader> m_sectionHeaderTable;
-    std::vector<SegmentHeader> m_segmentHeaderTable;
-    std::vector<Section> m_sections;
-    std::vector<Segment> m_segments;
+    SectionHeaderTable m_sectionHeaderTable;
+    SegmentHeaderTable m_segmentHeaderTable;
+    Sections m_sections;
+    Segments m_segments;
+
+    std::streampos m_ElfHeaderSeekLocation;
+    std::streampos m_ProgramHeaderSeekLocation;
+    std::streampos m_SectionHeaderTableSeekLocation;
+    std::streampos m_SegmentHeaderTableSeekLocation;
 };
 
 #endif

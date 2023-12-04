@@ -9,7 +9,16 @@ public:
     ~Segment() = default;
 
 private:
+    
+};
 
+class Segments{
+public:
+    Segments() = default;
+    ~Segments() = default;
+
+private:
+    std::vector<Segment> m_segments;
 };
 
 #endif

@@ -9,6 +9,8 @@
 #include <stdexcept>
 #include <ios>
 #include <cstdint>
+#include <string>
+#include <array>
 
 #include "elf.h"
 
