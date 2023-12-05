@@ -3,8 +3,7 @@
 
 #include "elf_header.hpp"
 #include "section_header_table.hpp"
-#include "segment_header_table.hpp"
-#include "program_header.hpp"
+#include "program_header_table.hpp"
 #include "section.hpp"
 #include "segment.hpp"
 
@@ -19,16 +18,10 @@ public:
 private:
 
     ElfHeader m_elfHeader;
-    ProgramHeader  m_programHeader;
+    ProgramHeaderTable  m_programHeaderTable;
     SectionHeaderTable m_sectionHeaderTable;
-    SegmentHeaderTable m_segmentHeaderTable;
     Sections m_sections;
     Segments m_segments;
-
-    std::streampos m_ElfHeaderSeekLocation;
-    std::streampos m_ProgramHeaderSeekLocation;
-    std::streampos m_SectionHeaderTableSeekLocation;
-    std::streampos m_SegmentHeaderTableSeekLocation;
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "elf_header.hpp"
 #include "elf.h"
 #include <algorithm>
+#include <charconv>
 #include <codecvt>
 #include <cstdint>
 #include <ios>
@@ -53,27 +54,27 @@ void ElfHeader::load(std::string file)
 void ElfHeader::dump()
 {
     // e_ident
-    std::cout << "EI_MAG0     : " << static_cast<unsigned int>(m_e_ident[0]) << std::endl; 
+    std::cout << "EI_MAG0     : " << std::hex << static_cast<unsigned int>(m_e_ident[0]) << std::endl; 
     std::cout << "EI_MAG1     : " << m_e_ident[1] << std::endl; 
     std::cout << "EI_MAG2     : " << m_e_ident[2] << std::endl; 
     std::cout << "EI_MAG3     : " << m_e_ident[3] << std::endl; 
-    std::cout << "EI_CLASS    : " << "Class                             - " << static_cast<unsigned int>(m_e_ident[4]) << std::endl; 
-    std::cout << "EI_DATA     : " << "Data                              - " << static_cast<unsigned int>(m_e_ident[5]) << std::endl; 
-    std::cout << "EI_VERSION  : " << "Version                           - " << static_cast<unsigned int>(m_e_ident[6]) << std::endl; 
-    std::cout << "EI_PAD      : " << static_cast<unsigned int>(m_e_ident[7]) << std::endl; 
+    std::cout << "EI_CLASS    : " << "Class                              -- " << std::hex << static_cast<unsigned int>(m_e_ident[4]) << std::endl; 
+    std::cout << "EI_DATA     : " << "Data                               -- " << std::hex << static_cast<unsigned int>(m_e_ident[5]) << std::endl; 
+    std::cout << "EI_VERSION  : " << "Version                            -- " << std::hex << static_cast<unsigned int>(m_e_ident[6]) << std::endl; 
+    std::cout << "EI_PAD      : " << "PAD                                -- " << std::hex << static_cast<unsigned int>(m_e_ident[7]) << std::endl; 
     std::cout << "e_type      : " << std::hex << str_e_type()      << std::endl;
     std::cout << "e_machine   : " << std::hex << str_e_machine()   << std::endl;
     std::cout << "e_version   : " << std::hex << str_e_version()   << std::endl;
     std::cout << "e_entry     : " << std::hex << m_e_entry     << std::endl;
-    std::cout << "e_phoff     : " << "Start of program headers           - " << std::dec << m_e_phoff << std::endl;
-    std::cout << "e_shoff     : " << "Start of section headers           - " << std::dec << m_e_shoff << std::endl;
-    std::cout << "e_flags     : " << std::hex << m_e_flags     << std::endl;
-    std::cout << "e_ehsize    : " << "Size of this header                - " << std::hex << m_e_ehsize    << std::endl;
-    std::cout << "e_phentsize : " << "Size of program headers            - " << std::hex << m_e_phentsize << std::endl;
-    std::cout << "e_phnum     : " << "Number of program headers          - " << std::hex << m_e_phnum     << std::endl;
-    std::cout << "e_shentsize : " << "Size of section headers            - " << std::hex << m_e_shentsize << std::endl;
-    std::cout << "e_shnum     : " << "Number of section headers          - " << std::hex << m_e_shnum     << std::endl;
-    std::cout << "e_shstrndx  : " << "Section header string table index  - " << std::hex << m_e_shstrndx  << std::endl;
+    std::cout << "e_phoff     : " << "Start of program headers           -- " << std::dec << m_e_phoff << std::endl;
+    std::cout << "e_shoff     : " << "Start of section headers           -- " << std::dec << m_e_shoff << std::endl;
+    std::cout << "e_flags     : " << std::dec << m_e_flags     << std::endl;
+    std::cout << "e_ehsize    : " << "Size of this header                -- " << std::dec << m_e_ehsize    << std::endl;
+    std::cout << "e_phentsize : " << "Size of program headers            -- " << std::dec << m_e_phentsize << std::endl;
+    std::cout << "e_phnum     : " << "Number of program headers          -- " << std::dec << m_e_phnum     << std::endl;
+    std::cout << "e_shentsize : " << "Size of section headers            -- " << std::dec << m_e_shentsize << std::endl;
+    std::cout << "e_shnum     : " << "Number of section headers          -- " << std::dec << m_e_shnum     << std::endl;
+    std::cout << "e_shstrndx  : " << "Section header string table index  -- " << std::dec << m_e_shstrndx  << std::endl;
 }
 
 std::string ElfHeader::str_e_type(){
@@ -139,155 +140,45 @@ std::string ElfHeader::str_e_version(){
     return std::string("unknow e_version type");
 }
 
-std::string ElfHeader::str_e_phoff(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+std::array<uint8_t,EI_NIDENT> ElfHeader::getEIdent(){
+    return m_e_ident;
 }
-
-std::string ElfHeader::str_e_shoff(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Half ElfHeader::getType(){
+    return m_e_type;
 }
-
-std::string ElfHeader::str_e_flags(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Half ElfHeader::getMachine(){
+    return m_e_machine;
 }
-
-std::string ElfHeader::str_e_ehsize(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Word ElfHeader::getVersion(){
+    return m_e_version;
 }
-
-std::string ElfHeader::str_e_phentsize(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Addr ElfHeader::getEntry(){
+    return m_e_entry;
 }
-
-std::string ElfHeader::str_e_phnum(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Off  ElfHeader::getProgramHeaderOffset(){
+    return m_e_phoff;
 }
-
-std::string ElfHeader::str_e_shentsize(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Off  ElfHeader::getSectionHeaderOffset(){
+    return m_e_shoff;
 }
-
-std::string ElfHeader::str_e_shnum(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Word ElfHeader::getFlags(){
+    return m_e_flags;
 }
-
-std::string ElfHeader::str_e_shstrndx(){
-    std::string result;
-    if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    else if(m_e_machine == ET_NONE)
-    {
-        return result = "未知文件类型";
-    }
-    return result;
+Elf64_Half ElfHeader::getElfHeaderSize(){
+    return m_e_ehsize;
+}
+Elf64_Half ElfHeader::getProgramHeaderItemSize(){
+    return m_e_phentsize;
+}
+Elf64_Half ElfHeader::getProgramHeaderItemNum(){
+    return m_e_phnum;
+}
+Elf64_Half ElfHeader::getSectionHeaderItemSize(){
+    return m_e_shentsize;
+}
+Elf64_Half ElfHeader::getSectionHeaderItemNum(){
+    return m_e_shnum;
+}
+Elf64_Half ElfHeader::getStringTableIndexInSectionHeader(){
+    return m_e_shstrndx;
 }

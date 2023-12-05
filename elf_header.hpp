@@ -26,35 +26,25 @@ public:
     void setSectionHeaderItemNum();
     void setStringTableIndexInSectionHeader();
     
-    void getEIdent();
-    void getType();
-    void getMachine();
-    void getVersion();
-    void getEntry();
-    void getProgramHeaderOffset();
-    void getSectionHeaderOffset();
-    void getFlags();
-    void getElfHeaderSize();
-    void getProgramHeaderItemSize();
-    void getProgramHeaderItemNum();
-    void getSectionHeaderItemSize();
-    void getSectionHeaderItemNum();
-    void getStringTableIndexInSectionHeader();
+    std::array<uint8_t,EI_NIDENT> getEIdent();
+    Elf64_Half getType();
+    Elf64_Half getMachine();
+    Elf64_Word getVersion();
+    Elf64_Addr getEntry();
+    Elf64_Off  getProgramHeaderOffset();
+    Elf64_Off  getSectionHeaderOffset();
+    Elf64_Word getFlags();
+    Elf64_Half getElfHeaderSize();
+    Elf64_Half getProgramHeaderItemSize();
+    Elf64_Half getProgramHeaderItemNum();
+    Elf64_Half getSectionHeaderItemSize();
+    Elf64_Half getSectionHeaderItemNum();
+    Elf64_Half getStringTableIndexInSectionHeader();
 
 private:
     std::string str_e_type();
     std::string str_e_machine();
     std::string str_e_version();
-    std::string str_e_entry();
-    std::string str_e_phoff();
-    std::string str_e_shoff();
-    std::string str_e_flags();
-    std::string str_e_ehsize();
-    std::string str_e_phentsize();
-    std::string str_e_phnum();
-    std::string str_e_shentsize();
-    std::string str_e_shnum();
-    std::string str_e_shstrndx();
 
 private:
     std::array<uint8_t,EI_NIDENT> m_e_ident;
