@@ -54,14 +54,14 @@ void ElfHeader::load(std::string file)
 void ElfHeader::dump()
 {
     // e_ident
-    std::cout << "EI_MAG0     : " << std::hex << static_cast<unsigned int>(m_e_ident[0]) << std::endl; 
-    std::cout << "EI_MAG1     : " << m_e_ident[1] << std::endl; 
-    std::cout << "EI_MAG2     : " << m_e_ident[2] << std::endl; 
-    std::cout << "EI_MAG3     : " << m_e_ident[3] << std::endl; 
-    std::cout << "EI_CLASS    : " << "Class                              -- " << std::hex << static_cast<unsigned int>(m_e_ident[4]) << std::endl; 
-    std::cout << "EI_DATA     : " << "Data                               -- " << std::hex << static_cast<unsigned int>(m_e_ident[5]) << std::endl; 
-    std::cout << "EI_VERSION  : " << "Version                            -- " << std::hex << static_cast<unsigned int>(m_e_ident[6]) << std::endl; 
-    std::cout << "EI_PAD      : " << "PAD                                -- " << std::hex << static_cast<unsigned int>(m_e_ident[7]) << std::endl; 
+    std::cout << "EI_MAG0     : " << std::hex << static_cast<unsigned int>(m_e_ident[0]) << std::endl;
+    std::cout << "EI_MAG1     : " << m_e_ident[1] << std::endl;
+    std::cout << "EI_MAG2     : " << m_e_ident[2] << std::endl;
+    std::cout << "EI_MAG3     : " << m_e_ident[3] << std::endl;
+    std::cout << "EI_CLASS    : " << "Class                              -- " << std::hex << static_cast<unsigned int>(m_e_ident[4]) << std::endl;
+    std::cout << "EI_DATA     : " << "Data                               -- " << std::hex << static_cast<unsigned int>(m_e_ident[5]) << std::endl;
+    std::cout << "EI_VERSION  : " << "Version                            -- " << std::hex << static_cast<unsigned int>(m_e_ident[6]) << std::endl;
+    std::cout << "EI_PAD      : " << "PAD                                -- " << std::hex << static_cast<unsigned int>(m_e_ident[7]) << std::endl;
     std::cout << "e_type      : " << std::hex << str_e_type()      << std::endl;
     std::cout << "e_machine   : " << std::hex << str_e_machine()   << std::endl;
     std::cout << "e_version   : " << std::hex << str_e_version()   << std::endl;
@@ -87,8 +87,8 @@ std::string ElfHeader::str_e_type(){
         std::make_pair(ET_NUM	 , "Number of defined types "),
         std::make_pair(ET_LOOS	 , "OS-specific range start "),
         std::make_pair(ET_HIOS	 , "OS-specific range end "),
-        std::make_pair(ET_LOPROC	 , "Processor-specific range start "),
-        std::make_pair(ET_HIPROC	 , "Processor-specific range end"),
+        std::make_pair(ET_LOPROC , "Processor-specific range start "),
+        std::make_pair(ET_HIPROC , "Processor-specific range end"),
     };
 
     for(auto & item : e_type_string)

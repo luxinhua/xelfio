@@ -20,7 +20,7 @@ void ProgramHeader::dump(){
     // std::cout << "p_type      : " << "Size of this header                -- " << std::dec << m_e_ehsize    << std::endl;
 }
 
-void ProgramHeaderTable::load(std::string file, Elf64_Off offset, Elf64_Half size){
+void ProgramHeaderTable::load(std::string file, Elf64_Off ProgramHeaderTableOffset, Elf64_Half ProgramHeaderTableSize, Elf64_Half ProgramHeaderNum){
 
 }
 

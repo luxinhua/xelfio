@@ -32,13 +32,13 @@ public:
   Elf64_Word getAlign();
 
 private:
-  Elf64_Word m_p_type;   
-  Elf64_Off  m_p_offset;   
-  Elf64_Addr m_p_vaddr;   
-  Elf64_Addr m_p_paddr;   
-  Elf64_Word m_p_filesz;   
-  Elf64_Word m_p_memsz;   
-  Elf64_Word m_p_flags;   
+  Elf64_Word m_p_type;
+  Elf64_Off  m_p_offset;
+  Elf64_Addr m_p_vaddr;
+  Elf64_Addr m_p_paddr;
+  Elf64_Word m_p_filesz;
+  Elf64_Word m_p_memsz;
+  Elf64_Word m_p_flags;
   Elf64_Word m_p_align;
 };
 
@@ -47,7 +47,7 @@ public:
   ProgramHeaderTable() = default;
   ~ProgramHeaderTable() = default;
 
-  void load(std::string, Elf64_Off offset, Elf64_Half size);
+  void load(std::string file, Elf64_Off ProgramHeaderTableOffset, Elf64_Half ProgramHeaderTableSize, Elf64_Half ProgramHeaderNum);
   void dump();
 
 private:
