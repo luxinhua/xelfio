@@ -18,7 +18,7 @@ public:
 private:
 
     ElfHeader m_elfHeader;
-    ProgramHeaderTable  m_programHeaderTable;
+    ProgramHeaderTable m_programHeaderTable;
     SectionHeaderTable m_sectionHeaderTable;
     Sections m_sections;
     Segments m_segments;

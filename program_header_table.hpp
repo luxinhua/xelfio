@@ -9,7 +9,7 @@ public:
   ProgramHeader() = default;
   ~ProgramHeader() = default;
 
-  void load(std::string, Elf64_Off offset, Elf64_Half size);
+  void load(std::string file, Elf64_Off offset, Elf64_Half size);
   void dump();
 
   void setType(Elf64_Word type);
@@ -31,6 +31,8 @@ public:
   Elf64_Word getFlags();
   Elf64_Word getAlign();
 
+  std::string str_p_type();
+
 private:
   Elf64_Word m_p_type;
   Elf64_Off  m_p_offset;
@@ -42,12 +44,16 @@ private:
   Elf64_Word m_p_align;
 };
 
+
+
+
+
 class ProgramHeaderTable{
 public:
   ProgramHeaderTable() = default;
   ~ProgramHeaderTable() = default;
 
-  void load(std::string file, Elf64_Off ProgramHeaderTableOffset, Elf64_Half ProgramHeaderTableSize, Elf64_Half ProgramHeaderNum);
+  void load(std::string file, Elf64_Off ProgramHeaderTableOffset, Elf64_Half ProgramHeaderTableItemSize, Elf64_Half ProgramHeaderItemNum);
   void dump();
 
 private:
