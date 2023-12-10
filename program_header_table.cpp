@@ -50,7 +50,6 @@ std::string ProgramHeader::str_p_type()
         std::make_pair(PT_GNU_RELRO  , "HIPROC"),
         std::make_pair(PT_HIPROC  , "HIPROC"),
 
-
         // #define PT_NULL		0		/* Program header table entry unused */
         // #define PT_LOAD		1		/* Loadable program segment */
         // #define PT_DYNAMIC	2		/* Dynamic linking information */

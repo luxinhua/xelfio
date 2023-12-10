@@ -11,6 +11,7 @@
 #include <cstdint>
 #include <string>
 #include <array>
+#include <iomanip>
 
 #include "elf.h"
 
