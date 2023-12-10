@@ -25,7 +25,7 @@ public:
     void setSectionHeaderItemSize();
     void setSectionHeaderItemNum();
     void setStringTableIndexInSectionHeader();
-    
+
     std::array<uint8_t,EI_NIDENT> getEIdent();
     Elf64_Half getType();
     Elf64_Half getMachine();

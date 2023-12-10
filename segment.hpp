@@ -9,7 +9,7 @@ public:
     ~Segment() = default;
 
 private:
-    
+
 };
 
 class Segments{

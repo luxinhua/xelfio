@@ -53,8 +53,10 @@ public:
     SectionHeaderTable() = default;
     ~SectionHeaderTable() = default;
 
-  void load(std::string file, Elf64_Off SectionHeaderTableOffset, Elf64_Half SectionHeaderTableItemSize, Elf64_Half SectionHeaderTableItemNum);
-  void dump();
+    void load(std::string file, Elf64_Off SectionHeaderTableOffset, Elf64_Half SectionHeaderTableItemSize, Elf64_Half SectionHeaderTableItemNum);
+    void dump();
+    uint32_t size();
+    SectionHeader getStringSection(uint32_t index);
 
 private:
     std::vector<SectionHeader> m_sectionHeaderTable;

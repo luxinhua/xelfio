@@ -1,7 +1,40 @@
 #include "section_header_table.hpp"
 #include <charconv>
+#include <cstdint>
+#include <ios>
 
 using namespace std;
+
+Elf64_Word SectionHeader::get_sh_name(){
+    return sh_name;
+}
+Elf64_Word SectionHeader::get_sh_type(){
+    return sh_type;
+}
+Elf64_Word SectionHeader::get_sh_flags(){
+    return sh_flags;
+}
+Elf64_Addr SectionHeader::get_sh_addr(){
+    return sh_addr;
+}
+Elf64_Off  SectionHeader::get_sh_offset(){
+    return sh_offset;
+}
+Elf64_Word SectionHeader::get_sh_size(){
+    return sh_size;
+}
+Elf64_Word SectionHeader::get_sh_link(){
+    return sh_link;
+}
+Elf64_Word SectionHeader::get_sh_info(){
+    return sh_info;
+}
+Elf64_Word SectionHeader::get_sh_addralign(){
+    return sh_addralign;
+}
+Elf64_Word SectionHeader::get_sh_entsize(){
+    return sh_entsize;
+}
 
 void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
 {
@@ -23,9 +56,10 @@ void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
     fread.close();
 }
 
-void SectionHeader::dump(uint32_t index){
+void SectionHeader::dump(uint32_t index)
+{
     std::cout
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << index
+              << std::dec << std::setw(15) << std::setfill(' ') << std::left << index
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_name
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_type
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_flags
@@ -53,8 +87,13 @@ void SectionHeaderTable::load(std::string file,
     }
 }
 
+uint32_t SectionHeaderTable::size(){
+    return m_sectionHeaderTable.size();
+}
 
-
+SectionHeader SectionHeaderTable::getStringSection(uint32_t index){
+    return m_sectionHeaderTable.at(38-1);
+}
 
 void SectionHeaderTable::dump()
 {
