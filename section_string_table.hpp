@@ -8,7 +8,7 @@
 
 class SectionStringTable{
 public:
-    void load(std::string file, Elf64_Off SectionStringTableOffset, uint32_t number);
+    void load(std::string file, Elf64_Off sectionStringTableOffset, uint32_t number);
     void dump();
 
 private:

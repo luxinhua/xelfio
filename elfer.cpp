@@ -11,10 +11,14 @@ void Elfer::load(std::string file)
                                 m_elfHeader.getSectionHeaderOffset(),
                                 m_elfHeader.getSectionHeaderItemSize(),
                                 m_elfHeader.getSectionHeaderItemNum());
-    SectionHeader stringTable = m_sectionHeaderTable.getStringSection(m_elfHeader.getStringTableIndexInSectionHeader());
+
+    // auto stringTableSectionIndex = m_elfHeader.getStringTableIndexInSectionHeader();
+    // auto stringTableSectionOffset = m_elfHeader.getSectionHeaderOffset() + m_elfHeader.getSectionHeaderItemSize() * stringTableSectionIndex;
     m_sectionStringTable.load(file,
-                                stringTable.get_sh_offset(),
-                                m_sectionHeaderTable.size());
+                                0x97da600000000,
+                                2);
+
+
 }
 
 void Elfer::dump()

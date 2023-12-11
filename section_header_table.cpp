@@ -58,6 +58,7 @@ void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
 
 void SectionHeader::dump(uint32_t index)
 {
+    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
     std::cout
               << std::dec << std::setw(15) << std::setfill(' ') << std::left << index
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_name
@@ -98,6 +99,8 @@ SectionHeader SectionHeaderTable::getStringSection(uint32_t index){
 void SectionHeaderTable::dump()
 {
     std::cout << std::endl;
+    std::cout << "Section Header Table : " << std::endl;
+    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
     std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"
               << std::setw(15) << std::setfill(' ') << std::left << "sh_name"
               << std::setw(15) << std::setfill(' ') << std::left << "sh_type"
@@ -116,4 +119,5 @@ void SectionHeaderTable::dump()
     {
         sectionHeader.dump(index++);
     }
+    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
 }
