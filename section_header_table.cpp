@@ -11,7 +11,7 @@ Elf64_Word SectionHeader::get_sh_name(){
 Elf64_Word SectionHeader::get_sh_type(){
     return sh_type;
 }
-Elf64_Word SectionHeader::get_sh_flags(){
+Elf64_Xword SectionHeader::get_sh_flags(){
     return sh_flags;
 }
 Elf64_Addr SectionHeader::get_sh_addr(){
@@ -20,7 +20,7 @@ Elf64_Addr SectionHeader::get_sh_addr(){
 Elf64_Off  SectionHeader::get_sh_offset(){
     return sh_offset;
 }
-Elf64_Word SectionHeader::get_sh_size(){
+Elf64_Xword SectionHeader::get_sh_size(){
     return sh_size;
 }
 Elf64_Word SectionHeader::get_sh_link(){
@@ -29,14 +29,14 @@ Elf64_Word SectionHeader::get_sh_link(){
 Elf64_Word SectionHeader::get_sh_info(){
     return sh_info;
 }
-Elf64_Word SectionHeader::get_sh_addralign(){
+Elf64_Xword SectionHeader::get_sh_addralign(){
     return sh_addralign;
 }
-Elf64_Word SectionHeader::get_sh_entsize(){
+Elf64_Xword SectionHeader::get_sh_entsize(){
     return sh_entsize;
 }
 
-void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
+void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Xword size)
 {
     std::ifstream fread(file,std::ios::in|std::ios::binary);
 
@@ -92,8 +92,8 @@ uint32_t SectionHeaderTable::size(){
     return m_sectionHeaderTable.size();
 }
 
-SectionHeader SectionHeaderTable::getStringSection(uint32_t index){
-    return m_sectionHeaderTable.at(38-1);
+SectionHeader SectionHeaderTable::getSectionHeaderByIndex(uint32_t index){
+    return m_sectionHeaderTable.at(index);
 }
 
 void SectionHeaderTable::dump()

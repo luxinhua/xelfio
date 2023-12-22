@@ -1,4 +1,5 @@
 #include "elfer.hpp"
+#include "section_header_table.hpp"
 
 void Elfer::load(std::string file)
 {
@@ -12,19 +13,20 @@ void Elfer::load(std::string file)
                                 m_elfHeader.getSectionHeaderItemSize(),
                                 m_elfHeader.getSectionHeaderItemNum());
 
-    // auto stringTableSectionIndex = m_elfHeader.getStringTableIndexInSectionHeader();
-    // auto stringTableSectionOffset = m_elfHeader.getSectionHeaderOffset() + m_elfHeader.getSectionHeaderItemSize() * stringTableSectionIndex;
-    m_sectionStringTable.load(file,
-                                0x97da600000000,
-                                2);
+    auto stringTableSectionIndex = m_elfHeader.getStringTableIndexInSectionHeader();
+    SectionHeader stringTableSectionHeader = m_sectionHeaderTable.getSectionHeaderByIndex(stringTableSectionIndex);
 
+    m_sectionStringTable.load(file,
+                                stringTableSectionHeader.get_sh_offset(),
+                                stringTableSectionHeader.get_sh_size(),
+                                2);
 
 }
 
 void Elfer::dump()
 {
-    m_elfHeader.dump();
-    m_programHeaderTable.dump();
-    m_sectionHeaderTable.dump();
-    m_sectionStringTable.dump();
+    // m_elfHeader.dump();
+    // m_programHeaderTable.dump();
+    // m_sectionHeaderTable.dump();
+    // m_sectionStringTable.dump();
 }
