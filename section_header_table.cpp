@@ -2,6 +2,8 @@
 #include <charconv>
 #include <cstdint>
 #include <ios>
+#include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -56,19 +58,18 @@ void SectionHeader::load(std::string file, Elf64_Off offset, Elf64_Xword size)
     fread.close();
 }
 
-void SectionHeader::dump(uint32_t index)
+void SectionHeader::dump(uint32_t index, std::string name)
 {
-    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
-    std::cout
-              << std::dec << std::setw(15) << std::setfill(' ') << std::left << index
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_name
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_type
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_flags
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_addr
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_offset
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_size
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_link
-              << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_info
+    std::cout << std::setw(10*11 + 15) << std::setfill('-') << std::left << "-" << std::endl;
+    std::cout << std::dec << std::setw(8) << std::setfill(' ') << std::left << index
+              << std::hex << std::setw(20) << std::setfill(' ') << std::left << name
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_type
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_flags
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_addr
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_offset
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_size
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_link
+              << std::hex << std::setw(10) << std::setfill(' ') << std::left << sh_info
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_addralign
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_entsize << std::endl;;
 }
@@ -100,16 +101,16 @@ void SectionHeaderTable::dump()
 {
     std::cout << std::endl;
     std::cout << "Section Header Table : " << std::endl;
-    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
-    std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_name"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_type"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_flags"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_addr"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_offset"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_size"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_link"
-              << std::setw(15) << std::setfill(' ') << std::left << "sh_info"
+    std::cout << std::setw(10*11+15) << std::setfill('-') << std::left << "-" << std::endl;
+    std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
+              << std::setw(20) << std::setfill(' ') << std::left << "sh_name"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_type"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_flags"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_addr"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_offset"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_size"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_link"
+              << std::setw(10) << std::setfill(' ') << std::left << "sh_info"
               << std::setw(15) << std::setfill(' ') << std::left << "sh_addralign"
               << std::setw(15) << std::setfill(' ') << std::left << "sh_entsize" << std::endl;
 
@@ -117,7 +118,33 @@ void SectionHeaderTable::dump()
 
     for (auto& sectionHeader : m_sectionHeaderTable)
     {
-        sectionHeader.dump(index++);
+        auto nameId = sectionHeader.get_sh_name();
+        auto name = get_sh_name(nameId);
+        sectionHeader.dump(index++, name);
     }
-    std::cout << std::setw(15*11) << std::setfill('-') << std::left << "-" << std::endl;
+    std::cout << std::setw(10*11+ 15) << std::setfill('-') << std::left << "-" << std::endl;
+
+    index = 0;
+    for (auto& stringName : m_sectionStringTable.get())
+    {
+        std::cout << std::dec << index++ << " " << stringName.first << " -- " << stringName.second << std::endl;
+    }
+}
+
+void SectionHeaderTable::reloadStringTable(std::string file, Elf64_Half stringTableSectionIndex)
+{
+    SectionHeader stringTableSectionHeader = getSectionHeaderByIndex(stringTableSectionIndex);
+
+    m_sectionStringTable.load(file,
+                                stringTableSectionHeader.get_sh_offset(),
+                                stringTableSectionHeader.get_sh_size());
+}
+
+std::string SectionHeaderTable::get_sh_name(Elf64_Word nameId)
+{
+    if (1 != m_sectionStringTable.get().count(nameId))
+    {
+        std::runtime_error("there is not name string ");
+    }
+    return m_sectionStringTable.get()[nameId];
 }

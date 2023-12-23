@@ -21,7 +21,6 @@ private:
     ElfHeader m_elfHeader;
     ProgramHeaderTable m_programHeaderTable;
     SectionHeaderTable m_sectionHeaderTable;
-    SectionStringTable m_sectionStringTable;
     Sections m_sections;
     Segments m_segments;
 };

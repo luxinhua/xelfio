@@ -6,22 +6,18 @@
 
 void SectionStringTable::load(std::string file,
                     Elf64_Off sectionStringTableOffset,
-                    Elf64_Xword size,
-                    uint32_t count)
+                    Elf64_Xword size)
 {
     std::ifstream fread(file,std::ios::in|std::ios::binary);
 
     fread.seekg(std::streamoff(sectionStringTableOffset), std::ios::beg);
-
-    std::cout << "xhlu: sectionStringTableOffset " << sectionStringTableOffset << std::endl;
-    std::cout << "xhlu: size " << size << std::endl;
-    std::cout << "xhlu: count " << count << std::endl;
 
     char data{0};
 
     for (uint32_t index = 0; index < size; index++)
     {
         std::string tmpstr;
+        auto nameId{index};
 
         fread.read((char *)&data, sizeof(data));
 
@@ -30,12 +26,8 @@ void SectionStringTable::load(std::string file,
             index++;
             tmpstr += data;
             fread.read((char *)&data, sizeof(data));
-
-            std::cout << tmpstr << std::endl;
         }
-        // std::cout << std::hex << "xhlu: "<< index << " " << static_cast<char>(data) << std::endl;
-
-
+        m_sectionStringTable[nameId] = tmpstr;
     }
 
     fread.close();
@@ -44,6 +36,13 @@ void SectionStringTable::load(std::string file,
 void SectionStringTable::dump(){
     for(auto& stringName: m_sectionStringTable)
     {
-        std::cout << stringName << " " << std::endl;
+        auto nameId = stringName.first;
+        auto nameString = stringName.second;
+        std::cout << std::hex << nameId << " " << nameString << " " << std::endl;
     }
+}
+
+std::map<uint32_t, std::string> SectionStringTable::get()
+{
+    return m_sectionStringTable;
 }

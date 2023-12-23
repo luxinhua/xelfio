@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include "common.hpp"
+#include "section_string_table.hpp"
 
 class SectionHeader{
 public:
@@ -10,7 +11,7 @@ public:
     ~SectionHeader() = default;
 
     void load(std::string file, Elf64_Off offset, Elf64_Xword size);
-    void dump(uint32_t index);
+    void dump(uint32_t index, std::string name);
 
     Elf64_Word get_sh_name();
     Elf64_Word get_sh_type();
@@ -57,10 +58,13 @@ public:
     void dump();
     uint32_t size();
     SectionHeader getSectionHeaderByIndex(uint32_t index);
+    void reloadStringTable(std::string file, Elf64_Half stringTableSectionIndex);
+
+    std::string get_sh_name(Elf64_Word nameId);
 
 private:
     std::vector<SectionHeader> m_sectionHeaderTable;
-
+    SectionStringTable m_sectionStringTable;
 };
 
 #endif

@@ -12,6 +12,7 @@
 #include <string>
 #include <array>
 #include <iomanip>
+#include <map>
 
 #include "elf.h"
 
