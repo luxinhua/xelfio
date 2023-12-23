@@ -180,6 +180,6 @@ Elf64_Half ElfHeader::getSectionHeaderItemSize(){
 Elf64_Half ElfHeader::getSectionHeaderItemNum(){
     return m_e_shnum;
 }
-Elf64_Half ElfHeader::getStringTableIndexInSectionHeader(){
+Elf64_Half ElfHeader::getSectionStringTableIndex(){
     return m_e_shstrndx;
 }

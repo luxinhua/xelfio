@@ -39,7 +39,7 @@ public:
     Elf64_Half getProgramHeaderItemNum();
     Elf64_Half getSectionHeaderItemSize();
     Elf64_Half getSectionHeaderItemNum();
-    Elf64_Half getStringTableIndexInSectionHeader();
+    Elf64_Half getSectionStringTableIndex();
 
 private:
     std::string str_e_type();

@@ -1,9 +1,9 @@
 #ifndef __SECTION_HEADER_TABLE_H__
 #define __SECTION_HEADER_TABLE_H__
 
-#include <cstdint>
+#include <vector>
 #include "common.hpp"
-#include "section_string_table.hpp"
+#include "symbol.hpp"
 
 class SectionHeader{
 public:
@@ -46,7 +46,6 @@ private:
     Elf64_Word sh_info;
     Elf64_Xword sh_addralign;
     Elf64_Xword sh_entsize;
-
 };
 
 class SectionHeaderTable{
@@ -56,15 +55,27 @@ public:
 
     void load(std::string file, Elf64_Off SectionHeaderTableOffset, Elf64_Half SectionHeaderTableItemSize, Elf64_Half SectionHeaderTableItemNum);
     void dump();
-    uint32_t size();
-    SectionHeader getSectionHeaderByIndex(uint32_t index);
-    void reloadStringTable(std::string file, Elf64_Half stringTableSectionIndex);
 
-    std::string get_sh_name(Elf64_Word nameId);
+    std::string str_sh_name(Elf64_Word nameId);
+    SectionHeader getSectionHeaderByIndex(uint32_t index);
+    void loadSectionStringTable(std::string file, Elf64_Half sectionStringTableIndex);
+    void dumpSectionStringTable();
+
+    SectionHeader getStringTable();
+    void loadStringTable(std::string files);
+    void dumpStringTable();
+
+    SectionHeader getSymbolTable();
+    void loadSymbolTable(std::string files);
+    void dumpSymbolTable();
+
 
 private:
     std::vector<SectionHeader> m_sectionHeaderTable;
-    SectionStringTable m_sectionStringTable;
+    std::map<uint32_t, std::string> m_sectionStringTable;
+    std::map<uint32_t, std::string> m_stringTable;
+
+    std::vector<Symbol>  m_symbols;
 };
 
 #endif

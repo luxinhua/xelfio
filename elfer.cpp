@@ -13,14 +13,16 @@ void Elfer::load(std::string file)
                                 m_elfHeader.getSectionHeaderItemSize(),
                                 m_elfHeader.getSectionHeaderItemNum());
 
-    m_sectionHeaderTable.reloadStringTable(file,
-                                        m_elfHeader.getStringTableIndexInSectionHeader());
-
+    m_sectionHeaderTable.loadSectionStringTable(file,
+                                        m_elfHeader.getSectionStringTableIndex());
+    m_sectionHeaderTable.loadStringTable(file);
 }
 
 void Elfer::dump()
 {
-    m_elfHeader.dump();
-    m_programHeaderTable.dump();
-    m_sectionHeaderTable.dump();
+    // m_elfHeader.dump();
+    // m_programHeaderTable.dump();
+    // m_sectionHeaderTable.dump();
+    m_sectionHeaderTable.dumpSectionStringTable();
+    // m_sectionHeaderTable.dumpStringTable();
 }

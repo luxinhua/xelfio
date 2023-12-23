@@ -89,10 +89,6 @@ void SectionHeaderTable::load(std::string file,
     }
 }
 
-uint32_t SectionHeaderTable::size(){
-    return m_sectionHeaderTable.size();
-}
-
 SectionHeader SectionHeaderTable::getSectionHeaderByIndex(uint32_t index){
     return m_sectionHeaderTable.at(index);
 }
@@ -119,32 +115,185 @@ void SectionHeaderTable::dump()
     for (auto& sectionHeader : m_sectionHeaderTable)
     {
         auto nameId = sectionHeader.get_sh_name();
-        auto name = get_sh_name(nameId);
+        auto name = str_sh_name(nameId);
         sectionHeader.dump(index++, name);
     }
     std::cout << std::setw(10*11+ 15) << std::setfill('-') << std::left << "-" << std::endl;
 
-    index = 0;
-    for (auto& stringName : m_sectionStringTable.get())
+
+}
+
+void SectionHeaderTable::dumpSectionStringTable()
+{
+    auto index{0};
+    std::cout << std::endl;
+    std::cout << "Section String Table : " << std::endl;
+    std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
+                << std::setw(8) << std::setfill(' ') << std::left << "NameId"
+                << std::setw(10) << std::setfill(' ') << std::left << "Name"
+                << std::endl;
+    for (auto& stringName : m_sectionStringTable)
     {
-        std::cout << std::dec << index++ << " " << stringName.first << " -- " << stringName.second << std::endl;
+        std::cout << std::setw(8) << std::setfill(' ') << std::left << std::dec << index++
+                  << std::setw(8) << std::setfill(' ') << std::left << std::hex << stringName.first
+                  << std::setw(10) << std::setfill(' ') << std::left << stringName.second
+                  << std::endl;
     }
 }
 
-void SectionHeaderTable::reloadStringTable(std::string file, Elf64_Half stringTableSectionIndex)
+void SectionHeaderTable::loadSectionStringTable(std::string file, Elf64_Half sectionStringTableIndex)
 {
-    SectionHeader stringTableSectionHeader = getSectionHeaderByIndex(stringTableSectionIndex);
+    SectionHeader sectionStringTableSectionHeader = getSectionHeaderByIndex(sectionStringTableIndex);
 
-    m_sectionStringTable.load(file,
-                                stringTableSectionHeader.get_sh_offset(),
-                                stringTableSectionHeader.get_sh_size());
+    std::ifstream fread(file,std::ios::in|std::ios::binary);
+
+    fread.seekg(std::streamoff(sectionStringTableSectionHeader.get_sh_offset()), std::ios::beg);
+
+    char data{0};
+
+    for (uint32_t index = 0; index < sectionStringTableSectionHeader.get_sh_size(); index++)
+    {
+        std::string tmpstr;
+        auto nameId{index};
+
+        fread.read((char *)&data, sizeof(data));
+
+        while (data != '\0')
+        {
+            index++;
+            tmpstr += data;
+            fread.read((char *)&data, sizeof(data));
+        }
+        m_sectionStringTable[nameId] = tmpstr;
+    }
+
+    fread.close();
 }
 
-std::string SectionHeaderTable::get_sh_name(Elf64_Word nameId)
+std::string SectionHeaderTable::str_sh_name(Elf64_Word nameId)
 {
-    if (1 != m_sectionStringTable.get().count(nameId))
+    if (1 != m_sectionStringTable.count(nameId))
     {
         std::runtime_error("there is not name string ");
     }
-    return m_sectionStringTable.get()[nameId];
+    return m_sectionStringTable[nameId];
+}
+
+
+SectionHeader SectionHeaderTable::getStringTable()
+{
+    std::string stringTableStr{".strtab"};
+    SectionHeader sectionHeaderResult;
+
+    for (auto& sectionHeader : m_sectionHeaderTable)
+    {
+        auto nameId = sectionHeader.get_sh_name();
+        auto name = str_sh_name(nameId);
+        if (name == stringTableStr)
+        {
+            std::cout << "Find " <<  name << std::endl;
+            sectionHeaderResult = sectionHeader;
+            break;
+        }
+    }
+    return sectionHeaderResult;
+}
+
+void SectionHeaderTable::loadStringTable(std::string file)
+{
+    SectionHeader stringTableSectionHeader = getStringTable();
+
+    std::ifstream fread(file,std::ios::in|std::ios::binary);
+
+    fread.seekg(std::streamoff(stringTableSectionHeader.get_sh_offset()), std::ios::beg);
+
+    char data{0};
+
+    for (uint32_t index = 0; index < stringTableSectionHeader.get_sh_size(); index++)
+    {
+        std::string tmpstr;
+        auto nameId{index};
+
+        fread.read((char *)&data, sizeof(data));
+
+        while (data != '\0')
+        {
+            index++;
+            tmpstr += data;
+            fread.read((char *)&data, sizeof(data));
+        }
+        m_stringTable[nameId] = tmpstr+'\0';
+    }
+
+    fread.close();
+}
+void SectionHeaderTable::dumpStringTable()
+{
+    auto index{0};
+    std::cout << std::endl;
+    std::cout << "String Table : " << std::endl;
+    std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
+                << std::setw(8) << std::setfill(' ') << std::left << "NameId"
+                << std::setw(10) << std::setfill(' ') << std::left << "Name"
+                << std::endl;
+    for (auto& stringName : m_stringTable)
+    {
+        std::cout << std::setw(8) << std::setfill(' ') << std::left << std::dec << index++
+                  << std::setw(8) << std::setfill(' ') << std::left << std::hex << stringName.first
+                  << std::setw(10) << std::setfill(' ') << std::left << stringName.second
+                  << std::endl;
+    }
+}
+
+
+
+SectionHeader SectionHeaderTable::getSymbolTable()
+{
+    std::string stringTableStr{".symtab"};
+    SectionHeader sectionHeaderResult;
+
+    for (auto& sectionHeader : m_sectionHeaderTable)
+    {
+        auto nameId = sectionHeader.get_sh_name();
+        auto name = str_sh_name(nameId);
+        if (name == stringTableStr)
+        {
+            std::cout << "Find " <<  name << std::endl;
+            sectionHeaderResult = sectionHeader;
+            break;
+        }
+    }
+    return sectionHeaderResult;
+}
+void SectionHeaderTable::loadSymbolTable(std::string file)
+{
+    SectionHeader symbolTableSectionHeader = getStringTable();
+
+    std::ifstream fread(file,std::ios::in|std::ios::binary);
+
+    fread.seekg(std::streamoff(symbolTableSectionHeader.get_sh_offset()), std::ios::beg);
+
+    char data{0};
+
+    for (uint32_t index = 0; index < symbolTableSectionHeader.get_sh_size(); index++)
+    {
+        std::string tmpstr;
+        auto nameId{index};
+
+        fread.read((char *)&data, sizeof(data));
+
+        while (data != '\0')
+        {
+            index++;
+            tmpstr += data;
+            fread.read((char *)&data, sizeof(data));
+        }
+        m_stringTable[nameId] = tmpstr+'\0';
+    }
+
+    fread.close();
+}
+void SectionHeaderTable::dumpSymbolTable()
+{
+
 }
