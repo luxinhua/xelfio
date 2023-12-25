@@ -75,7 +75,7 @@ private:
     std::map<uint32_t, std::string> m_sectionStringTable;
     std::map<uint32_t, std::string> m_stringTable;
 
-    std::vector<Symbol>  m_symbols;
+    std::vector<Symbol>             m_symbols;
 };
 
 #endif

@@ -267,7 +267,7 @@ SectionHeader SectionHeaderTable::getSymbolTable()
 }
 void SectionHeaderTable::loadSymbolTable(std::string file)
 {
-    SectionHeader symbolTableSectionHeader = getStringTable();
+    SectionHeader symbolTableSectionHeader = getSymbolTable();
 
     std::ifstream fread(file,std::ios::in|std::ios::binary);
 
@@ -275,25 +275,42 @@ void SectionHeaderTable::loadSymbolTable(std::string file)
 
     char data{0};
 
-    for (uint32_t index = 0; index < symbolTableSectionHeader.get_sh_size(); index++)
+    uint32_t index = 0;
+    while(index < symbolTableSectionHeader.get_sh_size())
     {
-        std::string tmpstr;
-        auto nameId{index};
+        Symbol symbol;
 
-        fread.read((char *)&data, sizeof(data));
+        fread.read((char *)&symbol , sizeof(symbol));
 
-        while (data != '\0')
-        {
-            index++;
-            tmpstr += data;
-            fread.read((char *)&data, sizeof(data));
-        }
-        m_stringTable[nameId] = tmpstr+'\0';
+        index += sizeof(symbol);
+
+        m_symbols.emplace_back(symbol);
     }
 
     fread.close();
 }
 void SectionHeaderTable::dumpSymbolTable()
 {
-
+    auto index{0};
+    std::cout << std::endl;
+    std::cout << "Symbol Table : " << std::endl;
+    std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"
+              << std::setw(15) << std::setfill(' ') << std::left << "name"
+              << std::setw(15) << std::setfill(' ') << std::left << "value"
+              << std::setw(15) << std::setfill(' ') << std::left << "size"
+              << std::setw(15) << std::setfill(' ') << std::left << "info"
+              << std::setw(15) << std::setfill(' ') << std::left << "other"
+              << std::setw(15) << std::setfill(' ') << std::left << "shndx"
+              << std::endl;
+    for (auto& symbol : m_symbols)
+    {
+        std::cout << std::setw(15) << std::setfill(' ') << std::left << std::dec << index++
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_name
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_value
+                  << std::setw(15) << std::setfill(' ') << std::left << std::dec << symbol.st_size
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_info
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_other
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_shndx
+                  << std::endl;
+    }
 }

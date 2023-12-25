@@ -1,9 +1,9 @@
 #!/bin/bash
-if [[ -d a.out ]];then
+if [[ -f a.out ]];then
     rm a.out    
 fi
 
-g++ *.cpp -g
+bear -- g++ *.cpp -g
 
 if [[ $? -eq 0 ]];then
     ./a.out
