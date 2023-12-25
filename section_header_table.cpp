@@ -115,7 +115,7 @@ void SectionHeaderTable::dump()
     for (auto& sectionHeader : m_sectionHeaderTable)
     {
         auto nameId = sectionHeader.get_sh_name();
-        auto name = str_sh_name(nameId);
+        auto name = str_sh_name_in_section_string_table(nameId);
         sectionHeader.dump(index++, name);
     }
     std::cout << std::setw(10*11+ 15) << std::setfill('-') << std::left << "-" << std::endl;
@@ -170,7 +170,7 @@ void SectionHeaderTable::loadSectionStringTable(std::string file, Elf64_Half sec
     fread.close();
 }
 
-std::string SectionHeaderTable::str_sh_name(Elf64_Word nameId)
+std::string SectionHeaderTable::str_sh_name_in_section_string_table(Elf64_Word nameId)
 {
     if (1 != m_sectionStringTable.count(nameId))
     {
@@ -178,6 +178,16 @@ std::string SectionHeaderTable::str_sh_name(Elf64_Word nameId)
     }
     return m_sectionStringTable[nameId];
 }
+
+std::string SectionHeaderTable::str_sh_name_in_string_table(Elf64_Word nameId)
+{
+    if (1 != m_stringTable.count(nameId))
+    {
+        std::runtime_error("there is not name string ");
+    }
+    return m_stringTable[nameId];
+}
+
 
 
 SectionHeader SectionHeaderTable::getStringTable()
@@ -188,7 +198,7 @@ SectionHeader SectionHeaderTable::getStringTable()
     for (auto& sectionHeader : m_sectionHeaderTable)
     {
         auto nameId = sectionHeader.get_sh_name();
-        auto name = str_sh_name(nameId);
+        auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
             std::cout << "Find " <<  name << std::endl;
@@ -255,7 +265,7 @@ SectionHeader SectionHeaderTable::getSymbolTable()
     for (auto& sectionHeader : m_sectionHeaderTable)
     {
         auto nameId = sectionHeader.get_sh_name();
-        auto name = str_sh_name(nameId);
+        auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
             std::cout << "Find " <<  name << std::endl;
@@ -295,22 +305,37 @@ void SectionHeaderTable::dumpSymbolTable()
     std::cout << std::endl;
     std::cout << "Symbol Table : " << std::endl;
     std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"
-              << std::setw(15) << std::setfill(' ') << std::left << "name"
               << std::setw(15) << std::setfill(' ') << std::left << "value"
               << std::setw(15) << std::setfill(' ') << std::left << "size"
               << std::setw(15) << std::setfill(' ') << std::left << "info"
               << std::setw(15) << std::setfill(' ') << std::left << "other"
               << std::setw(15) << std::setfill(' ') << std::left << "shndx"
+              << "name"
               << std::endl;
     for (auto& symbol : m_symbols)
     {
         std::cout << std::setw(15) << std::setfill(' ') << std::left << std::dec << index++
-                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_name
                   << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_value
                   << std::setw(15) << std::setfill(' ') << std::left << std::dec << symbol.st_size
                   << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_info
                   << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_other
                   << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_shndx
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << str_sh_name_in_string_table(symbol.st_name)
                   << std::endl;
     }
 }
+
+
+SectionHeader SectionHeaderTable::getDynamicSymbolTable()
+{
+
+}
+void SectionHeaderTable::loadDynamicSymbolTable(std::string files)
+{
+
+}
+void SectionHeaderTable::dumpDynamicSymbolTable()
+{
+
+}
+

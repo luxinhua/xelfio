@@ -56,26 +56,35 @@ public:
     void load(std::string file, Elf64_Off SectionHeaderTableOffset, Elf64_Half SectionHeaderTableItemSize, Elf64_Half SectionHeaderTableItemNum);
     void dump();
 
-    std::string str_sh_name(Elf64_Word nameId);
     SectionHeader getSectionHeaderByIndex(uint32_t index);
     void loadSectionStringTable(std::string file, Elf64_Half sectionStringTableIndex);
     void dumpSectionStringTable();
 
+    std::string str_sh_name_in_section_string_table(Elf64_Word nameId);
     SectionHeader getStringTable();
     void loadStringTable(std::string files);
     void dumpStringTable();
 
+    std::string str_sh_name_in_string_table(Elf64_Word nameId);
     SectionHeader getSymbolTable();
     void loadSymbolTable(std::string files);
     void dumpSymbolTable();
 
+    std::string str_sh_name_in_dynamic_string_table(Elf64_Word nameId);
+    SectionHeader getDynamicSymbolTable();
+    void loadDynamicSymbolTable(std::string files);
+    void dumpDynamicSymbolTable();
 
 private:
     std::vector<SectionHeader> m_sectionHeaderTable;
-    std::map<uint32_t, std::string> m_sectionStringTable;
-    std::map<uint32_t, std::string> m_stringTable;
 
+    std::map<uint32_t, std::string> m_sectionStringTable;
+
+    std::map<uint32_t, std::string> m_stringTable;
     std::vector<Symbol>             m_symbols;
+
+    std::map<uint32_t, std::string> m_dynamicStringTable;
+    std::vector<Symbol>             m_dynamicSymbols;
 };
 
 #endif
