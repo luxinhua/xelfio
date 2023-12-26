@@ -143,6 +143,7 @@ void ProgramHeaderTable::load(std::string file,
 void ProgramHeaderTable::dump()
 {
     std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "Program Header Table : " << std::endl;
     std::cout << std::setw(16*8) << std::setfill('-') << std::left << "-" << std::endl;
     std::cout << std::setw(16) << std::setfill(' ') << std::left << "m_p_type"

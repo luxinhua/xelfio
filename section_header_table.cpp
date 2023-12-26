@@ -101,6 +101,7 @@ SectionHeader SectionHeaderTable::getSectionHeaderByIndex(uint32_t index){
 void SectionHeaderTable::dump()
 {
     std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "Section Header Table : " << std::endl;
     std::cout << std::setw(10*11+15) << std::setfill('-') << std::left << "-" << std::endl;
     std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
@@ -131,6 +132,7 @@ void SectionHeaderTable::dump()
 void SectionHeaderTable::dumpSectionStringTable()
 {
     auto index{0};
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "Section String Table : " << std::endl;
     std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
@@ -206,7 +208,6 @@ SectionHeader SectionHeaderTable::getStringTable()
         auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
-            std::cout << "Find " <<  name << std::endl;
             sectionHeaderResult = sectionHeader;
             break;
         }
@@ -273,7 +274,6 @@ SectionHeader SectionHeaderTable::getSymbolTable()
         auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
-            std::cout << "Find " <<  name << std::endl;
             sectionHeaderResult = sectionHeader;
             break;
         }
@@ -342,7 +342,6 @@ SectionHeader SectionHeaderTable::getDynamciStringTable()
         auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
-            std::cout << "Find " <<  name << std::endl;
             sectionHeaderResult = sectionHeader;
             break;
         }
@@ -414,7 +413,6 @@ SectionHeader SectionHeaderTable::getDynamicSymbolTable()
         auto name = str_sh_name_in_section_string_table(nameId);
         if (name == stringTableStr)
         {
-            std::cout << "Find " <<  name << std::endl;
             sectionHeaderResult = sectionHeader;
             break;
         }
@@ -448,6 +446,7 @@ void SectionHeaderTable::loadDynamicSymbolTable(std::string file)
 void SectionHeaderTable::dumpDynamicSymbolTable()
 {
     auto index{0};
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "Dynamci Symbol Table : " << std::endl;
     std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"

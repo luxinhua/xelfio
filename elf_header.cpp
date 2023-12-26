@@ -54,6 +54,8 @@ void ElfHeader::load(std::string file)
 void ElfHeader::dump()
 {
     // e_ident
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "ELF Header : " << std::endl;
     std::cout << "EI_MAG0     : " << std::hex << static_cast<unsigned int>(m_e_ident[0]) << std::endl;
     std::cout << "EI_MAG1     : " << m_e_ident[1] << std::endl;
