@@ -232,7 +232,7 @@ void SectionHeaderTable::loadStringTable(std::string file)
             tmpstr += data;
             fread.read((char *)&data, sizeof(data));
         }
-        m_stringTable[nameId] = tmpstr+'\0';
+        m_stringTable[nameId] = tmpstr;
     }
 
     fread.close();
@@ -326,16 +326,143 @@ void SectionHeaderTable::dumpSymbolTable()
 }
 
 
+SectionHeader SectionHeaderTable::getDynamciStringTable()
+{
+    std::string stringTableStr{".dynstr"};
+    SectionHeader sectionHeaderResult;
+
+    for (auto& sectionHeader : m_sectionHeaderTable)
+    {
+        auto nameId = sectionHeader.get_sh_name();
+        auto name = str_sh_name_in_section_string_table(nameId);
+        if (name == stringTableStr)
+        {
+            std::cout << "Find " <<  name << std::endl;
+            sectionHeaderResult = sectionHeader;
+            break;
+        }
+    }
+    return sectionHeaderResult;
+}
+void SectionHeaderTable::loadDynamicStringTable(std::string file)
+{
+    SectionHeader dynamicStringTable = getDynamciStringTable();
+
+    std::ifstream fread(file,std::ios::in|std::ios::binary);
+
+    fread.seekg(std::streamoff(dynamicStringTable.get_sh_offset()), std::ios::beg);
+
+    char data{0};
+
+    for (uint32_t index = 0; index < dynamicStringTable.get_sh_size(); index++)
+    {
+        std::string tmpstr;
+        auto nameId{index};
+
+        fread.read((char *)&data, sizeof(data));
+
+        while (data != '\0')
+        {
+            index++;
+            tmpstr += data;
+            fread.read((char *)&data, sizeof(data));
+        }
+        m_dynamicStringTable[nameId] = tmpstr;
+    }
+
+    fread.close();
+}
+void SectionHeaderTable::dumpDynamicStringTable()
+{
+    auto index{0};
+    std::cout << std::endl;
+    std::cout << "Dynamic String Table : " << std::endl;
+    std::cout << std::setw(8) << std::setfill(' ') << std::left << "[No.]"
+                << std::setw(8) << std::setfill(' ') << std::left << "NameId"
+                << std::setw(10) << std::setfill(' ') << std::left << "Name"
+                << std::endl;
+    for (auto& stringName : m_dynamicStringTable)
+    {
+        std::cout << std::setw(8) << std::setfill(' ') << std::left << std::dec << index++
+                  << std::setw(8) << std::setfill(' ') << std::left << std::hex << stringName.first
+                  << std::setw(10) << std::setfill(' ') << std::left << stringName.second
+                  << std::endl;
+    }
+}
+
+std::string SectionHeaderTable::str_sh_name_in_dynamic_string_table(Elf64_Word nameId)
+{
+    if (1 != m_dynamicStringTable.count(nameId))
+    {
+        std::runtime_error("there is not name string ");
+    }
+    return m_dynamicStringTable[nameId];
+}
 SectionHeader SectionHeaderTable::getDynamicSymbolTable()
 {
+    std::string stringTableStr{".dynsym"};
+    SectionHeader sectionHeaderResult;
 
+    for (auto& sectionHeader : m_sectionHeaderTable)
+    {
+        auto nameId = sectionHeader.get_sh_name();
+        auto name = str_sh_name_in_section_string_table(nameId);
+        if (name == stringTableStr)
+        {
+            std::cout << "Find " <<  name << std::endl;
+            sectionHeaderResult = sectionHeader;
+            break;
+        }
+    }
+    return sectionHeaderResult;
 }
-void SectionHeaderTable::loadDynamicSymbolTable(std::string files)
+void SectionHeaderTable::loadDynamicSymbolTable(std::string file)
 {
+    SectionHeader dynamicSymbolTable = getDynamicSymbolTable();
 
+    std::ifstream fread(file,std::ios::in|std::ios::binary);
+
+    fread.seekg(std::streamoff(dynamicSymbolTable.get_sh_offset()), std::ios::beg);
+
+    char data{0};
+
+    uint32_t index = 0;
+    while(index < dynamicSymbolTable.get_sh_size())
+    {
+        Symbol symbol;
+
+        fread.read((char *)&symbol , sizeof(symbol));
+
+        index += sizeof(symbol);
+
+        m_dynamicSymbols.emplace_back(symbol);
+    }
+
+    fread.close();
 }
 void SectionHeaderTable::dumpDynamicSymbolTable()
 {
-
+    auto index{0};
+    std::cout << std::endl;
+    std::cout << "Dynamci Symbol Table : " << std::endl;
+    std::cout << std::setw(15) << std::setfill(' ') << std::left << "[No.]"
+              << std::setw(15) << std::setfill(' ') << std::left << "value"
+              << std::setw(15) << std::setfill(' ') << std::left << "size"
+              << std::setw(15) << std::setfill(' ') << std::left << "info"
+              << std::setw(15) << std::setfill(' ') << std::left << "other"
+              << std::setw(15) << std::setfill(' ') << std::left << "shndx"
+              << "name"
+              << std::endl;
+    for (auto& symbol : m_dynamicSymbols)
+    {
+        std::cout << std::setw(15) << std::setfill(' ') << std::left << std::dec << index++
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_value
+                  << std::setw(15) << std::setfill(' ') << std::left << std::dec << symbol.st_size
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_info
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_other
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << symbol.st_shndx
+                  << std::setw(15) << std::setfill(' ') << std::left << std::hex << str_sh_name_in_dynamic_string_table(symbol.st_name)
+                  << std::endl;
+    }
 }
 
