@@ -1,7 +1,6 @@
 #include "program_header_table.hpp"
 #include <iomanip>
 
-
 void ProgramHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
 {
     std::ifstream fread(file,std::ios::in|std::ios::binary);
@@ -84,6 +83,46 @@ std::string ProgramHeader::str_p_type()
 
     return std::string("unknow_e_type");
 
+}
+
+Elf64_Word ProgramHeader::getType()
+{
+    return m_p_type;
+}
+Elf64_Off  ProgramHeader::getOffset()
+{
+    return m_p_offset;
+}
+Elf64_Addr ProgramHeader::getVAddr()
+{
+    return m_p_vaddr;
+}
+Elf64_Addr ProgramHeader::getPAddr()
+{
+    return m_p_paddr;
+}
+Elf64_Word ProgramHeader::getFilesz()
+{
+    return m_p_filesz;
+}
+Elf64_Word ProgramHeader::getMemsz()
+{
+    return m_p_memsz;
+}
+Elf64_Word ProgramHeader::getFlags()
+{
+    return m_p_flags;
+}
+Elf64_Word ProgramHeader::getAlign()
+{
+    return m_p_align;
+}
+
+
+
+std::vector<ProgramHeader> ProgramHeaderTable::get()
+{
+    return m_programHeaderTable;
 }
 
 void ProgramHeaderTable::load(std::string file,

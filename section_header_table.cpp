@@ -74,6 +74,11 @@ void SectionHeader::dump(uint32_t index, std::string name)
               << std::hex << std::setw(15) << std::setfill(' ') << std::left << sh_entsize << std::endl;;
 }
 
+std::vector<SectionHeader> SectionHeaderTable::get()
+{
+    return m_sectionHeaderTable;
+}
+
 void SectionHeaderTable::load(std::string file,
                               Elf64_Off  SectionHeaderTableOffset,
                               Elf64_Half SectionHeaderTableItemSize,

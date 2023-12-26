@@ -55,6 +55,7 @@ public:
 
     void load(std::string file, Elf64_Off SectionHeaderTableOffset, Elf64_Half SectionHeaderTableItemSize, Elf64_Half SectionHeaderTableItemNum);
     void dump();
+    std::vector<SectionHeader> get();
 
     std::string str_sh_name_in_section_string_table(Elf64_Word nameId);
     SectionHeader getSectionHeaderByIndex(uint32_t index);

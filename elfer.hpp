@@ -15,6 +15,9 @@ public:
     void load(std::string);
     void dump();
 
+    void mapSegmentsAndSections();
+    bool isSectionInSegment(ProgramHeader, SectionHeader);
+
 private:
 
     ElfHeader m_elfHeader;

@@ -3,6 +3,7 @@
 
 #include "common.hpp"
 #include <vector>
+#include "section_header_table.hpp"
 
 class ProgramHeader{
 public:
@@ -42,6 +43,9 @@ private:
   Elf64_Word m_p_memsz;
   Elf64_Word m_p_flags;
   Elf64_Word m_p_align;
+
+  std::vector<SectionHeader> m_sections;
+
 };
 
 
@@ -55,6 +59,7 @@ public:
 
   void load(std::string file, Elf64_Off ProgramHeaderTableOffset, Elf64_Half ProgramHeaderTableItemSize, Elf64_Half ProgramHeaderItemNum);
   void dump();
+  std::vector<ProgramHeader> get();
 
 private:
 
