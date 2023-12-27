@@ -60,17 +60,17 @@ void Elfer::load(std::string file)
     m_sectionHeaderTable.loadDynamicStringTable(file);
     m_sectionHeaderTable.loadDynamicSymbolTable(file);
 
-    mapSegmentsAndSections();
+    // mapSegmentsAndSections();
 }
 
 void Elfer::dump()
 {
-    // m_elfHeader.dump();
-    // m_programHeaderTable.dump();
-    // m_sectionHeaderTable.dump();
+    m_elfHeader.dump();
+    m_programHeaderTable.dump();
+    m_sectionHeaderTable.dump();
     m_sectionHeaderTable.dumpSectionStringTable();
-    // m_sectionHeaderTable.dumpStringTable();
-    // m_sectionHeaderTable.dumpSymbolTable();
-    // m_sectionHeaderTable.dumpDynamicStringTable();
-    // m_sectionHeaderTable.dumpDynamicSymbolTable();
+    m_sectionHeaderTable.dumpStringTable();
+    m_sectionHeaderTable.dumpSymbolTable();
+    m_sectionHeaderTable.dumpDynamicStringTable();
+    m_sectionHeaderTable.dumpDynamicSymbolTable();
 }
