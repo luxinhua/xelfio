@@ -8,12 +8,12 @@ void ProgramHeader::load(std::string file, Elf64_Off offset, Elf64_Half size)
     fread.seekg(std::streamoff(offset), std::ios::beg);
 
     fread.read((char *)&m_p_type   , sizeof(m_p_type));
+    fread.read((char *)&m_p_flags  , sizeof(m_p_flags));
     fread.read((char *)&m_p_offset , sizeof(m_p_offset));
     fread.read((char *)&m_p_vaddr  , sizeof(m_p_vaddr));
     fread.read((char *)&m_p_paddr  , sizeof(m_p_paddr));
     fread.read((char *)&m_p_filesz , sizeof(m_p_filesz));
     fread.read((char *)&m_p_memsz  , sizeof(m_p_memsz));
-    fread.read((char *)&m_p_flags  , sizeof(m_p_flags));
     fread.read((char *)&m_p_align  , sizeof(m_p_align));
 
     fread.close();
@@ -85,35 +85,35 @@ std::string ProgramHeader::str_p_type()
 
 }
 
-Elf64_Word ProgramHeader::getType()
+uint32_t ProgramHeader::getType()
 {
     return m_p_type;
 }
-Elf64_Off  ProgramHeader::getOffset()
+uint64_t  ProgramHeader::getOffset()
 {
     return m_p_offset;
 }
-Elf64_Addr ProgramHeader::getVAddr()
+uint64_t ProgramHeader::getVAddr()
 {
     return m_p_vaddr;
 }
-Elf64_Addr ProgramHeader::getPAddr()
+uint64_t ProgramHeader::getPAddr()
 {
     return m_p_paddr;
 }
-Elf64_Word ProgramHeader::getFilesz()
+uint64_t ProgramHeader::getFilesz()
 {
     return m_p_filesz;
 }
-Elf64_Word ProgramHeader::getMemsz()
+uint64_t ProgramHeader::getMemsz()
 {
     return m_p_memsz;
 }
-Elf64_Word ProgramHeader::getFlags()
+uint32_t ProgramHeader::getFlags()
 {
     return m_p_flags;
 }
-Elf64_Word ProgramHeader::getAlign()
+uint64_t ProgramHeader::getAlign()
 {
     return m_p_align;
 }

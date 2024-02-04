@@ -67,10 +67,10 @@ void Elfer::dump()
 {
     m_elfHeader.dump();
     m_programHeaderTable.dump();
-    m_sectionHeaderTable.dump();
-    m_sectionHeaderTable.dumpSectionStringTable();
-    m_sectionHeaderTable.dumpStringTable();
-    m_sectionHeaderTable.dumpSymbolTable();
-    m_sectionHeaderTable.dumpDynamicStringTable();
-    m_sectionHeaderTable.dumpDynamicSymbolTable();
+    // m_sectionHeaderTable.dump();
+    // m_sectionHeaderTable.dumpSectionStringTable();
+    // m_sectionHeaderTable.dumpStringTable();
+    // m_sectionHeaderTable.dumpSymbolTable();
+    // m_sectionHeaderTable.dumpDynamicStringTable();
+    // m_sectionHeaderTable.dumpDynamicSymbolTable();
 }

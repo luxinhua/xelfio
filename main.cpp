@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
 {
     Elfer elf;
 
-    elf.load("test");
+    elf.load("a.out");
 
     elf.dump();
 

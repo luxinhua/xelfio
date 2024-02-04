@@ -13,36 +13,45 @@ public:
   void load(std::string file, Elf64_Off offset, Elf64_Half size);
   void dump();
 
-  void setType(Elf64_Word type);
-  void setOffset(Elf64_Off offset);
-  void setVAddr(Elf64_Addr vaddr);
-  void setPAddr(Elf64_Addr paddr);
-  void setFilesz(Elf64_Word filesz);
-  void setMemsz(Elf64_Word memsz);
-  void setFlags(Elf64_Word flags);
-  void setAlign(Elf64_Word align);
+  void setType  (uint32_t      type);
+  void setOffset(uint64_t      offset);
+  void setVAddr (uint64_t      vaddr);
+  void setPAddr (uint64_t      paddr);
+  void setFilesz(uint64_t      filesz);
+  void setMemsz (uint64_t      memsz);
+  void setFlags (uint32_t      flags);
+  void setAlign (uint64_t      align);
 
 
-  Elf64_Word getType();
-  Elf64_Off  getOffset();
-  Elf64_Addr getVAddr();
-  Elf64_Addr getPAddr();
-  Elf64_Word getFilesz();
-  Elf64_Word getMemsz();
-  Elf64_Word getFlags();
-  Elf64_Word getAlign();
+  uint32_t      getType();
+  uint64_t      getOffset();
+  uint64_t      getVAddr();
+  uint64_t      getPAddr();
+  uint64_t      getFilesz();
+  uint64_t      getMemsz();
+  uint32_t      getFlags();
+  uint64_t      getAlign();
 
   std::string str_p_type();
 
 private:
-  Elf64_Word m_p_type;
-  Elf64_Off  m_p_offset;
-  Elf64_Addr m_p_vaddr;
-  Elf64_Addr m_p_paddr;
-  Elf64_Word m_p_filesz;
-  Elf64_Word m_p_memsz;
-  Elf64_Word m_p_flags;
-  Elf64_Word m_p_align;
+  // Elf64_Word m_p_type;
+  // Elf64_Off  m_p_offset;
+  // Elf64_Addr m_p_vaddr;
+  // Elf64_Addr m_p_paddr;
+  // Elf64_Word m_p_filesz;
+  // Elf64_Word m_p_memsz;
+  // Elf64_Word m_p_flags;
+  // Elf64_Word m_p_align;
+
+  uint32_t      m_p_type;
+  uint64_t      m_p_offset;
+  uint64_t      m_p_vaddr;
+  uint64_t      m_p_paddr;
+  uint64_t      m_p_filesz;
+  uint64_t      m_p_memsz;
+  uint32_t      m_p_flags;
+  uint64_t      m_p_align;
 
   std::vector<SectionHeader> m_sections;
 
