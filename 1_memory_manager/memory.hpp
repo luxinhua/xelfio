@@ -11,10 +11,6 @@
 
 #include "address.hpp"
 
-using Page = std::array<uint8_t, 0x1000>;
-using PageDir = std::map<uint32_t, Page>;
-using Mem = std::map<uint32_t, PageDir>;
-
 enum class MemType : uint8_t
 {
     UnAlloc,
@@ -29,6 +25,10 @@ public:
 
 class Memory{
 public:
+    using Page = std::array<MemCell, 0x1000>;
+    using PageDir = std::map<uint32_t, Page>;
+    using Mem = std::map<uint32_t, PageDir>;
+
     uint8_t readbyte(uint32_t addr);
     void writebyte(uint32_t addr, uint8_t data);
     void write64(uint32_t addr, uint64_t data);

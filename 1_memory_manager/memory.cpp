@@ -37,7 +37,7 @@ uint8_t Memory::readbyte(uint32_t addr)
         allocPage(address);
     }
 
-    return m_mem[address.m_Dir][address.m_page][address.m_offset];
+    return m_mem[address.m_Dir][address.m_page][address.m_offset].data;
 }
 
 void Memory::writebyte(uint32_t addr, uint8_t data)
@@ -49,7 +49,8 @@ void Memory::writebyte(uint32_t addr, uint8_t data)
         allocPage(address);
     }
 
-    m_mem[address.m_Dir][address.m_page][address.m_offset] = data;
+    m_mem[address.m_Dir][address.m_page][address.m_offset].data = data;
+    m_mem[address.m_Dir][address.m_page][address.m_offset].status = MemType::Allocated;
 }
 
 void Memory::write64(uint32_t addr, uint64_t data)
@@ -63,12 +64,33 @@ void Memory::write64(uint32_t addr, uint64_t data)
     }
 }
 
+
+#define RESET "\033[0m"
+#define BLACK "\033[30m"   /* Black */
+#define RED "\033[31m"    /* Red */
+#define GREEN "\033[32m"   /* Green */
+#define YELLOW "\033[33m"   /* Yellow */
+#define BLUE "\033[34m"   /* Blue */
+#define MAGENTA "\033[35m"   /* Magenta */
+#define CYAN "\033[36m"    /* Cyan */
+#define WHITE "\033[37m"   /* White */
+
+#define BOLDBLACK "\033[1m\033[30m"   /* Bold Black */
+#define BOLDRED "\033[1m\033[31m"   /* Bold Red */
+#define BOLDGREEN "\033[1m\033[32m"  /* Bold Green */
+#define BOLDYELLOW "\033[1m\033[33m"  /* Bold Yellow */
+#define BOLDBLUE "\033[1m\033[34m"   /* Bold Blue */
+#define BOLDMAGENTA "\033[1m\033[35m"   /* Bold Magenta */
+#define BOLDCYAN "\033[1m\033[36m"  /* Bold Cyan */
+#define BOLDWHITE "\033[1m\033[37m"   /* Bold White */
+
+
 void Memory::dump()
 {
 #define LINE_ITEMS_NUM 0x20
 
     uint32_t lineItemNum{LINE_ITEMS_NUM};
-    std::array<uint8_t, LINE_ITEMS_NUM> line;
+    std::array<MemCell, LINE_ITEMS_NUM> line;
 
     uint32_t sum{0};
 
@@ -80,7 +102,7 @@ void Memory::dump()
                 if(((index%lineItemNum) == 0) && (index != 0) ){
                     sum = 0;
                     for (auto & item: line){
-                        sum += item;
+                        sum += item.data;
                     }
                     if (sum == 0){
                         line[index%lineItemNum] = page.second[index];
@@ -89,10 +111,20 @@ void Memory::dump()
                     std::cout << std::hex << std::setw(8) << std::setfill('0') << std::right
                                 << Address(dir.first, page.first, index-(lineItemNum)).value() << " : ";
                     for (auto & item: line){
-                        std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
-                                << +item << " ";
+                        if (item.status == MemType::Allocated){
+                            std::cout << GREEN  << std::hex << std::setw(2) << std::setfill('0') << std::right
+                                    << +item.data << RESET << " ";
+                        }
+                        else{
+                            std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
+                                    << +item.data << " ";
+                        }
                     }
-                    line.fill(0);
+                    for (auto& item: line)
+                    {
+                        item.data = 0;
+                        item.status = MemType::UnAlloc;
+                    }
                     std::cout << std::endl;
                 }
                 line[index%lineItemNum] = page.second[index];
@@ -100,15 +132,21 @@ void Memory::dump()
             {
                 sum = 0;
                 for (auto & item: line){
-                    sum += item;
+                    sum += item.data;
                 }
                 if (sum != 0){
                     std::cout << std::hex << std::setw(8) << std::setfill('0') << std::right
                             << Address(dir.first, page.first, 0x1000-(0x1000%lineItemNum)).value() << " : ";
 
                     for (auto & item: line){
-                        std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
-                            << +item << " ";
+                        if (item.status == MemType::Allocated){
+                            std::cout << GREEN << std::hex << std::setw(2) << std::setfill('0') << std::right
+                                    << +item.data << RESET << " ";
+                        }
+                        else{
+                            std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
+                                    << +item.data << " ";
+                        }
                     }
                 }
             }
