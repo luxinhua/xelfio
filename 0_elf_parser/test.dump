@@ -936,15 +936,10 @@ Disassembly of section .debug_line_str:
   26:	7070                	.insn	2, 0x7070
   28:	7070                	.insn	2, 0x7070
   2a:	7070                	.insn	2, 0x7070
-  2c:	725f302f          	.insn	4, 0x725f302f
-  30:	7369                	.insn	2, 0x7369
-  32:	5f765f63          	bge	a2,s7,630 <__abi_tag-0xfc60>
-  36:	6c65                	.insn	2, 0x6c65
-  38:	5f66                	.insn	2, 0x5f66
-  3a:	6170                	.insn	2, 0x6170
-  3c:	7372                	.insn	2, 0x7372
-  3e:	7265                	.insn	2, 0x7265
-  40:	655f302f          	.insn	4, 0x655f302f
-  44:	666c                	.insn	2, 0x666c
-  46:	705f 7261 6573      	.insn	6, 0x65737261705f
-  4c:	0072                	.insn	2, 0x0072
+  2c:	705f302f          	.insn	4, 0x705f302f
+  30:	6f72                	.insn	2, 0x6f72
+  32:	656a                	.insn	2, 0x656a
+  34:	302f7463          	bgeu	t5,sp,33c <__abi_tag-0xff54>
+  38:	655f 666c 705f      	.insn	6, 0x705f666c655f
+  3e:	7261                	.insn	2, 0x7261
+  40:	00726573          	.insn	4, 0x00726573

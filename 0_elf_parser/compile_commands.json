@@ -1,0 +1,102 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "address.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/address.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "elfer.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/elfer.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "elf_header.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/elf_header.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "main.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/main.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "memory.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/memory.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "program_header_table.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/program_header_table.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "section.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/section.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "section_header_table.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/section_header_table.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "segment.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/segment.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
+      "symbol.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/symbol.cpp"
+  }
+]

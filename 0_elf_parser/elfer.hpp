@@ -6,17 +6,24 @@
 #include "program_header_table.hpp"
 #include "section.hpp"
 #include "segment.hpp"
+#include "memory.hpp"
+#include <string>
 
 class Elfer{
 public:
-    Elfer() = default;
+    Elfer(std::string file):m_filename(file)  {}
     ~Elfer() = default;
 
-    void load(std::string);
+    void load();
     void dump();
+
+    void loadSegment2Mem();
 
     void mapSegmentsAndSections();
     bool isSectionInSegment(ProgramHeader, SectionHeader);
+
+private:
+    uint8_t read8(Elf64_Off offset);
 
 private:
 
@@ -25,6 +32,9 @@ private:
     SectionHeaderTable m_sectionHeaderTable;
     Sections m_sections;
     Segments m_segments;
+    Memory   m_mem;
+
+    std::string m_filename;
 };
 
 #endif

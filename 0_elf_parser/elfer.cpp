@@ -20,6 +20,28 @@
     return result;
  }
 
+void Elfer::loadSegment2Mem()
+{
+    for(auto& segment: m_programHeaderTable.get())
+    {
+        for(uint32_t index=0; index<segment.getMemsz(); index++ )
+        {
+            m_mem.writebyte(segment.getVAddr()+index, read8(segment.getOffset()+index));
+        }
+    }
+}
+
+uint8_t Elfer::read8(Elf64_Off offset)
+{
+    uint8_t data{0};
+    std::ifstream fread(m_filename,std::ios::in|std::ios::binary);
+    fread.seekg(std::streamoff(offset), std::ios::beg);
+    fread.read((char *)&data   , sizeof(uint8_t));
+    fread.close();
+
+    return data;
+}
+
 void Elfer::mapSegmentsAndSections()
 {
     for(auto& segment : m_programHeaderTable.get())
@@ -38,27 +60,27 @@ void Elfer::mapSegmentsAndSections()
     }
 }
 
-void Elfer::load(std::string file)
+void Elfer::load()
 {
-    m_elfHeader.load(file);
-    m_programHeaderTable.load(file,
+    m_elfHeader.load(m_filename);
+    m_programHeaderTable.load(m_filename,
                                 m_elfHeader.getProgramHeaderOffset(),
                                 m_elfHeader.getProgramHeaderItemSize(),
                                 m_elfHeader.getProgramHeaderItemNum());
-    m_sectionHeaderTable.load(file,
+    m_sectionHeaderTable.load(m_filename,
                                 m_elfHeader.getSectionHeaderOffset(),
                                 m_elfHeader.getSectionHeaderItemSize(),
                                 m_elfHeader.getSectionHeaderItemNum());
 
 
-    m_sectionHeaderTable.loadSectionStringTable(file,
+    m_sectionHeaderTable.loadSectionStringTable(m_filename,
                                         m_elfHeader.getSectionStringTableIndex());
 
-    m_sectionHeaderTable.loadStringTable(file);
-    m_sectionHeaderTable.loadSymbolTable(file);
+    m_sectionHeaderTable.loadStringTable(m_filename);
+    m_sectionHeaderTable.loadSymbolTable(m_filename);
 
-    m_sectionHeaderTable.loadDynamicStringTable(file);
-    m_sectionHeaderTable.loadDynamicSymbolTable(file);
+    m_sectionHeaderTable.loadDynamicStringTable(m_filename);
+    m_sectionHeaderTable.loadDynamicSymbolTable(m_filename);
 
     // mapSegmentsAndSections();
 }
@@ -73,4 +95,6 @@ void Elfer::dump()
     // m_sectionHeaderTable.dumpSymbolTable();
     // m_sectionHeaderTable.dumpDynamicStringTable();
     // m_sectionHeaderTable.dumpDynamicSymbolTable();
+
+    m_mem.dump();
 }
