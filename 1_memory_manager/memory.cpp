@@ -49,10 +49,6 @@ void Memory::writebyte(uint32_t addr, uint8_t data)
         allocPage(address);
     }
 
-    // std::cout << "m_Dir    " << std::hex << address.m_Dir << std::endl;
-    // std::cout << "m_page   " << std::hex << address.m_page << std::endl;
-    // std::cout << "m_offset " << std::hex << address.m_offset << std::endl;
-
     m_mem[address.m_Dir][address.m_page][address.m_offset] = data;
 }
 
@@ -78,68 +74,46 @@ void Memory::dump()
 
     std::cout << "Memory Dump: " << std::endl;
 
-    for(auto& dir : m_mem)
-    {
-        for(auto& page : dir.second)
-        {
-            // std::cout << std::endl;
-            // std::cout << "Dir: " << std::hex << dir.first << std::endl;
-            // std::cout << "    " ;
-            // std::cout << "Page: " << std::hex << page.first << std::endl;
-
-            for (uint32_t index=0; index <= 0x1000; index++)
-            {
-                if(((index%lineItemNum) == 0) && (index != 0) )
-                {
+    for(auto& dir : m_mem){
+        for(auto& page : dir.second){
+            for (uint32_t index=0; index <= 0x1000; index++){
+                if(((index%lineItemNum) == 0) && (index != 0) ){
                     sum = 0;
-                    for (auto & item: line)
-                    {
+                    for (auto & item: line){
                         sum += item;
                     }
-                    if (sum == 0)
-                    {
+                    if (sum == 0){
                         line[index%lineItemNum] = page.second[index];
                         continue;
                     }
-
                     std::cout << std::hex << std::setw(8) << std::setfill('0') << std::right
                                 << Address(dir.first, page.first, index-(lineItemNum)).value() << " : ";
-
-                    for (auto & item: line)
-                    {
+                    for (auto & item: line){
                         std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
-                                << +item << "  ";
+                                << +item << " ";
                     }
-
                     line.fill(0);
-
                     std::cout << std::endl;
                 }
-
                 line[index%lineItemNum] = page.second[index];
             }
-
             {
                 sum = 0;
-                for (auto & item: line)
-                {
+                for (auto & item: line){
                     sum += item;
                 }
-                if (sum != 0)
-                {
+                if (sum != 0){
                     std::cout << std::hex << std::setw(8) << std::setfill('0') << std::right
                             << Address(dir.first, page.first, 0x1000-(0x1000%lineItemNum)).value() << " : ";
 
-                    for (auto & item: line)
-                    {
+                    for (auto & item: line){
                         std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right
-                            << +item << "  ";
+                            << +item << " ";
                     }
                 }
             }
         }
     }
-    // std::cout << std::endl;
 }
 
 int main(int argc, char const *argv[])
@@ -155,6 +129,7 @@ int main(int argc, char const *argv[])
 
     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0xAAAAAAAAAAAAAAAA});
     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0xBBBBBBBBBBBBBBBB});
+    m.write64(Address(0x2,0x3,0x18).value(), uint64_t{0xFFFFFFFFFFFFFFFF});
     m.write64(Address(0x2,0x3,0x20).value(), uint64_t{0xCCCCCCCCCCCCCCCC});
     m.write64(Address(0x2,0x3,0x40).value(), uint64_t{0xCCCCCCCCCCCCCCCC});
     m.write64(Address(0x2,0x3,0x50).value(), uint64_t{0xDDDDDDDDDDDDDDDD});

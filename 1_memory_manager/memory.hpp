@@ -15,6 +15,18 @@ using Page = std::array<uint8_t, 0x1000>;
 using PageDir = std::map<uint32_t, Page>;
 using Mem = std::map<uint32_t, PageDir>;
 
+enum class MemType : uint8_t
+{
+    UnAlloc,
+    Allocated
+};
+
+class MemCell{
+public:
+    uint8_t data;
+    MemType status;
+};
+
 class Memory{
 public:
     uint8_t readbyte(uint32_t addr);

@@ -715,10 +715,9 @@ Disassembly of section .debug_info:
    c:	4602                	.insn	2, 0x4602
    e:	0000                	.insn	2, 0x
   10:	1d00                	.insn	2, 0x1d00
-  12:	003a                	.insn	2, 0x003a
+  12:	0000                	.insn	2, 0x
   14:	0000                	.insn	2, 0x
-  16:	0000                	.insn	2, 0x
-  18:	0000                	.insn	2, 0x
+  16:	00000007          	.insn	4, 0x0007
   1a:	052c                	.insn	2, 0x052c
   1c:	0001                	.insn	2, 0x0001
   1e:	0000                	.insn	2, 0x
@@ -820,13 +819,10 @@ Disassembly of section .debug_line:
   1a:	0001                	.insn	2, 0x0001
   1c:	0100                	.insn	2, 0x0100
   1e:	0101                	.insn	2, 0x0101
-  20:	011f 0000 0000      	.insn	6, 0x011f
+  20:	011f 0007 0000      	.insn	6, 0x0007011f
   26:	0102                	.insn	2, 0x0102
-  28:	021f 020f 003a      	.insn	6, 0x003a020f021f
-  2e:	0000                	.insn	2, 0x
-  30:	3a00                	.insn	2, 0x3a00
-  32:	0000                	.insn	2, 0x
-  34:	0000                	.insn	2, 0x
+  28:	021f 020f 0000      	.insn	6, 0x020f021f
+	...
   36:	0105                	.insn	2, 0x0105
   38:	0900                	.insn	2, 0x0900
   3a:	2c02                	.insn	2, 0x2c02
@@ -921,27 +917,34 @@ Disassembly of section .debug_str:
 Disassembly of section .debug_line_str:
 
 0000000000000000 <.debug_line_str>:
-   0:	6d6f682f          	.insn	4, 0x6d6f682f
-   4:	2f65                	.insn	2, 0x2f65
-   6:	6978                	.insn	2, 0x6978
-   8:	686e                	.insn	2, 0x686e
-   a:	6175                	.insn	2, 0x6175
-   c:	756c                	.insn	2, 0x756c
-   e:	7065722f          	.insn	4, 0x7065722f
-  12:	5f302f6f          	jal	t5,2e04 <__abi_tag-0xd48c>
-  16:	6878                	.insn	2, 0x6878
-  18:	756c                	.insn	2, 0x756c
-  1a:	705f302f          	.insn	4, 0x705f302f
-  1e:	7070                	.insn	2, 0x7070
-  20:	7070                	.insn	2, 0x7070
-  22:	7070                	.insn	2, 0x7070
-  24:	2f70                	.insn	2, 0x2f70
-  26:	5f30                	.insn	2, 0x5f30
-  28:	6972                	.insn	2, 0x6972
-  2a:	765f6373          	.insn	4, 0x765f6373
-  2e:	655f 666c 705f      	.insn	6, 0x705f666c655f
-  34:	7261                	.insn	2, 0x7261
-  36:	00726573          	.insn	4, 0x00726573
-  3a:	6574                	.insn	2, 0x6574
-  3c:	632e7473          	.insn	4, 0x632e7473
-	...
+   0:	6574                	.insn	2, 0x6574
+   2:	632e7473          	.insn	4, 0x632e7473
+   6:	2f00                	.insn	2, 0x2f00
+   8:	6f68                	.insn	2, 0x6f68
+   a:	656d                	.insn	2, 0x656d
+   c:	6e69782f          	.insn	4, 0x6e69782f
+  10:	7568                	.insn	2, 0x7568
+  12:	6c61                	.insn	2, 0x6c61
+  14:	2f75                	.insn	2, 0x2f75
+  16:	6572                	.insn	2, 0x6572
+  18:	6f70                	.insn	2, 0x6f70
+  1a:	785f302f          	.insn	4, 0x785f302f
+  1e:	6c68                	.insn	2, 0x6c68
+  20:	2f75                	.insn	2, 0x2f75
+  22:	5f30                	.insn	2, 0x5f30
+  24:	7070                	.insn	2, 0x7070
+  26:	7070                	.insn	2, 0x7070
+  28:	7070                	.insn	2, 0x7070
+  2a:	7070                	.insn	2, 0x7070
+  2c:	725f302f          	.insn	4, 0x725f302f
+  30:	7369                	.insn	2, 0x7369
+  32:	5f765f63          	bge	a2,s7,630 <__abi_tag-0xfc60>
+  36:	6c65                	.insn	2, 0x6c65
+  38:	5f66                	.insn	2, 0x5f66
+  3a:	6170                	.insn	2, 0x6170
+  3c:	7372                	.insn	2, 0x7372
+  3e:	7265                	.insn	2, 0x7265
+  40:	655f302f          	.insn	4, 0x655f302f
+  44:	666c                	.insn	2, 0x666c
+  46:	705f 7261 6573      	.insn	6, 0x65737261705f
+  4c:	0072                	.insn	2, 0x0072
