@@ -29,9 +29,14 @@ public:
     using PageDir = std::map<uint32_t, Page>;
     using Mem = std::map<uint32_t, PageDir>;
 
-    uint8_t readbyte(uint32_t addr);
+    uint8_t  readbyte(uint32_t addr);
+    uint32_t read32(uint32_t addr);
+    uint64_t read64(uint32_t addr);
+
     void writebyte(uint32_t addr, uint8_t data);
+    void write32(uint32_t addr, uint32_t data);
     void write64(uint32_t addr, uint64_t data);
+
 
     void dump();
 

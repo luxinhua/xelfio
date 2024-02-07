@@ -2,6 +2,7 @@
 #include "address.hpp"
 #include <cstdint>
 #include <iomanip>
+#include <iostream>
 
 bool Memory::existPage(Address addr)
 {
@@ -53,14 +54,37 @@ void Memory::writebyte(uint32_t addr, uint8_t data)
     m_mem[address.m_Dir][address.m_page][address.m_offset].status = MemType::Allocated;
 }
 
+uint32_t Memory::read32(uint32_t addr)
+{
+
+    return 0;
+}
+uint64_t Memory::read64(uint32_t addr)
+{
+    uint8_t localData{0};
+    uint64_t data{0};
+
+    for(uint32_t index=0; index<8; index++)
+    {
+        localData = readbyte(addr + index);
+        data = data | (localData << (index * 8));
+    }
+
+    return data;
+}
+void Memory::write32(uint32_t addr, uint32_t data)
+{
+
+}
+
 void Memory::write64(uint32_t addr, uint64_t data)
 {
-    uint8_t data8bit{0};
+    uint8_t localData{0};
 
     for(int index=0; index<8; index++)
     {
-        data8bit = static_cast<uint8_t>(data>>(index * 8));
-        writebyte(addr+index , data8bit);
+        localData = static_cast<uint8_t>(data>>(index * 8));
+        writebyte(addr+index , localData);
     }
 }
 
@@ -94,6 +118,7 @@ void Memory::dump()
 
     uint32_t sum{0};
 
+    std::cout << std::endl;
     std::cout << "Memory Dump: " << std::endl;
 
     for(auto& dir : m_mem){
@@ -152,35 +177,20 @@ void Memory::dump()
             }
         }
     }
+    std::cout << std::endl;
 }
 
 // int main(int argc, char const *argv[])
 // {
 //     auto m = Memory();
-//     m.writebyte(Address(0x0, 0x0, 0x0).value(), uint8_t(0x1));
-//     m.writebyte(Address(0x0, 0x0, 0x10).value(), uint8_t(0x7));
-//     m.writebyte(Address(0x0, 0x0, 0xF0).value(), uint8_t(0x7));
-//     m.writebyte(Address(0x0, 0x0, 0xFF0).value(), uint8_t(0x2));
-//     m.writebyte(Address(0x0, 0x0, 0xFFF).value(), uint8_t(0x3));
-
-//     m.writebyte(Address(0x1, 0x1, 0x1).value(), uint8_t(0x4));
 
 //     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0xAAAAAAAAAAAAAAAA});
 //     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0xBBBBBBBBBBBBBBBB});
-//     m.write64(Address(0x2,0x3,0x18).value(), uint64_t{0xFFFFFFFFFFFFFFFF});
-//     m.write64(Address(0x2,0x3,0x20).value(), uint64_t{0xCCCCCCCCCCCCCCCC});
-//     m.write64(Address(0x2,0x3,0x40).value(), uint64_t{0xCCCCCCCCCCCCCCCC});
-//     m.write64(Address(0x2,0x3,0x50).value(), uint64_t{0xDDDDDDDDDDDDDDDD});
-//     m.write64(Address(0x2,0x3,0x60).value(), uint64_t{0xFFFFFFFFFFFFFFFF});
-
 //     m.writebyte(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
-//     m.writebyte(Address(0x3FF, 0x3FF, 0xFF1).value(), uint8_t(0x6));
-//     m.writebyte(Address(0x3FF, 0x3FF, 0xFFF).value(), uint8_t(0x6));
-//     m.writebyte(Address(0x3FF, 0x3FF, 0xFFe).value(), uint8_t(0xA));
 
-//     // std::cout << "adddress " << std::hex << Address(0x3FF, 0x3FF, 0xFFe).value() << "  " << +m.readbyte(Address(0x3FF, 0x3FF, 0xFFe).value()) << std::endl;
-//     // std::cout << "adddress " << std::hex << Address(1, 1, 1).value() << "  " << +m.readbyte(Address(1, 1, 1).value()) << std::endl;
-//     // std::cout << "adddress " << std::hex << Address(0, 0, 0).value() << "  " << +m.readbyte(Address(0, 0, 0).value()) << std::endl;
+//     std::cout << "adddress " << std::hex << Address(0x2,0x3,0x00).value() << "  " << +m.read64(Address(0x2,0x3,0x00).value()) << std::endl;
+//     std::cout << "adddress " << std::hex << Address(0x2,0x3,0x10).value() << "  " << +m.read64(Address(0x2,0x3,0x10).value()) << std::endl;
+//     std::cout << "adddress " << std::hex << Address(0x3FF, 0x3FF, 0xFF0).value() << "  " << +m.read64(Address(0x3FF, 0x3FF, 0xFF0).value()) << std::endl;
 
 //     m.dump();
 
