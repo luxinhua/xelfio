@@ -83,14 +83,20 @@ uint64_t Memory::read64(uint32_t addr)
 }
 void Memory::write32(uint32_t addr, uint32_t data)
 {
+    uint8_t localData{0};
 
+    for(int index=0; index<sizeof(uint32_t); index++)
+    {
+        localData = static_cast<uint8_t>(data>>(index * 8));
+        writebyte(addr+index , localData);
+    }
 }
 
 void Memory::write64(uint32_t addr, uint64_t data)
 {
     uint8_t localData{0};
 
-    for(int index=0; index<8; index++)
+    for(int index=0; index<sizeof(uint64_t); index++)
     {
         localData = static_cast<uint8_t>(data>>(index * 8));
         writebyte(addr+index , localData);
@@ -120,7 +126,7 @@ void Memory::write64(uint32_t addr, uint64_t data)
 
 void Memory::dump()
 {
-#define LINE_ITEMS_NUM 0x10
+#define LINE_ITEMS_NUM 0x20
 
     uint32_t lineItemNum{LINE_ITEMS_NUM};
     std::array<MemCell, LINE_ITEMS_NUM> line;
@@ -193,8 +199,8 @@ void Memory::dump()
 // {
 //     auto m = Memory();
 
-//     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0xAAAAAAAAAAAAAAAA});
-//     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0xBBBBBBBBBBBBBBBB});
+//     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0x0123456789abcdef});
+//     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0x0123456789abcdef});
 //     m.writebyte(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
 
 //     m.read64(Address(0x2,0x3,0x00).value());

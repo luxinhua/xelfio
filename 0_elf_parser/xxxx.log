@@ -1,0 +1,93 @@
+Unsupported opcode 0x2a!
+Execution history and memory dump in dump.txt
+==========ELF Information==========
+Type: ELF64
+Encoding: Little Endian
+ISA: RISC-V(0xf3)
+Number of Sections: 34
+ID	Name		Address	Size
+[0]	            	0x0	0
+[1]	.interp     	0x10270	32
+[2]	.note.ABI-tag	0x10290	32
+[3]	.hash       	0x102b0	36
+[4]	.gnu.hash   	0x102d8	48
+[5]	.dynsym     	0x10308	96
+[6]	.dynstr     	0x10368	74
+[7]	.gnu.version	0x103b2	8
+[8]	.gnu.version_r	0x103c0	48
+[9]	.rela.plt   	0x103f0	48
+[10]	.plt        	0x10420	64
+[11]	.text       	0x10460	256
+[12]	.rodata     	0x10560	21
+[13]	.eh_frame_hdr	0x10578	60
+[14]	.eh_frame   	0x105b8	180
+[15]	.preinit_array	0x11df0	8
+[16]	.init_array 	0x11df8	8
+[17]	.fini_array 	0x11e00	8
+[18]	.dynamic    	0x11e08	480
+[19]	.got        	0x11fe8	8
+[20]	.got.plt    	0x11ff0	32
+[21]	.sdata      	0x12010	8
+[22]	.bss        	0x12018	8
+[23]	.comment    	0x0	18
+[24]	.riscv.attributes	0x0	52
+[25]	.debug_aranges	0x0	48
+[26]	.debug_info 	0x0	140
+[27]	.debug_abbrev	0x0	67
+[28]	.debug_line 	0x0	98
+[29]	.debug_str  	0x0	151
+[30]	.debug_line_str	0x0	68
+[31]	.symtab     	0x0	1728
+[32]	.strtab     	0x0	539
+[33]	.shstrtab   	0x0	332
+Number of Segments: 10
+ID	Flags	Address	FSize	MSize
+[0]	0x4	0x10040	560	560
+[1]	0x4	0x10270	32	32
+[2]	0x4	0x0	52	0
+[3]	0x5	0x10000	1644	1644
+[4]	0x6	0x11df0	552	560
+[5]	0x6	0x11e08	480	480
+[6]	0x4	0x10290	32	32
+[7]	0x4	0x10578	60	60
+[8]	0x6	0x0	0	0
+[9]	0x4	0x11df0	528	528
+===================================
+Memory Pages: 
+0x0-0x400000:
+  0x10000-0x11000
+  0x11000-0x12000
+  0x12000-0x13000
+Fetched instruction 0x022000ef at address 0x10460
+Decode: Bubble
+Execute: Bubble
+Memory Access: Bubble
+WriteBack: Bubble
+------------ CPU STATE ------------
+PC: 0x10464
+zero: 0x00000000(0) ra: 0x00000000(0) sp: 0x80000000(2147483648) gp: 0x00000000(0) 
+tp: 0x00000000(0) t0: 0x00000000(0) t1: 0x00000000(0) t2: 0x00000000(0) 
+s0: 0x00000000(0) s1: 0x00000000(0) a0: 0x00000000(0) a1: 0x00000000(0) 
+a2: 0x00000000(0) a3: 0x00000000(0) a4: 0x00000000(0) a5: 0x00000000(0) 
+a6: 0x00000000(0) a7: 0x00000000(0) s2: 0x00000000(0) s3: 0x00000000(0) 
+s4: 0x00000000(0) s5: 0x00000000(0) s6: 0x00000000(0) s7: 0x00000000(0) 
+s8: 0x00000000(0) s9: 0x00000000(0) s10: 0x00000000(0) s11: 0x00000000(0) 
+t3: 0x00000000(0) t4: 0x00000000(0) t5: 0x00000000(0) t6: 0x00000000(0) 
+-----------------------------------
+Fetched instruction 0x051787aa at address 0x10464
+Decoded instruction 0x022000ef as jal ra,34
+Execute: Bubble
+Memory Access: Bubble
+WriteBack: Bubble
+------------ CPU STATE ------------
+PC: 0x10468
+zero: 0x00000000(0) ra: 0x00000000(0) sp: 0x80000000(2147483648) gp: 0x00000000(0) 
+tp: 0x00000000(0) t0: 0x00000000(0) t1: 0x00000000(0) t2: 0x00000000(0) 
+s0: 0x00000000(0) s1: 0x00000000(0) a0: 0x00000000(0) a1: 0x00000000(0) 
+a2: 0x00000000(0) a3: 0x00000000(0) a4: 0x00000000(0) a5: 0x00000000(0) 
+a6: 0x00000000(0) a7: 0x00000000(0) s2: 0x00000000(0) s3: 0x00000000(0) 
+s4: 0x00000000(0) s5: 0x00000000(0) s6: 0x00000000(0) s7: 0x00000000(0) 
+s8: 0x00000000(0) s9: 0x00000000(0) s10: 0x00000000(0) s11: 0x00000000(0) 
+t3: 0x00000000(0) t4: 0x00000000(0) t5: 0x00000000(0) t6: 0x00000000(0) 
+-----------------------------------
+Fetched instruction 0x05130000 at address 0x10468

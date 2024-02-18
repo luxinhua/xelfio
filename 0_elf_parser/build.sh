@@ -1,20 +1,23 @@
 #!/bin/bash
 if [[ -f a.out ]];then
     rm a.out
-    rm test
+fi
+if [[ -f ./demo/helloworld.dump ]];then
+    rm ./demo/helloworld.dump
+fi
+if [[ -f ./demo/helloworld.out ]];then
+    rm ./demo/helloworld.out
 fi
 
 bear -- g++ *.cpp -g
 
-# gcc test.c -g -o test
-# objdump -D test > test.dump
+cd demo
+#riscv64-unknown-elf-gcc must use newlib clib , can not use riscv64-unknown-linux-gnu-gcc
+riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 helloworld.c lib.c -o helloworld.out
+riscv64-unknown-elf-objdump -D helloworld.out > helloworld.dump
+cd ..
 
-riscv64-unknown-linux-gnu-gcc -march=rv64i -mabi=lp64 test.c -g -o test
-riscv64-unknown-linux-gnu-objdump -D test > test.dump
-
-if [[ $? -eq 0 ]];then
-    ./a.out
-fi
+./a.out
 
 
 

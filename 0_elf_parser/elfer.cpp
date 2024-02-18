@@ -79,8 +79,8 @@ void Elfer::load()
     m_sectionHeaderTable.loadStringTable(m_filename);
     m_sectionHeaderTable.loadSymbolTable(m_filename);
 
-    m_sectionHeaderTable.loadDynamicStringTable(m_filename);
-    m_sectionHeaderTable.loadDynamicSymbolTable(m_filename);
+    // m_sectionHeaderTable.loadDynamicStringTable(m_filename);
+    // m_sectionHeaderTable.loadDynamicSymbolTable(m_filename);
 
     // mapSegmentsAndSections();
 }

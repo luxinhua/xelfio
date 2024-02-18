@@ -5,8 +5,8 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    Elfer elf{"test"};
-
+    // Elfer elf{"./demo/helloworld.out"};
+    Elfer elf{"./demo/helloworld.out"};
 
     elf.load();
 

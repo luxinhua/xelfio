@@ -2,6 +2,7 @@
 #ifndef __ISA_PARSER_H__
 #define __ISA_PARSER_H__
 
+#include <array>
 #include <iostream>
 
 
