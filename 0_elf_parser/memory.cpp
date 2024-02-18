@@ -61,14 +61,23 @@ uint32_t Memory::read32(uint32_t addr)
 }
 uint64_t Memory::read64(uint32_t addr)
 {
-    uint8_t localData{0};
+    uint64_t localData{0};
     uint64_t data{0};
 
     for(uint32_t index=0; index<8; index++)
     {
         localData = readbyte(addr + index);
+
+        // std::cout << "adddr "
+        //         << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr + index
+        //         << std::hex << std::setw(20) << std::left << std::setfill(' ')  << +localData << std::endl;
+
         data = data | (localData << (index * 8));
     }
+
+    std::cout << "adddress "
+              << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
+              << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
 
     return data;
 }
@@ -111,7 +120,7 @@ void Memory::write64(uint32_t addr, uint64_t data)
 
 void Memory::dump()
 {
-#define LINE_ITEMS_NUM 0x20
+#define LINE_ITEMS_NUM 0x10
 
     uint32_t lineItemNum{LINE_ITEMS_NUM};
     std::array<MemCell, LINE_ITEMS_NUM> line;
@@ -188,9 +197,9 @@ void Memory::dump()
 //     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0xBBBBBBBBBBBBBBBB});
 //     m.writebyte(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
 
-//     std::cout << "adddress " << std::hex << Address(0x2,0x3,0x00).value() << "  " << +m.read64(Address(0x2,0x3,0x00).value()) << std::endl;
-//     std::cout << "adddress " << std::hex << Address(0x2,0x3,0x10).value() << "  " << +m.read64(Address(0x2,0x3,0x10).value()) << std::endl;
-//     std::cout << "adddress " << std::hex << Address(0x3FF, 0x3FF, 0xFF0).value() << "  " << +m.read64(Address(0x3FF, 0x3FF, 0xFF0).value()) << std::endl;
+//     m.read64(Address(0x2,0x3,0x00).value());
+//     m.read64(Address(0x2,0x3,0x10).value());
+//     m.read64(Address(0x3FF, 0x3FF, 0xFF0).value());
 
 //     m.dump();
 
