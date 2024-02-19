@@ -136,6 +136,14 @@ void Memory::dump()
     std::cout << std::endl;
     std::cout << "Memory Dump: " << std::endl;
 
+    std::cout << std::hex << std::setw(8) << std::setfill('0') << std::right
+                 << "########   ";
+    for (uint32_t title=0; title<LINE_ITEMS_NUM; title++)
+    {
+        std::cout << std::hex << std::setw(2) << std::setfill('0') << std::right << title << " ";
+    }
+    std::cout << std::endl;
+
     for(auto& dir : m_mem){
         for(auto& page : dir.second){
             for (uint32_t index=0; index <= 0x1000; index++){
