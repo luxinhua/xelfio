@@ -31,10 +31,16 @@ enum class InstOpCode : uint8_t
     LBU    = 0x3,   // I
     LHU    = 0x3,   // I
 
+    LWU    = 0x3, // I
+    LD     = 0x3, // I
+
+
     STORE  = 0x23,
     SB     = 0x23,  // S
     SH     = 0x23,  // S
     SW     = 0x23,  // S
+
+    SD     = 0x23, // S
 
     IMM    = 0x13,
     ADDI   = 0x13,  // I
@@ -63,20 +69,17 @@ enum class InstOpCode : uint8_t
     FENCE_J = 0xF,  // UJ
 
     SYSTEM  = 0x73,
-    ECALL   = 0x73, // I
-    EBREA   = 0x73, // I
-    CSRRW   = 0x73, // I
-    CSRRS   = 0x73, // I
-    CSRRC   = 0x73, // I
-    CSRRSI  = 0x73, // I
-    CSRRCI  = 0x73, // I
+    ECALL   = 0x73, // R
+    EBREA   = 0x73, // R
+    CSRRW   = 0x73, // R
+    CSRRS   = 0x73, // R
+    CSRRC   = 0x73, // R
+    CSRRSW  = 0x73, // R
+    CSRRSI  = 0x73, // R
+    CSRRCI  = 0x73, // R
 
     // RV64I base inst set, beside RV32I inst set
-    LWU = 0x3, // I
 
-    LU  = 0x3, // I
-
-    SD  = 0x23, // S
 
     // SLLI = 0X13, // R  ,  include by rv32i set
     // SRLI = 0X13, // R  ,  include by rv32i set
@@ -98,53 +101,85 @@ enum class InstOpCode : uint8_t
 
 union Instruction
 {
-    struct{
-        uint32_t opcode : 7;
-        uint32_t reserverd : 25;
-    } common;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t rd     : 5;
-        uint32_t func3  : 3;
-        uint32_t rs1    : 5;
-        uint32_t rs2    : 5;
-        uint32_t func7  : 7;
-    } R;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t rd     : 5;
-        uint32_t func3  : 3;
-        uint32_t rs1    : 5;
-        uint32_t imm    : 12;
-    } I;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t imm    : 5;
-        uint32_t func3  : 3;
-        uint32_t rs1    : 5;
-        uint32_t rs2    : 5;
-        uint32_t imm_2  : 7;
-    } S;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t imm    : 5;
-        uint32_t func3  : 3;
-        uint32_t rs1    : 5;
-        uint32_t rs2    : 5;
-        uint32_t imm_2  : 7;
-    } B;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t rd     : 5;
-        uint32_t imm    : 20;
-    } U;
-    struct{
-        uint32_t opcode : 7;
-        uint32_t rd     : 5;
-        uint32_t imm    : 20;
-    } J;
+    union{
+        struct {
+            uint32_t opcode  : 7;
+            uint32_t reserve : 25;
+        } common;
+        struct{
+            uint32_t opcode : 7;
+            uint32_t rd     : 5;
+            uint32_t func3  : 3;
+            uint32_t rs1    : 5;
+            uint32_t rs2    : 5;
+            uint32_t func7  : 7;
+        } R;
+        struct{
+            uint32_t opcode   : 7;
+            uint32_t rd       : 5;
+            uint32_t func3    : 3;
+            uint32_t rs1      : 5;
+            uint32_t imm_11_0 : 12;
+        } I;
+        struct{
+            uint32_t opcode   : 7;
+            uint32_t imm_4_0  : 5;
+            uint32_t func3    : 3;
+            uint32_t rs1      : 5;
+            uint32_t rs2      : 5;
+            uint32_t imm_11_5 : 7;
+        } S;
+        struct{
+            uint32_t opcode   : 7;
+            uint32_t imm_11   : 1;
+            uint32_t imm_4_1  : 4;
+            uint32_t func3    : 3;
+            uint32_t rs1      : 5;
+            uint32_t rs2      : 5;
+            uint32_t imm_10_5 : 6;
+            uint32_t imm_12   : 1;
+        } SB;
+        struct{
+            uint32_t opcode     : 7;
+            uint32_t rd         : 5;
+            uint32_t imm_31_12  : 20;
+        } U;
+        struct{
+            uint32_t opcode    : 7;
+            uint32_t rd        : 5;
+            uint32_t imm_19_12 : 20;
+            uint32_t imm_11    : 20;
+            uint32_t imm_10_1  : 20;
+            uint32_t imm_20    : 20;
+        } UJ;
+    };
+    union{
+        struct{
+            uint32_t opcode : 7;
+            uint32_t rd     : 5;
+            uint32_t func3  : 3;
+            uint32_t rs1    : 5;
+            uint32_t rs2    : 5;
+            uint32_t func7  : 7;
+        } R;
+        struct{
+            uint32_t opcode   : 7;
+            uint32_t rd       : 5;
+            uint32_t func3    : 3;
+            uint32_t rs1      : 5;
+            uint32_t imm_11_0 : 12;
+        } I;
+        struct{
+            uint32_t opcode   : 7;
+            uint32_t imm_4_0  : 5;
+            uint32_t func3    : 3;
+            uint32_t rs1      : 5;
+            uint32_t rs2      : 5;
+            uint32_t imm_11_5 : 7;
+        } S;
+    }rv64i;
+
     uint32_t DoubleWord;
 };
-
 
 #endif

@@ -1,0 +1,2350 @@
+cscope 15 /data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/1_risc_v_isa_parser -q 0000000115 0000012037
+	@/home/xinhualu/repo/0_xhlu/0_pppppppp/0_project/1_risc_v_isa_parser/isa_parser.cpp
+
+2 
+	~"iß_∑r£r.hµ
+"
+
+4 
+	g°d
+::
+¨øy
+<
+uöt32_t
+, 150> 
+	gböx
+ = {
+
+157 
+	$∑r£r_bønch_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+159 
+ö°
+.
+S
+.
+func3
+)
+
+161 0: 
+°d
+::
+cout
+ << "BEQ " << std::
+ídl
+; ;
+
+162 1: 
+°d
+::
+cout
+ << "BNE " << std::
+ídl
+; ;
+
+163 4: 
+°d
+::
+cout
+ << "BLT " << std::
+ídl
+; ;
+
+164 5: 
+°d
+::
+cout
+ << "BGE " << std::
+ídl
+; ;
+
+165 6: 
+°d
+::
+cout
+ << "BLTU " << std::
+ídl
+; ;
+
+166 7: 
+°d
+::
+cout
+ << "BGEU " << std::
+ídl
+; ;
+
+168 
+°d
+::
+cout
+ << "Bønch " << 
+ö°
+.
+S
+.
+func3
+ << std::
+ídl
+;
+
+172 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+S
+.
+imm
+ << std::
+ídl
+;
+
+173 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+func3
+ << std::
+ídl
+;
+
+174 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+rs1
+ << std::
+ídl
+;
+
+175 
+°d
+::
+cout
+ << " " << "rs2 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+rs2
+ << std::
+ídl
+;
+
+176 
+°d
+::
+cout
+ << " " << "imm_2 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+imm_2
+ << std::
+ídl
+;
+
+177 
+	}
+}
+
+179 
+	$∑r£r_lﬂd_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+181 
+ö°
+.
+I
+.
+func3
+)
+
+183 0: 
+°d
+::
+cout
+ << "LB " << std::
+ídl
+; ;
+
+184 1: 
+°d
+::
+cout
+ << "LH " << std::
+ídl
+; ;
+
+185 2: 
+°d
+::
+cout
+ << "LW " << std::
+ídl
+; ;
+
+186 4: 
+°d
+::
+cout
+ << "LBU " << std::
+ídl
+; ;
+
+187 5: 
+°d
+::
+cout
+ << "LHU " << std::
+ídl
+; ;
+
+189 
+°d
+::
+cout
+ << "lﬂd " << 
+ö°
+.
+I
+.
+func3
+ << std::
+ídl
+;
+
+192 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rd
+ << std::
+ídl
+;
+
+193 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+func3
+ << std::
+ídl
+;
+
+194 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rs1
+ << std::
+ídl
+;
+
+195 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+I
+.
+imm
+ << std::
+ídl
+;
+
+196 
+	}
+}
+
+198 
+	$∑r£r_°‹e_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+200 
+ö°
+.
+S
+.
+func3
+)
+
+202 0: 
+°d
+::
+cout
+ << "SB " << std::
+ídl
+; ;
+
+203 1: 
+°d
+::
+cout
+ << "SH " << std::
+ídl
+; ;
+
+204 2: 
+°d
+::
+cout
+ << "SW " << std::
+ídl
+; ;
+
+206 
+°d
+::
+cout
+ << "°‹ê" << 
+ö°
+.
+S
+.
+func3
+ << std::
+ídl
+;
+
+209 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+S
+.
+imm
+ << std::
+ídl
+;
+
+210 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+func3
+ << std::
+ídl
+;
+
+211 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+rs1
+ << std::
+ídl
+;
+
+212 
+°d
+::
+cout
+ << " " << "rs2 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+rs2
+ << std::
+ídl
+;
+
+213 
+°d
+::
+cout
+ << " " << "imm_2 " << std::
+hex
+ << 
+ö°
+.
+S
+.
+imm_2
+ << std::
+ídl
+;
+
+214 
+	}
+}
+
+216 
+	$∑r£r_imm_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+218 
+°d
+::
+cout
+ << "IMM " << std::
+ídl
+;
+
+219 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rd
+ << std::
+ídl
+;
+
+220 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+func3
+ << std::
+ídl
+;
+
+221 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rs1
+ << std::
+ídl
+;
+
+222 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+I
+.
+imm
+ << std::
+ídl
+;
+
+223 
+	}
+}
+
+225 
+	$∑r£r_ªg_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+227 
+°d
+::
+cout
+ << "REG " << std::
+ídl
+;
+
+228 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+U
+.
+rd
+ << std::
+ídl
+;
+
+229 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+U
+.
+imm
+ << std::
+ídl
+;
+
+230 
+	}
+}
+
+232 
+	$∑r£r_„n˚_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+235 
+	}
+}
+
+237 
+	$∑r£r_sy°em_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+239 
+°d
+::
+cout
+ << "SYSTEM " << std::
+ídl
+;
+
+240 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rd
+ << std::
+ídl
+;
+
+241 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+func3
+ << std::
+ídl
+;
+
+242 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rs1
+ << std::
+ídl
+;
+
+243 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+I
+.
+imm
+ << std::
+ídl
+;
+
+244 
+	}
+}
+
+246 
+	$∑r£r_imm32_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+248 
+°d
+::
+cout
+ << "IMM32 " << std::
+ídl
+;
+
+249 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rd
+ << std::
+ídl
+;
+
+250 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+func3
+ << std::
+ídl
+;
+
+251 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rs1
+ << std::
+ídl
+;
+
+252 
+°d
+::
+cout
+ << " " << "rs2 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rs2
+ << std::
+ídl
+;
+
+253 
+°d
+::
+cout
+ << " " << "func7 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+func7
+ << std::
+ídl
+;
+
+254 
+	}
+}
+
+256 
+	$∑r£r_›32_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+258 
+°d
+::
+cout
+ << "OP32 " << std::
+ídl
+;
+
+259 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rd
+ << std::
+ídl
+;
+
+260 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+func3
+ << std::
+ídl
+;
+
+261 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rs1
+ << std::
+ídl
+;
+
+262 
+°d
+::
+cout
+ << " " << "rs2 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+rs2
+ << std::
+ídl
+;
+
+263 
+°d
+::
+cout
+ << " " << "func7 " << std::
+hex
+ << 
+ö°
+.
+R
+.
+func7
+ << std::
+ídl
+;
+
+264 
+	}
+}
+
+266 
+	$∑r£r_auùc_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+268 
+°d
+::
+cout
+ << "AUIPC " << std::
+ídl
+;
+
+269 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+U
+.
+rd
+ << std::
+ídl
+;
+
+270 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+U
+.
+imm
+ << std::
+ídl
+;
+
+271 
+	}
+}
+
+273 
+	$∑r£r_jÆ_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+275 
+°d
+::
+cout
+ << "JAL " << std::
+ídl
+;
+
+276 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+U
+.
+rd
+ << std::
+ídl
+;
+
+277 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+U
+.
+imm
+ << std::
+ídl
+;
+
+278 
+	}
+}
+
+280 
+	$∑r£r_jÆr_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+282 
+°d
+::
+cout
+ << "JALR " << std::
+ídl
+;
+
+283 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rd
+ << std::
+ídl
+;
+
+284 
+°d
+::
+cout
+ << " " << "func3 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+func3
+ << std::
+ídl
+;
+
+285 
+°d
+::
+cout
+ << " " << "rs1 " << std::
+hex
+ << 
+ö°
+.
+I
+.
+rs1
+ << std::
+ídl
+;
+
+286 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+I
+.
+imm
+ << std::
+ídl
+;
+
+287 
+	}
+}
+
+289 
+	$∑r£r_lut_ö°
+(
+In°ru˘i⁄
+ 
+ö°
+)
+
+291 
+°d
+::
+cout
+ << "LUT " << std::
+ídl
+;
+
+292 
+°d
+::
+cout
+ << " " << "rd " << std::
+hex
+ << 
+ö°
+.
+U
+.
+rd
+ << std::
+ídl
+;
+
+293 
+°d
+::
+cout
+ << " " << "imm " << std::
+hex
+ << 
+ö°
+.
+U
+.
+imm
+ << std::
+ídl
+;
+
+294 
+	}
+}
+
+296 
+	$maö
+(
+¨gc
+, c⁄° *
+¨gv
+[])
+
+298 
+In°ru˘i⁄
+ 
+ö°
+;
+
+300 autÿ& 
+cmd
+: 
+böx
+)
+
+302 
+ö°
+.
+DoubÀW‹d
+ = 
+cmd
+;
+
+304 
+°©ic_ˇ°
+<
+In°OpCode
+>(
+ö°
+.
+comm⁄
+.
+›code
+))
+
+306 
+In°OpCode
+::
+REG
+ : 
+	`∑r£r_ªg_ö°
+(
+ö°
+) ; ;
+
+307 
+In°OpCode
+::
+IMM
+ : 
+	`∑r£r_imm_ö°
+(
+ö°
+) ; ;
+
+308 
+In°OpCode
+::
+LUT
+ : 
+	`∑r£r_lut_ö°
+(
+ö°
+) ; ;
+
+309 
+In°OpCode
+::
+BRANCH
+ : 
+	`∑r£r_bønch_ö°
+(
+ö°
+); ;
+
+310 
+In°OpCode
+::
+STORE
+ : 
+	`∑r£r_°‹e_ö°
+(
+ö°
+) ; ;
+
+311 
+In°OpCode
+::
+LOAD
+ : 
+	`∑r£r_lﬂd_ö°
+(
+ö°
+) ; ;
+
+312 
+In°OpCode
+::
+SYSTEM
+ : 
+	`∑r£r_sy°em_ö°
+(
+ö°
+); ;
+
+313 
+In°OpCode
+::
+AUIPC
+ : 
+	`∑r£r_auùc_ö°
+(
+ö°
+) ; ;
+
+314 
+In°OpCode
+::
+JAL
+ : 
+	`∑r£r_jÆ_ö°
+(
+ö°
+) ; ;
+
+315 
+In°OpCode
+::
+JALR
+ : 
+	`∑r£r_jÆr_ö°
+(
+ö°
+) ; ;
+
+316 
+In°OpCode
+::
+IMM32
+ : 
+	`∑r£r_imm32_ö°
+(
+ö°
+) ; ;
+
+317 
+In°OpCode
+::
+OP32
+ : 
+	`∑r£r_›32_ö°
+(
+ö°
+) ; ;
+
+319 
+°d
+::
+cout
+ << "UNKNOW OpCodê!!!!!!!!!!! " << 
+ö°
+.
+comm⁄
+.
+›code
+
+
+320 << " INST: " << 
+ö°
+.
+DoubÀW‹d
+ << 
+°d
+::
+ídl
+;
+
+325 
+	}
+}
+
+	@/home/xinhualu/repo/0_xhlu/0_pppppppp/0_project/1_risc_v_isa_parser/isa_parser.hpp
+
+2 #i‚de‡
+__ISA_PARSER_H__
+
+
+3 
+	#__ISA_PARSER_H__
+
+
+	)
+
+5 
+	~<¨øy
+>
+
+6 
+	~<io°ªam
+>
+
+8 ˛as†
+	cIn°OpCode
+ : 
+uöt8_t
+
+
+11 
+LUT
+ = 0x37,
+
+13 
+	mAUIPC
+ = 0x17,
+
+15 
+	mJAL
+ = 0x6F,
+
+17 
+	mJALR
+ = 0x67,
+
+19 
+	mBRANCH
+ = 0x63,
+
+20 
+	mBEQ
+ = 0x63,
+
+21 
+	mBNE
+ = 0x63,
+
+22 
+	mBLT
+ = 0x63,
+
+23 
+	mBGE
+ = 0x63,
+
+24 
+	mBLTU
+ = 0x63,
+
+25 
+	mBGEU
+ = 0x63,
+
+27 
+	mLOAD
+ = 0x3,
+
+28 
+	mLB
+ = 0x3,
+
+29 
+	mLH
+ = 0x3,
+
+30 
+	mLW
+ = 0x3,
+
+31 
+	mLBU
+ = 0x3,
+
+32 
+	mLHU
+ = 0x3,
+
+34 
+	mSTORE
+ = 0x23,
+
+35 
+	mSB
+ = 0x23,
+
+36 
+	mSH
+ = 0x23,
+
+37 
+	mSW
+ = 0x23,
+
+39 
+	mIMM
+ = 0x13,
+
+40 
+	mADDI
+ = 0x13,
+
+41 
+	mSLTI
+ = 0x13,
+
+42 
+	mSLTIU
+ = 0x13,
+
+43 
+	mXORI
+ = 0x13,
+
+44 
+	mORI
+ = 0x13,
+
+45 
+	mANDI
+ = 0x13,
+
+46 
+	mSLLI
+ = 0x13,
+
+47 
+	mSRLI
+ = 0x13,
+
+48 
+	mSRAI
+ = 0x13,
+
+50 
+	mREG
+ = 0x33,
+
+51 
+	mADD
+ = 0x33,
+
+52 
+	mSUB
+ = 0x33,
+
+53 
+	mSLL
+ = 0x33,
+
+54 
+	mSLT
+ = 0x33,
+
+55 
+	mSLTU
+ = 0x33,
+
+56 
+	mXOR
+ = 0x33,
+
+57 
+	mSRL
+ = 0x33,
+
+58 
+	mSRA
+ = 0x33,
+
+59 
+	mOR
+ = 0x33,
+
+60 
+	mAND
+ = 0x33,
+
+62 
+	mFENCE
+ = 0xF,
+
+63 
+	mFENCE_J
+ = 0xF,
+
+65 
+	mSYSTEM
+ = 0x73,
+
+66 
+	mECALL
+ = 0x73,
+
+67 
+	mEBREA
+ = 0x73,
+
+68 
+	mCSRRW
+ = 0x73,
+
+69 
+	mCSRRS
+ = 0x73,
+
+70 
+	mCSRRC
+ = 0x73,
+
+71 
+	mCSRRSI
+ = 0x73,
+
+72 
+	mCSRRCI
+ = 0x73,
+
+75 
+	mLWU
+ = 0x3,
+
+77 
+	mLU
+ = 0x3,
+
+79 
+	mSD
+ = 0x23,
+
+85 
+	mIMM32
+ = 0x1B,
+
+86 
+	mADDIW
+ = 0x1B,
+
+87 
+	mSLLIW
+ = 0x1B,
+
+88 
+	mSRLIW
+ = 0x1B,
+
+89 
+	mSRAIW
+ = 0x1B,
+
+91 
+	mOP32
+ = 0x3B,
+
+92 
+	mADDW
+ = 0x3B,
+
+93 
+	mSUBW
+ = 0x3B,
+
+94 
+	mSLLW
+ = 0x3B,
+
+95 
+	mSRLW
+ = 0x3B,
+
+96 
+	mSRAW
+ = 0x3B,
+
+99 
+	uIn°ru˘i⁄
+
+
+102 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+103 
+uöt32_t
+ 
+	mª£rvîd
+ : 25;
+
+104 } 
+	mcomm⁄
+;
+
+106 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+107 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+108 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+109 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+110 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+111 
+uöt32_t
+ 
+	mfunc7
+ : 7;
+
+112 } 
+	mR
+;
+
+114 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+115 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+116 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+117 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+118 
+uöt32_t
+ 
+	mimm
+ : 12;
+
+119 } 
+	mI
+;
+
+121 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+122 
+uöt32_t
+ 
+	mimm
+ : 5;
+
+123 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+124 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+125 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+126 
+uöt32_t
+ 
+	mimm_2
+ : 7;
+
+127 } 
+	mS
+;
+
+129 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+130 
+uöt32_t
+ 
+	mimm
+ : 5;
+
+131 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+132 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+133 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+134 
+uöt32_t
+ 
+	mimm_2
+ : 7;
+
+135 } 
+	mB
+;
+
+137 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+138 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+139 
+uöt32_t
+ 
+	mimm
+ : 20;
+
+140 } 
+	mU
+;
+
+142 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+143 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+144 
+uöt32_t
+ 
+	mimm
+ : 20;
+
+145 } 
+	mJ
+;
+
+146 
+uöt32_t
+ 
+	mDoubÀW‹d
+;
+
+	@isa_parser.hpp
+
+2 #i‚de‡
+__ISA_PARSER_H__
+
+
+3 
+	#__ISA_PARSER_H__
+
+
+	)
+
+5 
+	~<¨øy
+>
+
+6 
+	~<io°ªam
+>
+
+8 ˛as†
+	cIn°OpCode
+ : 
+uöt8_t
+
+
+11 
+LUT
+ = 0x37,
+
+13 
+	mAUIPC
+ = 0x17,
+
+15 
+	mJAL
+ = 0x6F,
+
+17 
+	mJALR
+ = 0x67,
+
+19 
+	mBRANCH
+ = 0x63,
+
+20 
+	mBEQ
+ = 0x63,
+
+21 
+	mBNE
+ = 0x63,
+
+22 
+	mBLT
+ = 0x63,
+
+23 
+	mBGE
+ = 0x63,
+
+24 
+	mBLTU
+ = 0x63,
+
+25 
+	mBGEU
+ = 0x63,
+
+27 
+	mLOAD
+ = 0x3,
+
+28 
+	mLB
+ = 0x3,
+
+29 
+	mLH
+ = 0x3,
+
+30 
+	mLW
+ = 0x3,
+
+31 
+	mLBU
+ = 0x3,
+
+32 
+	mLHU
+ = 0x3,
+
+34 
+	mSTORE
+ = 0x23,
+
+35 
+	mSB
+ = 0x23,
+
+36 
+	mSH
+ = 0x23,
+
+37 
+	mSW
+ = 0x23,
+
+39 
+	mIMM
+ = 0x13,
+
+40 
+	mADDI
+ = 0x13,
+
+41 
+	mSLTI
+ = 0x13,
+
+42 
+	mSLTIU
+ = 0x13,
+
+43 
+	mXORI
+ = 0x13,
+
+44 
+	mORI
+ = 0x13,
+
+45 
+	mANDI
+ = 0x13,
+
+46 
+	mSLLI
+ = 0x13,
+
+47 
+	mSRLI
+ = 0x13,
+
+48 
+	mSRAI
+ = 0x13,
+
+50 
+	mREG
+ = 0x33,
+
+51 
+	mADD
+ = 0x33,
+
+52 
+	mSUB
+ = 0x33,
+
+53 
+	mSLL
+ = 0x33,
+
+54 
+	mSLT
+ = 0x33,
+
+55 
+	mSLTU
+ = 0x33,
+
+56 
+	mXOR
+ = 0x33,
+
+57 
+	mSRL
+ = 0x33,
+
+58 
+	mSRA
+ = 0x33,
+
+59 
+	mOR
+ = 0x33,
+
+60 
+	mAND
+ = 0x33,
+
+62 
+	mFENCE
+ = 0xF,
+
+63 
+	mFENCE_J
+ = 0xF,
+
+65 
+	mSYSTEM
+ = 0x73,
+
+66 
+	mECALL
+ = 0x73,
+
+67 
+	mEBREA
+ = 0x73,
+
+68 
+	mCSRRW
+ = 0x73,
+
+69 
+	mCSRRS
+ = 0x73,
+
+70 
+	mCSRRC
+ = 0x73,
+
+71 
+	mCSRRSI
+ = 0x73,
+
+72 
+	mCSRRCI
+ = 0x73,
+
+75 
+	mLWU
+ = 0x3,
+
+77 
+	mLU
+ = 0x3,
+
+79 
+	mSD
+ = 0x23,
+
+85 
+	mIMM32
+ = 0x1B,
+
+86 
+	mADDIW
+ = 0x1B,
+
+87 
+	mSLLIW
+ = 0x1B,
+
+88 
+	mSRLIW
+ = 0x1B,
+
+89 
+	mSRAIW
+ = 0x1B,
+
+91 
+	mOP32
+ = 0x3B,
+
+92 
+	mADDW
+ = 0x3B,
+
+93 
+	mSUBW
+ = 0x3B,
+
+94 
+	mSLLW
+ = 0x3B,
+
+95 
+	mSRLW
+ = 0x3B,
+
+96 
+	mSRAW
+ = 0x3B,
+
+99 
+	uIn°ru˘i⁄
+
+
+102 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+103 
+uöt32_t
+ 
+	mª£rvîd
+ : 25;
+
+104 } 
+	mcomm⁄
+;
+
+106 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+107 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+108 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+109 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+110 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+111 
+uöt32_t
+ 
+	mfunc7
+ : 7;
+
+112 } 
+	mR
+;
+
+114 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+115 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+116 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+117 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+118 
+uöt32_t
+ 
+	mimm
+ : 12;
+
+119 } 
+	mI
+;
+
+121 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+122 
+uöt32_t
+ 
+	mimm
+ : 5;
+
+123 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+124 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+125 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+126 
+uöt32_t
+ 
+	mimm_2
+ : 7;
+
+127 } 
+	mS
+;
+
+129 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+130 
+uöt32_t
+ 
+	mimm
+ : 5;
+
+131 
+uöt32_t
+ 
+	mfunc3
+ : 3;
+
+132 
+uöt32_t
+ 
+	mrs1
+ : 5;
+
+133 
+uöt32_t
+ 
+	mrs2
+ : 5;
+
+134 
+uöt32_t
+ 
+	mimm_2
+ : 7;
+
+135 } 
+	mB
+;
+
+137 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+138 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+139 
+uöt32_t
+ 
+	mimm
+ : 20;
+
+140 } 
+	mU
+;
+
+142 
+uöt32_t
+ 
+	m›code
+ : 7;
+
+143 
+uöt32_t
+ 
+	mrd
+ : 5;
+
+144 
+uöt32_t
+ 
+	mimm
+ : 20;
+
+145 } 
+	mJ
+;
+
+146 
+uöt32_t
+ 
+	mDoubÀW‹d
+;
+
+	@
+1
+.
+0
+3
+181
+/home/xinhualu/repo/0_xhlu/0_pppppppp/0_project/1_risc_v_isa_parser/isa_parser.cpp
+/home/xinhualu/repo/0_xhlu/0_pppppppp/0_project/1_risc_v_isa_parser/isa_parser.hpp
+isa_parser.hpp

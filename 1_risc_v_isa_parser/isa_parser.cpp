@@ -1,7 +1,13 @@
 
 #include "isa_parser.hpp"
+#include <iomanip>
+#include <vector>
 
-std::array<uint32_t, 150> binx = {
+#define   OUT_PRINT       std::cout << std::hex << std::setw(12) << std::setfill(' ')  << std::left
+#define   FORMAT          std::dec << std::setw(12) << std::setfill(' ')  << std::left
+#define   INST_FORMAT     std::hex << std::setw(8) << std::setfill('0')
+
+std::vector<uint32_t> binx = {
     0x00003197, // as auipc gp,3
     0x6f418193, // as addi gp,gp,1780
     0x1a018513, // as addi a0,gp,416
@@ -158,75 +164,121 @@ void parser_branch_inst(Instruction inst)
 {
     switch (inst.S.func3)
     {
-        case 0:    std::cout <<  "BEQ "   << std::endl;     break;
-        case 1:    std::cout <<  "BNE "   << std::endl;     break;
-        case 4:    std::cout <<  "BLT "   << std::endl;     break;
-        case 5:    std::cout <<  "BGE "   << std::endl;     break;
-        case 6:    std::cout <<  "BLTU "  << std::endl;     break;
-        case 7:    std::cout <<  "BGEU "  << std::endl;     break;
+        case 0:    OUT_PRINT <<   "BEQ"  ;     break;
+        case 1:    OUT_PRINT <<   "BNE"  ;     break;
+        case 4:    OUT_PRINT <<   "BLT"  ;     break;
+        case 5:    OUT_PRINT <<   "BGE"  ;     break;
+        case 6:    OUT_PRINT <<   "BLTU" ;     break;
+        case 7:    OUT_PRINT <<   "BGEU" ;     break;
         default:
-            std::cout <<  "Branch " << inst.S.func3  << std::endl;
+            OUT_PRINT <<   "-- Branch";
             break;
     }
 
-    std::cout <<  "       "  << "imm     " << std::hex << inst.S.imm   << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.S.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.S.rs1   << std::endl;
-    std::cout <<  "       "  << "rs2     " << std::hex << inst.S.rs2   << std::endl;
-    std::cout <<  "       "  << "imm_2   " << std::hex << inst.S.imm_2 << std::endl;
+    OUT_PRINT   << "imm_4_0"   << FORMAT << inst.S.imm_4_0 ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.S.rs1 ;
+    OUT_PRINT   << "rs2"   << FORMAT << inst.S.rs2 ;
+    OUT_PRINT   << "imm_11_5" << FORMAT << inst.S.imm_11_5 << std::endl;
 }
 
 void parser_load_inst(Instruction inst)
 {
     switch (inst.I.func3)
     {
-        case 0:    std::cout <<  "LB "   << std::endl;     break;
-        case 1:    std::cout <<  "LH "   << std::endl;     break;
-        case 2:    std::cout <<  "LW "   << std::endl;     break;
-        case 4:    std::cout <<  "LBU "   << std::endl;     break;
-        case 5:    std::cout <<  "LHU "  << std::endl;     break;
+        case 0:    OUT_PRINT <<   "LB"  ;     break;
+        case 1:    OUT_PRINT <<   "LH"  ;     break;
+        case 2:    OUT_PRINT <<   "LW"  ;     break;
+        case 4:    OUT_PRINT <<   "LBU" ;     break;
+        case 5:    OUT_PRINT <<   "LHU" ;     break;
+        case 6:    OUT_PRINT <<   "LWU" ;     break;
+        case 3:    OUT_PRINT <<   "LD" ;     break;
         default:
-            std::cout <<  "load " << inst.I.func3 << std::endl;
+            OUT_PRINT <<   "-- load";
             break;
     }
-    std::cout <<  "       "  << "rd      " << std::hex << inst.I.rd    << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.I.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.I.rs1   << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.I.imm   << std::endl;
+    OUT_PRINT   << "rd"    << FORMAT << inst.I.rd ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.I.rs1 ;
+    OUT_PRINT   << "imm_11_0"   << FORMAT << inst.I.imm_11_0   << std::endl;
 }
 
 void parser_store_inst(Instruction inst)
 {
     switch (inst.S.func3)
     {
-        case 0:    std::cout <<  "SB "   << std::endl;     break;
-        case 1:    std::cout <<  "SH "   << std::endl;     break;
-        case 2:    std::cout <<  "SW "   << std::endl;     break;
+        case 0:    OUT_PRINT <<   "SB"  ;     break;
+        case 1:    OUT_PRINT <<   "SH"  ;     break;
+        case 2:    OUT_PRINT <<   "SW"  ;     break;
+        case 3:    OUT_PRINT <<   "SD"  ;     break;
         default:
-            std::cout <<  "store " << inst.S.func3 << std::endl;
+            OUT_PRINT <<   "-- store";
             break;
     }
-    std::cout <<  "       "  << "imm     " << std::hex << inst.S.imm << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.S.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.S.rs1 << std::endl;
-    std::cout <<  "       "  << "rs2     " << std::hex << inst.S.rs2 << std::endl;
-    std::cout <<  "       "  << "imm_2   " << std::hex << inst.S.imm_2 << std::endl;
+    OUT_PRINT   << "imm_4_0"   << FORMAT << inst.S.imm_4_0   ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.S.rs1   ;
+    OUT_PRINT   << "rs2"   << FORMAT << inst.S.rs2   ;
+    OUT_PRINT   << "imm_11_5" << FORMAT << inst.S.imm_11_5 << std::endl;
 }
 
 void parser_imm_inst(Instruction inst)
 {
-    std::cout <<  "IMM    "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.I.rd << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.I.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.I.rs1 << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.I.imm << std::endl;
+    switch (inst.I.func3)
+    {
+        case 0:    OUT_PRINT <<   "ADDI  "  ;     break;
+        case 2:    OUT_PRINT <<   "SLTI  "  ;     break;
+        case 3:    OUT_PRINT <<   "SLTIU "  ;     break;
+        case 4:    OUT_PRINT <<   "XORI  "  ;     break;
+        case 6:    OUT_PRINT <<   "ORI   "  ;     break;
+        case 7:    OUT_PRINT <<   "ANDI  "  ;     break;
+        case 1:    OUT_PRINT <<   "SLLI  "  ;     break;
+        case 5:    OUT_PRINT <<   "SRAI/SRLI"  ;     break;
+        default:
+            OUT_PRINT <<   "-- IMM";
+            break;
+    }
+
+    OUT_PRINT   << "rd"    << FORMAT << inst.I.rd    ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.I.rs1   ;
+    OUT_PRINT   << "imm_11_0"   << FORMAT << inst.I.imm_11_0   << std::endl;
 }
 
 void parser_reg_inst(Instruction inst)
 {
-    std::cout <<  "REG    "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.U.rd   << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.U.imm  << std::endl;
+    switch (inst.R.func3)
+    {
+        case 0:
+            if (inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "ADD " ;
+            }
+            else if (inst.R.func7 == 0x20)
+            {
+                OUT_PRINT <<   "SUB " ;
+            }
+            break;
+        case 1:    OUT_PRINT <<   "SLL "  ;     break;
+        case 2:    OUT_PRINT <<   "SLT "  ;     break;
+        case 3:    OUT_PRINT <<   "SLTU"  ;     break;
+        case 4:    OUT_PRINT <<   "XOR "  ;     break;
+        case 5:
+            if (inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "SRL " ;
+            }
+            else if (inst.R.func7 == 0x20)
+            {
+                OUT_PRINT <<   "SRA " ;
+            }
+            break;
+        case 6:    OUT_PRINT <<   "OR  "  ;     break;
+        case 7:    OUT_PRINT <<   "AND "  ;     break;
+        default:
+            OUT_PRINT <<   "-- REG";
+            break;
+    }
+
+    OUT_PRINT   << "rd"  << FORMAT << inst.R.rd   ;
+    OUT_PRINT   << "rs1" << FORMAT << inst.R.rs1  ;
+    OUT_PRINT   << "rs2" << FORMAT << inst.R.rs2  << std::endl;
 }
 
 void parser_fence_inst(Instruction inst)
@@ -236,61 +288,127 @@ void parser_fence_inst(Instruction inst)
 
 void parser_system_inst(Instruction inst)
 {
-    std::cout <<  "SYSTEM "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.I.rd << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.I.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.I.rs1 << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.I.imm << std::endl;
+    switch (inst.R.func3)
+    {
+        case 0:
+            if (inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "ECALL "  ;
+            }
+            else if(inst.R.func7 == 1)
+            {
+                OUT_PRINT <<   "EBREA "  ;
+            }
+            break;
+        case 1:    OUT_PRINT <<   "CSRRW "  ;     break;
+        case 2:    OUT_PRINT <<   "CSRRS "  ;     break;
+        case 3:    OUT_PRINT <<   "CSRRC "  ;     break;
+        case 5:    OUT_PRINT <<   "CSRRSW"  ;     break;
+        case 6:    OUT_PRINT <<   "CSRRSI"  ;     break;
+        case 7:    OUT_PRINT <<   "CSRRCI"  ;     break;
+        default:
+            OUT_PRINT <<   "-- SYSTEM";
+            break;
+    }
+
+    OUT_PRINT   << "rd"    << FORMAT << inst.I.rd    ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.I.rs1   ;
+    OUT_PRINT   << "imm_11_0"   << FORMAT << inst.I.imm_11_0   << std::endl;
 }
 
 void parser_imm32_inst(Instruction inst)
 {
-    std::cout <<  "IMM32  "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.R.rd << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.R.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.R.rs1 << std::endl;
-    std::cout <<  "       "  << "rs2     " << std::hex << inst.R.rs2 << std::endl;
-    std::cout <<  "       "  << "func7   " << std::hex << inst.R.func7 << std::endl;
+    switch (inst.R.func3)
+    {
+        case 0:    OUT_PRINT <<   "ADDIW"  ;     break;
+        case 1:    OUT_PRINT <<   "SLLIW"  ;     break;
+        case 5:
+            if(inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "SRLIW"  ;
+            }
+            else if (inst.R.func7 == 0x20)
+            {
+                OUT_PRINT <<   "SRAIW"  ;
+            }
+            break;
+        default:
+            OUT_PRINT <<   "-- IMM32";
+            break;
+    }
+
+    OUT_PRINT   << "rd"    << FORMAT << inst.R.rd    ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.R.rs1   ;
+    OUT_PRINT   << "rs2"   << FORMAT << inst.R.rs2   ;
+    OUT_PRINT   << "func7" << FORMAT << inst.R.func7 << std::endl;
 }
 
 void parser_op32_inst(Instruction inst)
 {
-    std::cout <<  "OP32   "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.R.rd << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.R.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.R.rs1 << std::endl;
-    std::cout <<  "       "  << "rs2     " << std::hex << inst.R.rs2 << std::endl;
-    std::cout <<  "       "  << "func7   " << std::hex << inst.R.func7 << std::endl;
+    switch (inst.R.func3)
+    {
+        case 0:
+            if (inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "ADDW"  ;
+            }
+            else if(inst.R.func7 == 0x20)
+            {
+                OUT_PRINT <<   "SUBW"  ;
+            }
+            break;
+        case 1:    OUT_PRINT <<   "SLLW"  ;     break;
+        case 5:
+            if (inst.R.func7 == 0)
+            {
+                OUT_PRINT <<   "SRLW"  ;
+            }
+            else if(inst.R.func7 == 0x20)
+            {
+                OUT_PRINT <<   "SRAW"  ;
+            }
+            break;
+        default:
+            OUT_PRINT <<   "-- OP32";
+            break;
+    }
+
+    OUT_PRINT   << "rd"    << FORMAT << inst.R.rd     ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.R.rs1    ;
+    OUT_PRINT   << "rs2"   << FORMAT << inst.R.rs2    ;
+    OUT_PRINT   << "func7" << FORMAT << inst.R.func7 << std::endl;
+
+
 }
 
 void parser_auipc_inst(Instruction inst)
 {
-    std::cout <<  "AUIPC  "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.U.rd << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.U.imm << std::endl;
+    OUT_PRINT   << "AUIPC"  ;
+    OUT_PRINT   << "rd"  << FORMAT << inst.U.rd  ;
+    OUT_PRINT   << "imm_31_12" << FORMAT << inst.U.imm_31_12 << std::endl;
 }
 
 void parser_jal_inst(Instruction inst)
 {
-    std::cout <<  "JAL    "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.U.rd << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.U.imm << std::endl;
+    OUT_PRINT <<   "JAL"  ;
+    OUT_PRINT   << "rd"  << FORMAT << inst.U.rd  ;
+    OUT_PRINT   << "imm_31_12" << FORMAT << inst.U.imm_31_12 << std::endl;
 }
 
 void parser_jalr_inst(Instruction inst)
 {
-    std::cout <<  "JALR   "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.I.rd << std::endl;
-    std::cout <<  "       "  << "func3   " << std::hex << inst.I.func3 << std::endl;
-    std::cout <<  "       "  << "rs1     " << std::hex << inst.I.rs1 << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.I.imm << std::endl;
+    OUT_PRINT <<   "JALR"  ;
+    OUT_PRINT   << "rd"    << FORMAT << inst.I.rd    ;
+    OUT_PRINT   << "func3" << FORMAT << inst.I.func3 ;
+    OUT_PRINT   << "rs1"   << FORMAT << inst.I.rs1   ;
+    OUT_PRINT   << "imm_11_0"   << FORMAT << inst.I.imm_11_0   << std::endl;
 }
 
 void parser_lut_inst(Instruction inst)
 {
-    std::cout <<  "LUT    "  << std::endl;
-    std::cout <<  "       "  << "rd      " << std::hex << inst.U.rd << std::endl;
-    std::cout <<  "       "  << "imm     " << std::hex << inst.U.imm << std::endl;
+    OUT_PRINT   << "LUT"  ;
+    OUT_PRINT   << "rd"  << FORMAT << inst.U.rd  ;
+    OUT_PRINT   << "imm_31_12" << FORMAT << inst.U.imm_31_12 << std::endl;
 }
 
 int main(int argc, char const *argv[])
@@ -300,6 +418,8 @@ int main(int argc, char const *argv[])
     for (auto & cmd: binx)
     {
         inst.DoubleWord = cmd;
+
+        std::cout << INST_FORMAT << inst.DoubleWord << "   ";
 
         switch (static_cast<InstOpCode>(inst.common.opcode))
         {
@@ -316,10 +436,11 @@ int main(int argc, char const *argv[])
             case InstOpCode::IMM32  : parser_imm32_inst(inst) ; break;
             case InstOpCode::OP32   : parser_op32_inst(inst)  ; break;
             default:
-                std::cout <<  "UNKNOW OpCode !!!!!!!!!!!   "  << inst.common.opcode
-                        << " INST: " << inst.DoubleWord  << std::endl;
+                OUT_PRINT <<   "UNKNOW OpCode !!!!!!!!!!!   "  << FORMAT << inst.common.opcode
+                        << " INST: " << FORMAT << inst.DoubleWord  << std::endl;
                 break;
         };
     }
+
     return 0;
 }
