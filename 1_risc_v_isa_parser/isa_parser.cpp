@@ -357,7 +357,7 @@ void parser_op32_inst(Instruction inst)
                 OUT_PRINT <<   "SUBW"  ;
             }
             break;
-        case 1:    OUT_PRINT <<   "SLLW"  ;     break;
+        case 1:    OUT_PRINT << "SLLW"  ;     break;
         case 5:
             if (inst.R.func7 == 0)
             {
@@ -377,8 +377,6 @@ void parser_op32_inst(Instruction inst)
     OUT_PRINT   << "rs1"   << FORMAT << inst.R.rs1    ;
     OUT_PRINT   << "rs2"   << FORMAT << inst.R.rs2    ;
     OUT_PRINT   << "func7" << FORMAT << inst.R.func7 << std::endl;
-
-
 }
 
 void parser_auipc_inst(Instruction inst)
