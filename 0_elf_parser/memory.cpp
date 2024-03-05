@@ -56,8 +56,25 @@ void Memory::writebyte(uint32_t addr, uint8_t data)
 
 uint32_t Memory::read32(uint32_t addr)
 {
+    uint32_t localData{0};
+    uint32_t data{0};
 
-    return 0;
+    for(uint32_t index=0; index<4; index++)
+    {
+        localData = readbyte(addr + index);
+
+        // std::cout << "adddr "
+        //         << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr + index
+        //         << std::hex << std::setw(20) << std::left << std::setfill(' ')  << +localData << std::endl;
+
+        data = data | (localData << (index * 8));
+    }
+
+    // std::cout << "adddress "
+    //           << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
+    //           << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
+
+    return data;
 }
 uint64_t Memory::read64(uint32_t addr)
 {
@@ -75,9 +92,9 @@ uint64_t Memory::read64(uint32_t addr)
         data = data | (localData << (index * 8));
     }
 
-    std::cout << "adddress "
-              << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
-              << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
+    // std::cout << "adddress "
+    //           << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
+    //           << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
 
     return data;
 }

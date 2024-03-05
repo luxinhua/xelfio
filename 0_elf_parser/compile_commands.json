@@ -14,6 +14,16 @@
       "/usr/bin/g++",
       "-c",
       "-g",
+      "cpu.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/cpu.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
       "elfer.cpp"
     ],
     "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
@@ -28,16 +38,6 @@
     ],
     "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
     "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/elf_header.cpp"
-  },
-  {
-    "arguments": [
-      "/usr/bin/g++",
-      "-c",
-      "-g",
-      "main.cpp"
-    ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/main.cpp"
   },
   {
     "arguments": [

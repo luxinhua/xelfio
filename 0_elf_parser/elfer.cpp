@@ -20,13 +20,13 @@
     return result;
  }
 
-void Elfer::loadSegment2Mem()
+void Elfer::loadSegment2Mem(Memory* mem)
 {
     for(auto& segment: m_programHeaderTable.get())
     {
         for(uint32_t index=0; index<segment.getMemsz(); index++ )
         {
-            m_mem.writebyte(segment.getVAddr()+index, this->read8(segment.getOffset()+index));
+            mem->writebyte(segment.getVAddr()+index, this->read8(segment.getOffset()+index));
         }
     }
 }
@@ -60,31 +60,6 @@ void Elfer::mapSegmentsAndSections()
     }
 }
 
-void Elfer::load()
-{
-    m_elfHeader.load(m_filename);
-    m_programHeaderTable.load(m_filename,
-                                m_elfHeader.getProgramHeaderOffset(),
-                                m_elfHeader.getProgramHeaderItemSize(),
-                                m_elfHeader.getProgramHeaderItemNum());
-    m_sectionHeaderTable.load(m_filename,
-                                m_elfHeader.getSectionHeaderOffset(),
-                                m_elfHeader.getSectionHeaderItemSize(),
-                                m_elfHeader.getSectionHeaderItemNum());
-
-
-    m_sectionHeaderTable.loadSectionStringTable(m_filename,
-                                        m_elfHeader.getSectionStringTableIndex());
-
-    m_sectionHeaderTable.loadStringTable(m_filename);
-    m_sectionHeaderTable.loadSymbolTable(m_filename);
-
-    // m_sectionHeaderTable.loadDynamicStringTable(m_filename);
-    // m_sectionHeaderTable.loadDynamicSymbolTable(m_filename);
-
-    // mapSegmentsAndSections();
-}
-
 void Elfer::dump()
 {
     m_elfHeader.dump();
@@ -95,6 +70,9 @@ void Elfer::dump()
     // m_sectionHeaderTable.dumpSymbolTable();
     // m_sectionHeaderTable.dumpDynamicStringTable();
     // m_sectionHeaderTable.dumpDynamicSymbolTable();
+}
 
-    m_mem.dump();
+uint64_t Elfer::get_entry()
+{
+    return m_elfHeader.getEntry();
 }
