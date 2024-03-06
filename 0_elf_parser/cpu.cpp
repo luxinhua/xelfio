@@ -5,11 +5,23 @@ using namespace std;
 
 void Core::fetch()
 {
+    /** check pc align with byte. */
+    if ((m_pc % 2) != 0)
+    {
+        std::runtime_error("illegal pc pointer !");
+    }
+
+    /** read pc inst */
+    m_inst.DoubleWord = m_mem->read32(m_pc);
     std::cout << "fetch " << "address " << m_pc << "  " << std::hex << m_mem->read32(m_pc)  << std::endl;
+
+    /** set pc to next */
+    m_pc += INST_LEN;
 }
 
 void Core::decode()
 {
+    parse_inst(m_inst.DoubleWord);
     std::cout << "decode " << std::endl;
 }
 

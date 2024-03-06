@@ -44,6 +44,16 @@
       "/usr/bin/g++",
       "-c",
       "-g",
+      "isa_parser.cpp"
+    ],
+    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
+    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/isa_parser.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-g",
       "memory.cpp"
     ],
     "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",

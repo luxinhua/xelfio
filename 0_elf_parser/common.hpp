@@ -20,4 +20,7 @@ using namespace std;
 #include "core_reg.hpp"
 #include "stack.hpp"
 
+/** inst len in byte */
+#define INST_LEN  4
+
 #endif
