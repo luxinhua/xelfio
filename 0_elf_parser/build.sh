@@ -1,4 +1,6 @@
 #!/bin/bash
+clear
+
 if [[ -f a.out ]];then
     rm a.out
 fi

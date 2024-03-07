@@ -4,11 +4,12 @@
 #include <iostream>
 
 class Stack{
-    void push(uint32_t data);
-    void pop();
+public:
+    Stack(uint32_t base, uint32_t size): m_base(base), m_size(size) {}
+    ~Stack() = default;
 
-    uint32_t base;
-    uint32_t size;
+    uint32_t m_base;
+    uint32_t m_size;
 };
 
 

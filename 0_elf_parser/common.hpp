@@ -17,7 +17,6 @@ using namespace std;
 #include <map>
 
 #include "elf.h"
-#include "core_reg.hpp"
 #include "stack.hpp"
 
 /** inst len in byte */
