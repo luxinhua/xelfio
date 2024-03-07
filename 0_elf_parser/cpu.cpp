@@ -113,6 +113,11 @@ void Core::parser_imm_inst()
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.I.imm_11_0 << std::endl;
 }
 
+void Core::execute_sub()
+{
+    m_core_registers[m_inst.R.rd].first = m_core_registers[m_inst.R.rs1].first - m_core_registers[m_inst.R.rs2].first;
+}
+
 void Core::parser_reg_inst()
 {
     switch (m_inst.R.func3)
@@ -125,6 +130,7 @@ void Core::parser_reg_inst()
             else if (m_inst.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SUB " ;
+                execute_sub();
             }
             break;
         case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SLL "  ;     break;
@@ -266,11 +272,30 @@ void Core::execute_auipc()
     m_core_registers[m_inst.U.rd].first = m_pc + (m_inst.U.imm_31_12 << 12);
 }
 
+void Core::execute_jal()
+{
+    m_core_registers[m_inst.UJ.rd].first = m_pc + 4;
+
+    // auto offset = (m_inst.UJ.imm_10_1 | (m_inst.UJ.imm_11 << 10) | \
+    //              (m_inst.UJ.imm_19_12 << 11) | (m_inst.UJ.imm_20 << 19));
+
+    auto offset = int32_t(((m_inst.DoubleWord >> 21) & 0x3FF) | ((m_inst.DoubleWord >> 10) & 0x400) |
+                                ((m_inst.DoubleWord >> 1) & 0x7F800) | ((m_inst.DoubleWord >> 12) & 0x80000)) << 12 >> 11;
+
+    m_pc = m_pc + offset;
+    m_pc -= 4;
+}
+
 void Core::parser_jal_inst()
 {
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "JAL"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.U.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.U.imm_31_12 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.UJ.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.UJ.imm_10_1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.UJ.imm_11
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.UJ.imm_19_12
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.UJ.imm_20 << std::endl;
+
+    execute_jal();
 }
 
 void Core::parser_jalr_inst()
@@ -388,9 +413,9 @@ int main(int argc, char **argv)
 
     Core   core{&mem, stack, elf_entry};
 
-    mem.dump();
+    // mem.dump();
 
-    uint32_t times{5};
+    uint32_t times{9};
     while (times--) {
         core.fetch();
         core.execute();

@@ -32,6 +32,8 @@ private:
     void execute_andi();
     void execute_slli();
     void execute_srai();
+    void execute_sub();
+    void execute_jal();
 
     void parser_branch_inst();
     void parser_load_inst();
