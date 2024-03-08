@@ -3,39 +3,176 @@
 
 using namespace std;
 
+void Core::execute_beq()
+{
+    int32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 == rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+void Core::execute_bne()
+{
+    int32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 != rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+void Core::execute_blt()
+{
+    int32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 < rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+void Core::execute_bge()
+{
+    int32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 > rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+void Core::execute_bltu()
+{
+    uint32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    uint32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 < rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+void Core::execute_bgeu()
+{
+    uint32_t rs1 = m_core_registers[m_inst.SB.rs1].first;
+    uint32_t rs2 = m_core_registers[m_inst.SB.rs2].first;
+
+    if (rs1 > rs2)
+    {
+        auto offset = ( (m_inst.SB.imm_4_1) | (m_inst.SB.imm_10_5 << 5) | \
+                        (m_inst.SB.imm_11 << 11) | (m_inst.SB.imm_12) ) << 19 >> 19;
+        m_pc += offset;
+    }
+}
+
 void Core::parser_branch_inst()
 {
     switch (m_inst.S.func3)
     {
-        case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BEQ"  ;     break;
-        case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BNE"  ;     break;
-        case 4:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BLT"  ;     break;
-        case 5:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BGE"  ;     break;
-        case 6:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BLTU" ;     break;
-        case 7:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BGEU" ;     break;
+        case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BEQ"  ;
+            execute_beq() ;
+            break;
+        case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BNE"  ;
+            execute_bne() ;
+            break;
+        case 4:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BLT"  ;
+            execute_blt() ;
+            break;
+        case 5:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BGE"  ;
+            execute_bge() ;
+            break;
+        case 6:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BLTU" ;
+            execute_bltu();
+            break;
+        case 7:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BGEU" ;
+            execute_bgeu();
+            break;
         default:
             std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "Branch";
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.S.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.S.rs2
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.S.imm_4_0
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.S.imm_11_5 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.rs2
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.imm_4_1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.imm_10_5
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.imm_11
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.SB.imm_12 << std::endl;
 
+}
+
+void Core::execute_lb()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read8(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_lh()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read16(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_lw()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read32(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_lbu()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read8(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_lhu()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read16(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_lwu()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read32(address);
+    m_core_registers[m_inst.I.rd].first = data;
+}
+void Core::execute_ld()
+{
+    auto offset = m_inst.I.imm_11_0 >> 20;
+    auto address = m_core_registers[m_inst.I.rs1].first + offset;
+    auto data = m_mem->read64(address);
+    m_core_registers[m_inst.I.rd].first = data;
 }
 
 void Core::parser_load_inst()
 {
     switch (m_inst.I.func3)
     {
-        case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LB"  ;     break;
-        case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LH"  ;     break;
-        case 2:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LW"  ;     break;
-        case 4:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LBU" ;     break;
-        case 5:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LHU" ;     break;
-        case 6:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LWU" ;     break;
-        case 3:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LD" ;     break;
+        case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LB"  ; execute_lb() ; break;
+        case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LH"  ; execute_lh() ; break;
+        case 2:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LW"  ; execute_lw() ; break;
+        case 4:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LBU" ; execute_lbu(); break;
+        case 5:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LHU" ; execute_lhu(); break;
+        case 6:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LWU" ; execute_lwu(); break;
+        case 3:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LD"  ; execute_ld() ; break;
         default:
             std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "load";
             break;
@@ -65,9 +202,18 @@ void Core::parser_store_inst()
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.S.imm_11_5 << std::endl;
 }
 
-void Core::execute_addi(){
+void Core::execute_addi(){   //// ??????????????????????????????????????
     // addi x3, x3, 0x678    // x3 + 0x678 --> x3  , x3 寄存器寻址
-    m_core_registers[m_inst.I.rd].first = m_core_registers[m_inst.I.rs1].first + m_inst.I.imm_11_0;
+    auto flag = m_inst.I.imm_11_0 & 0x800;  // 取出符号位 1 为负
+    if (flag)
+    {
+        auto imm  = m_inst.I.imm_11_0 & 0xFFFFF; // clear 清除符号位
+    }
+    else {
+        auto imm  = m_inst.I.imm_11_0 ;
+    }
+
+    m_core_registers[m_inst.I.rd].first = m_core_registers[m_inst.I.rs1].first + imm;
 }
 void Core::execute_slti(){
 
@@ -110,7 +256,7 @@ void Core::parser_imm_inst()
 
     std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.I.rd
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.I.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.I.imm_11_0 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << int32_t(m_inst.I.imm_11_0) << std::endl;
 }
 
 void Core::execute_sub()
@@ -276,14 +422,10 @@ void Core::execute_jal()
 {
     m_core_registers[m_inst.UJ.rd].first = m_pc + 4;
 
-    // auto offset = (m_inst.UJ.imm_10_1 | (m_inst.UJ.imm_11 << 10) | \
-    //              (m_inst.UJ.imm_19_12 << 11) | (m_inst.UJ.imm_20 << 19));
-
-    auto offset = int32_t(((m_inst.DoubleWord >> 21) & 0x3FF) | ((m_inst.DoubleWord >> 10) & 0x400) |
-                                ((m_inst.DoubleWord >> 1) & 0x7F800) | ((m_inst.DoubleWord >> 12) & 0x80000)) << 12 >> 11;
+    auto offset = (m_inst.UJ.imm_10_1 | (m_inst.UJ.imm_11 << 11) | \
+                 (m_inst.UJ.imm_19_12 << 12) | (m_inst.UJ.imm_20 << 20)) << 12 >> 11;
 
     m_pc = m_pc + offset;
-    m_pc -= 4;
 }
 
 void Core::parser_jal_inst()
@@ -318,7 +460,11 @@ void Core::fetch()
     std::cout << std::endl;
     std::cout << std::setw(3)  << std::left << std::setfill(' ')  << "PC:" << std::hex << m_pc << std::endl;
     std::cout << std::setw(80) << std::left << std::setfill('-') << "-" << std::endl;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << "Fetch   :";
+
+    if (m_core_registers[zero].first != 0)
+    {
+        m_core_registers[zero].first = 0;
+    }
 
     /** check pc align with byte. */
     if ((m_pc % 2) != 0)
@@ -328,9 +474,11 @@ void Core::fetch()
 
     /** read pc m_inst */
     m_inst.DoubleWord = m_mem->read32(m_pc);
-    std::cout << std::setw(10) << std::left << std::setfill(' ')  << "pc"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_pc
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.DoubleWord << std::endl;
+    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Fetched" << ":"
+              << "instruction "
+              << std::hex << m_inst.DoubleWord
+              << " at address "
+              << std::hex << m_pc << std::endl;
 
     m_fetch_bubble = false;
     m_fetch_stall = false;
@@ -338,7 +486,7 @@ void Core::fetch()
 
 void Core::execute()
 {
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << "execute :";
+    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Execute" << ":";
 
     if (m_fetch_stall)
     {
@@ -348,6 +496,7 @@ void Core::execute()
     if (m_fetch_bubble || m_inst.DoubleWord == 0)
     {
         std::cout << "Get fetch bubble" << std::endl;
+        m_pc += INST_LEN;
         return;
     }
 
@@ -368,8 +517,10 @@ void Core::execute()
         case InstOpCode::IMM32  : parser_imm32_inst() ; break;
         case InstOpCode::OP32   : parser_op32_inst()  ; break;
         default:
-            std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "UNKNOW OpCode !!!!!!!!!!!   "  << FORMAT << m_inst.common.opcode
-                    << " INST: " << FORMAT << m_inst.DoubleWord  << std::endl;
+            std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "UNKNOW OpCode !!!!!!!!!!!   "
+                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_inst.common.opcode
+                      << " INST: "
+                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_inst.DoubleWord  << std::endl;
             break;
     };
 
@@ -415,7 +566,7 @@ int main(int argc, char **argv)
 
     // mem.dump();
 
-    uint32_t times{9};
+    uint32_t times{20};
     while (times--) {
         core.fetch();
         core.execute();

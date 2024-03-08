@@ -17,12 +17,31 @@ public:
     }
     ~Core() = default;
 
+    // 取值阶段(IF):更新PC,取指写入IR
+    // 译码阶段(ID):立即数拼接扩展与rs1、rs2地址取数
+    // 执行阶段(EXE):ALU计算和比较器运行
+    // 访存阶段(MEM):存储器读写
+    // 写回阶段(WB):寄存器组根据rd地址写入数据
+
     void fetch();
     void execute();
 
     void print_core_registers();
 
 private:
+    void execute_lb() ;
+    void execute_lh() ;
+    void execute_lw() ;
+    void execute_lbu();
+    void execute_lhu();
+    void execute_lwu();
+    void execute_ld() ;
+    void execute_beq() ;
+    void execute_bne() ;
+    void execute_blt() ;
+    void execute_bge() ;
+    void execute_bltu();
+    void execute_bgeu();
     void execute_auipc();
     void execute_addi();
     void execute_slti();
@@ -52,15 +71,16 @@ private:
 public:
 
     uint32_t m_pc;
+    Instruction m_inst;
+
     Memory * m_mem;
     Stack  m_stack;
 
     bool m_fetch_bubble;
     bool m_fetch_stall;
+
     bool m_execute_bubble;
     bool m_execute_stall;
-
-    Instruction m_inst;
 
     enum {
         zero = 0,
@@ -97,7 +117,7 @@ public:
         t6      ,
     };
 
-    std::map<uint32_t,  std::pair<uint32_t, std::string>> m_core_registers{
+    std::map<uint32_t,  std::pair<uint64_t, std::string>> m_core_registers{
         /**std::pair < value, alias_name > */
         std::make_pair( zero , std::make_pair( 0, "zero" )),  //  x0
         std::make_pair( ra   , std::make_pair( 0, "ra"   )),  //  x1

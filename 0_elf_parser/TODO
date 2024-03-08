@@ -1,0 +1,27 @@
+
+1. execute RISCV32I instruction set ELF.
+   Dump all mem
+   Dump Elf all item
+   Dump core register
+   Dump pc real-time change for each pipeline stage
+   Dump stack change
+
+2. port lettleshell for risc32i
+
+3. Fix run lettleshell inst issue.
+
+4. extend single-core to muti-core support.
+
+6. port free-RTOS to run in this core.
+
+
+
+
+
+
+
+
+6. add NUMA(core memory relate) memory resource mangement  // there is no performance improvement for simulate CPU.
+
+
+

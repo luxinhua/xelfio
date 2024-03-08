@@ -29,7 +29,7 @@ void Memory::allocPage(Address addr)
     }
 }
 
-uint8_t Memory::readbyte(uint32_t addr)
+uint8_t Memory::read8(uint32_t addr)
 {
     auto address = Address{addr};
 
@@ -41,7 +41,7 @@ uint8_t Memory::readbyte(uint32_t addr)
     return m_mem[address.m_Dir][address.m_page][address.m_offset].data;
 }
 
-void Memory::writebyte(uint32_t addr, uint8_t data)
+void Memory::write8(uint32_t addr, uint8_t data)
 {
     auto address = Address{addr};
 
@@ -53,6 +53,19 @@ void Memory::writebyte(uint32_t addr, uint8_t data)
     m_mem[address.m_Dir][address.m_page][address.m_offset].data = data;
     m_mem[address.m_Dir][address.m_page][address.m_offset].status = MemType::Allocated;
 }
+uint16_t Memory::read16(uint32_t addr)
+{
+    uint32_t localData{0};
+    uint32_t data{0};
+
+    for(uint32_t index=0; index<2; index++)
+    {
+        localData = read8(addr + index);
+        data = data | (localData << (index * 8));
+    }
+
+    return data;
+}
 
 uint32_t Memory::read32(uint32_t addr)
 {
@@ -61,18 +74,9 @@ uint32_t Memory::read32(uint32_t addr)
 
     for(uint32_t index=0; index<4; index++)
     {
-        localData = readbyte(addr + index);
-
-        // std::cout << "adddr "
-        //         << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr + index
-        //         << std::hex << std::setw(20) << std::left << std::setfill(' ')  << +localData << std::endl;
-
+        localData = read8(addr + index);
         data = data | (localData << (index * 8));
     }
-
-    // std::cout << "adddress "
-    //           << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
-    //           << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
 
     return data;
 }
@@ -83,20 +87,22 @@ uint64_t Memory::read64(uint32_t addr)
 
     for(uint32_t index=0; index<8; index++)
     {
-        localData = readbyte(addr + index);
-
-        // std::cout << "adddr "
-        //         << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr + index
-        //         << std::hex << std::setw(20) << std::left << std::setfill(' ')  << +localData << std::endl;
+        localData = read8(addr + index);
 
         data = data | (localData << (index * 8));
     }
 
-    // std::cout << "adddress "
-    //           << std::hex << std::setw(10) << std::left << std::setfill(' ') << addr
-    //           << std::hex << std::setw(20) << std::left << std::setfill(' ')  << data << std::endl;
-
     return data;
+}
+void Memory::write16(uint32_t addr, uint16_t data)
+{
+    uint8_t localData{0};
+
+    for(int index=0; index<sizeof(uint16_t); index++)
+    {
+        localData = static_cast<uint8_t>(data>>(index * 8));
+        write8(addr+index , localData);
+    }
 }
 void Memory::write32(uint32_t addr, uint32_t data)
 {
@@ -105,7 +111,7 @@ void Memory::write32(uint32_t addr, uint32_t data)
     for(int index=0; index<sizeof(uint32_t); index++)
     {
         localData = static_cast<uint8_t>(data>>(index * 8));
-        writebyte(addr+index , localData);
+        write8(addr+index , localData);
     }
 }
 
@@ -116,7 +122,7 @@ void Memory::write64(uint32_t addr, uint64_t data)
     for(int index=0; index<sizeof(uint64_t); index++)
     {
         localData = static_cast<uint8_t>(data>>(index * 8));
-        writebyte(addr+index , localData);
+        write8(addr+index , localData);
     }
 }
 
@@ -226,7 +232,7 @@ void Memory::dump()
 
 //     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0x0123456789abcdef});
 //     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0x0123456789abcdef});
-//     m.writebyte(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
+//     m.write8(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
 
 //     m.read64(Address(0x2,0x3,0x00).value());
 //     m.read64(Address(0x2,0x3,0x10).value());

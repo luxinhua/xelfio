@@ -26,7 +26,7 @@ void Elfer::loadSegment2Mem(Memory* mem)
     {
         for(uint32_t index=0; index<segment.getMemsz(); index++ )
         {
-            mem->writebyte(segment.getVAddr()+index, this->read8(segment.getOffset()+index));
+            mem->write8(segment.getVAddr()+index, this->read8(segment.getOffset()+index));
         }
     }
 }
