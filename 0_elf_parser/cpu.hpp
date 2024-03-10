@@ -10,6 +10,10 @@ public:
     Core(Memory * memory, Stack stack, uint32_t elf_entry): m_mem{memory}, m_stack{stack}, m_pc{elf_entry}{
         m_fetch_bubble = true;
         m_fetch_stall = true;
+
+        m_decode_bubble = true;
+        m_decode_stall = true;
+
         m_execute_bubble = true;
         m_execute_stall = true;
 
@@ -24,6 +28,7 @@ public:
     // 写回阶段(WB):寄存器组根据rd地址写入数据
 
     void fetch();
+    void decode();
     void execute();
 
     void print_core_registers();
@@ -54,19 +59,63 @@ private:
     void execute_sub();
     void execute_jal();
 
-    void parser_branch_inst();
-    void parser_load_inst();
-    void parser_store_inst();
-    void parser_imm_inst();
-    void parser_reg_inst();
-    void parser_fence_inst();
-    void parser_system_inst();
-    void parser_imm32_inst();
-    void parser_op32_inst();
-    void parser_auipc_inst();
-    void parser_jal_inst();
-    void parser_jalr_inst();
-    void parser_lut_inst();
+    void execute_branch_inst();
+    void execute_load_inst();
+    void execute_store_inst();
+    void execute_imm_inst();
+    void execute_reg_inst();
+    void execute_fence_inst();
+    void execute_system_inst();
+    void execute_imm32_inst();
+    void execute_op32_inst();
+    void execute_auipc_inst();
+    void execute_jal_inst();
+    void execute_jalr_inst();
+    void execute_lut_inst();
+
+    void decode_sb();
+    void decode_sh();
+    void decode_sw();
+    void decode_sd();
+    void decode_lb() ;
+    void decode_lh() ;
+    void decode_lw() ;
+    void decode_lbu();
+    void decode_lhu();
+    void decode_lwu();
+    void decode_ld() ;
+    void decode_beq() ;
+    void decode_bne() ;
+    void decode_blt() ;
+    void decode_bge() ;
+    void decode_bltu();
+    void decode_bgeu();
+    void decode_auipc();
+    void decode_addi();
+    void decode_slti();
+    void decode_sltu();
+    void decode_xori();
+    void decode_ori();
+    void decode_andi();
+    void decode_slli();
+    void decode_srli();
+    void decode_srai();
+    void decode_sub();
+    void decode_jal();
+
+    void decode_branch_inst();
+    void decode_load_inst();
+    void decode_store_inst();
+    void decode_imm_inst();
+    void decode_reg_inst();
+    void decode_fence_inst();
+    void decode_system_inst();
+    void decode_imm32_inst();
+    void decode_op32_inst();
+    void decode_auipc_inst();
+    void decode_jal_inst();
+    void decode_jalr_inst();
+    void decode_lut_inst();
 
 public:
 
@@ -78,6 +127,9 @@ public:
 
     bool m_fetch_bubble;
     bool m_fetch_stall;
+
+    bool m_decode_bubble;
+    bool m_decode_stall;
 
     bool m_execute_bubble;
     bool m_execute_stall;
@@ -117,40 +169,40 @@ public:
         t6      ,
     };
 
-    std::map<uint32_t,  std::pair<uint64_t, std::string>> m_core_registers{
+    std::array<std::pair<uint64_t, std::string>, 32> m_core_registers{
         /**std::pair < value, alias_name > */
-        std::make_pair( zero , std::make_pair( 0, "zero" )),  //  x0
-        std::make_pair( ra   , std::make_pair( 0, "ra"   )),  //  x1
-        std::make_pair( sp   , std::make_pair( 0, "sp"   )),  //  x2
-        std::make_pair( gp   , std::make_pair( 0, "gp"   )),  //  x3
-        std::make_pair( tp   , std::make_pair( 0, "tp"   )),  //  x4
-        std::make_pair( t0   , std::make_pair( 0, "t0"   )),  //  x5
-        std::make_pair( t1   , std::make_pair( 0, "t1"   )),  //  x6
-        std::make_pair( t2   , std::make_pair( 0, "t2"   )),  //  x7
-        std::make_pair( s0   , std::make_pair( 0, "s0"   )),  //  x8
-        std::make_pair( s1   , std::make_pair( 0, "s1"   )),  //  x9
-        std::make_pair( a0   , std::make_pair( 0, "a0"   )),  // x10
-        std::make_pair( a1   , std::make_pair( 0, "a1"   )),  // x11
-        std::make_pair( a2   , std::make_pair( 0, "a2"   )),  // x12
-        std::make_pair( a3   , std::make_pair( 0, "a3"   )),  // x13
-        std::make_pair( a4   , std::make_pair( 0, "a4"   )),  // x14
-        std::make_pair( a5   , std::make_pair( 0, "a5"   )),  // x15
-        std::make_pair( a6   , std::make_pair( 0, "a6"   )),  // x16
-        std::make_pair( a7   , std::make_pair( 0, "a7"   )),  // x17
-        std::make_pair( s2   , std::make_pair( 0, "s2"   )),  // x18
-        std::make_pair( s3   , std::make_pair( 0, "s3"   )),  // x19
-        std::make_pair( s4   , std::make_pair( 0, "s4"   )),  // x20
-        std::make_pair( s5   , std::make_pair( 0, "s5"   )),  // x21
-        std::make_pair( s6   , std::make_pair( 0, "s6"   )),  // x22
-        std::make_pair( s7   , std::make_pair( 0, "s7"   )),  // x23
-        std::make_pair( s8   , std::make_pair( 0, "s8"   )),  // x24
-        std::make_pair( s9   , std::make_pair( 0, "s9"   )),  // x25
-        std::make_pair( s10  , std::make_pair( 0, "s10"  )),  // x26
-        std::make_pair( s11  , std::make_pair( 0, "s11"  )),  // x27
-        std::make_pair( t3   , std::make_pair( 0, "t3"   )),  // x28
-        std::make_pair( t4   , std::make_pair( 0, "t4"   )),  // x29
-        std::make_pair( t5   , std::make_pair( 0, "t5"   )),  // x30
-        std::make_pair( t6   , std::make_pair( 0, "t6"   )),  // x31
+        std::make_pair( 0, "zero" ),  //  x0
+        std::make_pair( 0, "ra"   ),  //  x1
+        std::make_pair( 0, "sp"   ),  //  x2
+        std::make_pair( 0, "gp"   ),  //  x3
+        std::make_pair( 0, "tp"   ),  //  x4
+        std::make_pair( 0, "t0"   ),  //  x5
+        std::make_pair( 0, "t1"   ),  //  x6
+        std::make_pair( 0, "t2"   ),  //  x7
+        std::make_pair( 0, "s0"   ),  //  x8
+        std::make_pair( 0, "s1"   ),  //  x9
+        std::make_pair( 0, "a0"   ),  // x10
+        std::make_pair( 0, "a1"   ),  // x11
+        std::make_pair( 0, "a2"   ),  // x12
+        std::make_pair( 0, "a3"   ),  // x13
+        std::make_pair( 0, "a4"   ),  // x14
+        std::make_pair( 0, "a5"   ),  // x15
+        std::make_pair( 0, "a6"   ),  // x16
+        std::make_pair( 0, "a7"   ),  // x17
+        std::make_pair( 0, "s2"   ),  // x18
+        std::make_pair( 0, "s3"   ),  // x19
+        std::make_pair( 0, "s4"   ),  // x20
+        std::make_pair( 0, "s5"   ),  // x21
+        std::make_pair( 0, "s6"   ),  // x22
+        std::make_pair( 0, "s7"   ),  // x23
+        std::make_pair( 0, "s8"   ),  // x24
+        std::make_pair( 0, "s9"   ),  // x25
+        std::make_pair( 0, "s10"  ),  // x26
+        std::make_pair( 0, "s11"  ),  // x27
+        std::make_pair( 0, "t3"   ),  // x28
+        std::make_pair( 0, "t4"   ),  // x29
+        std::make_pair( 0, "t5"   ),  // x30
+        std::make_pair( 0, "t6"   ),  // x31
     };
 
 
