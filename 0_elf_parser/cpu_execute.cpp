@@ -13,7 +13,7 @@ using namespace std;
 
 void Core::execute_branch_inst()
 {
-    switch (m_inst.rv32i.S.func3)
+    switch (m_execute_inst.rv32i.S.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "BEQ"  ;
             execute_beq() ;
@@ -38,11 +38,11 @@ void Core::execute_branch_inst()
             break;
     }
 
-    auto imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                        (m_inst.rv32i.SB.imm_11 << 11) | (m_inst.rv32i.SB.imm_12 << 12) ) << 19 ) >> 19;
+    auto imm = int32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                        (m_execute_inst.rv32i.SB.imm_11 << 11) | (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19 ) >> 19;
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.SB.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.SB.rs2
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.SB.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.SB.rs2
               << std::setw(10) << std::left << std::setfill(' ') << std::dec << imm
               << std::endl;
 
@@ -50,7 +50,7 @@ void Core::execute_branch_inst()
 
 void Core::execute_load_inst()
 {
-    switch (m_inst.rv32i.I.func3)
+    switch (m_execute_inst.rv32i.I.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LB"  ; execute_lb() ; break;
         case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LH"  ; execute_lh() ; break;
@@ -66,14 +66,14 @@ void Core::execute_load_inst()
 
 
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.imm_11_0 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.imm_11_0 << std::endl;
 }
 
 void Core::execute_store_inst()
 {
-    switch (m_inst.rv32i.S.func3)
+    switch (m_execute_inst.rv32i.S.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SB"  ;     break;
         case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SH"  ;     break;
@@ -84,15 +84,15 @@ void Core::execute_store_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.S.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.S.rs2
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.S.imm_4_0
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.S.imm_11_5 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.S.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.S.rs2
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.S.imm_4_0
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.S.imm_11_5 << std::endl;
 }
 
 void Core::execute_imm_inst()
 {
-    switch (m_inst.rv32i.I.func3)
+    switch (m_execute_inst.rv32i.I.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<  "ADDI  "     ; execute_addi();  break;
         case 2:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<  "SLTI  "     ; execute_slti();  break;
@@ -107,21 +107,21 @@ void Core::execute_imm_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.imm_11_0 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.imm_11_0 << std::endl;
 }
 
 void Core::execute_reg_inst()
 {
-    switch (m_inst.rv32i.R.func3)
+    switch (m_execute_inst.rv32i.R.func3)
     {
         case 0:
-            if (m_inst.rv32i.R.func7 == 0)
+            if (m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "ADD " ;
             }
-            else if (m_inst.rv32i.R.func7 == 0x20)
+            else if (m_execute_inst.rv32i.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SUB " ;
                 execute_sub();
@@ -132,11 +132,11 @@ void Core::execute_reg_inst()
         case 3:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SLTU"  ;     break;
         case 4:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "XOR "  ;     break;
         case 5:
-            if (m_inst.rv32i.R.func7 == 0)
+            if (m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRL " ;
             }
-            else if (m_inst.rv32i.R.func7 == 0x20)
+            else if (m_execute_inst.rv32i.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRA " ;
             }
@@ -148,9 +148,9 @@ void Core::execute_reg_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs2 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs2 << std::endl;
 }
 
 void Core::execute_fence_inst()
@@ -160,14 +160,14 @@ void Core::execute_fence_inst()
 
 void Core::execute_system_inst()
 {
-    switch (m_inst.rv32i.R.func3)
+    switch (m_execute_inst.rv32i.R.func3)
     {
         case 0:
-            if (m_inst.rv32i.R.func7 == 0)
+            if (m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "ECALL "  ;
             }
-            else if(m_inst.rv32i.R.func7 == 1)
+            else if(m_execute_inst.rv32i.R.func7 == 1)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "EBREA "  ;
             }
@@ -183,23 +183,23 @@ void Core::execute_system_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.imm_11_0 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.imm_11_0 << std::endl;
 }
 
 void Core::execute_imm32_inst()
 {
-    switch (m_inst.rv32i.R.func3)
+    switch (m_execute_inst.rv32i.R.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "ADDIW"  ;     break;
         case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SLLIW"  ;     break;
         case 5:
-            if(m_inst.rv32i.R.func7 == 0)
+            if(m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRLIW"  ;
             }
-            else if (m_inst.rv32i.R.func7 == 0x20)
+            else if (m_execute_inst.rv32i.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRAIW"  ;
             }
@@ -209,34 +209,34 @@ void Core::execute_imm32_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs2
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.func7 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs2
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.func7 << std::endl;
 
 }
 
 void Core::execute_op32_inst()
 {
-    switch (m_inst.rv32i.R.func3)
+    switch (m_execute_inst.rv32i.R.func3)
     {
         case 0:
-            if (m_inst.rv32i.R.func7 == 0)
+            if (m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "ADDW"  ;
             }
-            else if(m_inst.rv32i.R.func7 == 0x20)
+            else if(m_execute_inst.rv32i.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SUBW"  ;
             }
             break;
         case 1:    std::cout << std::setw(10) << std::left << std::setfill(' ') << "SLLW"  ;     break;
         case 5:
-            if (m_inst.rv32i.R.func7 == 0)
+            if (m_execute_inst.rv32i.R.func7 == 0)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRLW"  ;
             }
-            else if(m_inst.rv32i.R.func7 == 0x20)
+            else if(m_execute_inst.rv32i.R.func7 == 0x20)
             {
                 std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "SRAW"  ;
             }
@@ -246,17 +246,17 @@ void Core::execute_op32_inst()
             break;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.rs2
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.R.func7 << std::endl;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.rs2
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.R.func7 << std::endl;
 }
 
 void Core::execute_auipc_inst()
 {
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "AUIPC"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.imm_31_12 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.U.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.U.imm_31_12 << std::endl;
 
     execute_auipc();
 }
@@ -264,11 +264,11 @@ void Core::execute_auipc_inst()
 void Core::execute_jal_inst()
 {
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "JAL"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.UJ.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.UJ.imm_10_1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.UJ.imm_11
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.UJ.imm_19_12
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.UJ.imm_20 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.UJ.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.UJ.imm_10_1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.UJ.imm_11
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.UJ.imm_19_12
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.UJ.imm_20 << std::endl;
 
     execute_jal();
 }
@@ -276,99 +276,99 @@ void Core::execute_jal_inst()
 void Core::execute_jalr_inst()
 {
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "JALR"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.rs1
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.I.imm_11_0 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.rs1
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.I.imm_11_0 << std::endl;
 }
 
 void Core::execute_lut_inst()
 {
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "LUT"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.imm_31_12 << std::endl;
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.U.rd
+              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_execute_inst.rv32i.U.imm_31_12 << std::endl;
 }
 
 void Core::execute_beq()
 {
-    int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    int32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 == rs2)
     {
-        auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19 ) >> 19 ;
+        auto offset = int32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19 ) >> 19 ;
         m_pc += offset;
     }
 }
 void Core::execute_bne()
 {
-    int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    int32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 != rs2)
     {
-        auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
+        auto offset = int32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
         m_pc += offset;
     }
 }
 void Core::execute_blt()
 {
-    int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    int32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 < rs2)
     {
-        auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
+        auto offset = int32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
         m_pc += offset;
     }
 }
 void Core::execute_bge()
 {
-    int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    int32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    int32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 > rs2)
     {
-        auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
+        auto offset = int32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
         m_pc += offset;
     }
 }
 void Core::execute_bltu()
 {
-    uint32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    uint32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    uint32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    uint32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 < rs2)
     {
-        auto offset = uint32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                 (m_inst.rv32i.SB.imm_11 << 11) | \
-                                 (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
+        auto offset = uint32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                 (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                 (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                 (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
         m_pc += offset;
     }
 }
 void Core::execute_bgeu()
 {
-    uint32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
-    uint32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
+    uint32_t rs1 = m_core_registers[m_execute_inst.rv32i.SB.rs1].first;
+    uint32_t rs2 = m_core_registers[m_execute_inst.rv32i.SB.rs2].first;
 
     if (rs1 > rs2)
     {
-        auto offset = uint32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                 (m_inst.rv32i.SB.imm_11 << 11) | \
-                                 (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
+        auto offset = uint32_t(( (m_execute_inst.rv32i.SB.imm_4_1) | \
+                                 (m_execute_inst.rv32i.SB.imm_10_5 << 5) | \
+                                 (m_execute_inst.rv32i.SB.imm_11 << 11) | \
+                                 (m_execute_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
         m_pc += offset;
     }
 }
@@ -376,66 +376,66 @@ void Core::execute_bgeu()
 
 void Core::execute_lb()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = int32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read8(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_lh()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = int32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read16(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_lw()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = int32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read32(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_lbu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = uint32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read8(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_lhu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = uint32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read16(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_lwu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = uint32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read32(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 void Core::execute_ld()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto offset = int32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto address = m_core_registers[m_execute_inst.rv32i.I.rs1].first + offset;
     auto data = m_mem->read64(address);
 
-    m_core_registers[m_inst.rv32i.I.rd].first = data;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = data;
 }
 
 void Core::execute_addi(){
-    auto imm = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto rs1 = m_core_registers[m_inst.rv32i.I.rs1].first;
+    auto imm = int32_t(m_execute_inst.rv32i.I.imm_11_0 << 20) >> 20;
+    auto rs1 = m_core_registers[m_execute_inst.rv32i.I.rs1].first;
 
-    m_core_registers[m_inst.rv32i.I.rd].first = rs1 + imm;
+    m_core_registers[m_execute_inst.rv32i.I.rd].first = rs1 + imm;
 }
 void Core::execute_slti(){
 
@@ -461,27 +461,27 @@ void Core::execute_srai(){
 
 void Core::execute_sub()
 {
-    auto rs1 = m_core_registers[m_inst.rv32i.R.rs1].first;
-    auto rs2 = m_core_registers[m_inst.rv32i.R.rs2].first;
+    auto rs1 = m_core_registers[m_execute_inst.rv32i.R.rs1].first;
+    auto rs2 = m_core_registers[m_execute_inst.rv32i.R.rs2].first;
 
-    m_core_registers[m_inst.rv32i.R.rd].first = rs1 - rs2;
+    m_core_registers[m_execute_inst.rv32i.R.rd].first = rs1 - rs2;
 }
 
 void Core::execute_auipc()
 {
-    auto offset = int32_t(m_inst.rv32i.U.imm_31_12 << 12);
+    auto offset = int32_t(m_execute_inst.rv32i.U.imm_31_12 << 12);
 
-    m_core_registers[m_inst.rv32i.U.rd].first = m_pc + offset;
+    m_core_registers[m_execute_inst.rv32i.U.rd].first = m_pc + offset;
 }
 
 void Core::execute_jal()
 {
-    m_core_registers[m_inst.rv32i.UJ.rd].first = m_pc + 4;
+    m_core_registers[m_execute_inst.rv32i.UJ.rd].first = m_pc + 4;
 
-    auto offset = int32_t((m_inst.rv32i.UJ.imm_10_1 | \
-                          (m_inst.rv32i.UJ.imm_11 << 11) | \
-                          (m_inst.rv32i.UJ.imm_19_12 << 12) | \
-                          (m_inst.rv32i.UJ.imm_20 << 20)) << 12) >> 11;
+    auto offset = int32_t((m_execute_inst.rv32i.UJ.imm_10_1 | \
+                          (m_execute_inst.rv32i.UJ.imm_11 << 11) | \
+                          (m_execute_inst.rv32i.UJ.imm_19_12 << 12) | \
+                          (m_execute_inst.rv32i.UJ.imm_20 << 20)) << 12) >> 11;
 
     m_pc = m_pc + offset;
 }
@@ -490,22 +490,23 @@ void Core::execute()
 {
     std::cout << std::setw(8) << std::left << std::setfill(' ') << "Execute" << ":";
 
-    if (m_fetch_stall)
+    std::cout << std::setw(13) << std::left << std::setfill(' ') << "instruction" ;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_execute_inst.DoubleWord;
+    std::cout << std::setw(12) << std::left << std::setfill(' ') << "at address" ;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_execute_pc ;
+    std::cout << std::endl;
+
+    if (m_decode_stall)
     {
         m_pc -= INST_LEN;
     }
 
-    if (m_fetch_bubble || m_inst.DoubleWord == 0)
+    if (m_decode_bubble)
     {
-        std::cout << "Get fetch bubble" << std::endl;
-        m_pc += INST_LEN;
-        return;
+        std::cout << "decode bubble" << std::endl;
     }
 
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_pc;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_inst.DoubleWord;
-
-    switch (static_cast<InstOpCode>(m_inst.common.opcode))
+    switch (static_cast<InstOpCode>(m_execute_inst.common.opcode))
     {
         case InstOpCode::REG    : execute_reg_inst()   ; break;
         case InstOpCode::IMM    : execute_imm_inst()   ; break;
@@ -521,11 +522,11 @@ void Core::execute()
         case InstOpCode::OP32   : execute_op32_inst()  ; break;
         default:
             std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "UNKNOW OpCode !!!!!!!!!!!   "
-                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_inst.common.opcode
+                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_execute_inst.common.opcode
                       << " INST: "
-                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_inst.DoubleWord  << std::endl;
+                      << std::dec << std::setw(12) << std::setfill(' ')  << std::left << m_execute_inst.DoubleWord  << std::endl;
             break;
     };
 
-    m_pc += INST_LEN;
+
 }

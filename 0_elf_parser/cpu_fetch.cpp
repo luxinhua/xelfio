@@ -27,12 +27,19 @@ void Core::fetch()
 
     /** read pc m_inst */
     m_inst.DoubleWord = m_mem->read32(m_pc);
-    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Fetched" << ":"
-              << "instruction "
-              << std::hex << m_inst.DoubleWord
-              << " at address "
-              << std::hex << m_pc << std::endl;
+
+    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Fetched" << ":";
+    std::cout << std::setw(13) << std::left << std::setfill(' ') << "instruction" ;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_inst.DoubleWord;
+    std::cout << std::setw(12) << std::left << std::setfill(' ') << "at address" ;
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_pc ;
+    std::cout << std::endl;
 
     m_fetch_bubble = false;
     m_fetch_stall = false;
+
+    m_decode_pc = m_pc;
+    m_decode_inst = m_inst;
+
+    m_pc += 4;
 }

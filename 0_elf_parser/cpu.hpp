@@ -120,7 +120,12 @@ private:
 public:
 
     uint32_t m_pc;
+    uint32_t m_decode_pc;
+    uint32_t m_execute_pc;
+
     Instruction m_inst;
+    Instruction m_decode_inst;
+    Instruction m_execute_inst;
 
     Memory * m_mem;
     Stack  m_stack;

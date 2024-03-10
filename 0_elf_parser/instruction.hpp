@@ -187,8 +187,8 @@ struct Instruction
     };
     uint32_t imm;
     std::string opName;
-    std::string decodeView;
-    std::string decodeViewValue;
+    // std::string decodeView;
+    // std::string decodeViewValue;
 };
 
 #define   OUT_PRINT       std::cout << std::hex << std::setw(12) << std::setfill(' ')  << std::left
