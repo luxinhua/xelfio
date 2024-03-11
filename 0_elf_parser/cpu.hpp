@@ -8,16 +8,11 @@
 class Core{
 public:
     Core(Memory * memory, Stack stack, uint32_t elf_entry): m_mem{memory}, m_stack{stack}, m_pc{elf_entry}{
-        m_fetch_bubble = true;
-        m_fetch_stall = true;
-
-        m_decode_bubble = true;
-        m_decode_stall = true;
-
-        m_execute_bubble = true;
-        m_execute_stall = true;
+        m_inst.DoubleWord = 0;
 
         m_core_registers[sp].first = m_stack.m_base;
+
+
     }
     ~Core() = default;
 
@@ -30,6 +25,7 @@ public:
     void fetch();
     void decode();
     void execute();
+    void movePipe();
 
     void print_core_registers();
 
@@ -118,26 +114,26 @@ private:
     void decode_lut_inst();
 
 public:
-
-    uint32_t m_pc;
-    uint32_t m_decode_pc;
-    uint32_t m_execute_pc;
-
-    Instruction m_inst;
-    Instruction m_decode_inst;
-    Instruction m_execute_inst;
-
     Memory * m_mem;
     Stack  m_stack;
 
-    bool m_fetch_bubble;
-    bool m_fetch_stall;
+    struct Stage{
+        uint32_t m_pc;
+        Instruction m_inst;
+        bool m_bubble;
+        bool m_stall;
+    };
 
-    bool m_decode_bubble;
-    bool m_decode_stall;
+    struct Stage FetchReg{0};
+    struct Stage FetchRegNew{0};
+    struct Stage DecodeReg{0};
+    struct Stage DecodeRegNew{0};
+    struct Stage ExecuteReg{0};
+    struct Stage ExecuteRegNew{0};
 
-    bool m_execute_bubble;
-    bool m_execute_stall;
+    uint32_t m_pc;
+
+    Instruction m_inst;
 
     enum {
         zero = 0,

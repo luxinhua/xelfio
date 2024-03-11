@@ -35,11 +35,10 @@ void Core::fetch()
     std::cout << std::setw(10) << std::left << std::setfill(' ') << m_pc ;
     std::cout << std::endl;
 
-    m_fetch_bubble = false;
-    m_fetch_stall = false;
-
-    m_decode_pc = m_pc;
-    m_decode_inst = m_inst;
+    FetchRegNew.m_bubble = false;
+    FetchRegNew.m_stall = false;
+    FetchRegNew.m_pc = m_pc;
+    FetchRegNew.m_inst = m_inst;
 
     m_pc += 4;
 }

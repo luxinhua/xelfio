@@ -24,6 +24,13 @@ void Core::print_core_registers()
     std::cout << std::setw(80) << std::left << std::setfill('-') << "-" << std::endl;
 }
 
+void Core::movePipe()
+{
+    FetchReg = FetchRegNew;
+    DecodeReg = DecodeRegNew;
+    ExecuteReg = ExecuteRegNew;
+}
+
 int main(int argc, char **argv)
 {
     Memory mem;
@@ -42,12 +49,13 @@ int main(int argc, char **argv)
 
     // mem.dump();
 
-    uint32_t times{4};
+    uint32_t times{6};
     while (times--) {
         core.fetch();
         core.decode();
         core.execute();
         core.print_core_registers();
+        core.movePipe();
     };
 
     return 0;
