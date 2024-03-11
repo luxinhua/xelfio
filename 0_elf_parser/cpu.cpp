@@ -7,21 +7,21 @@ void Core::print_core_registers()
 {
     uint32_t line_cout{0};
 
-    std::cout << std::setw(80) << std::left << std::setfill('-') << "-";
+    std::cout << std::setw(100) << std::left << std::setfill('-') << "-";
 
     for (auto& reg : m_core_registers)
     {
-        if ((line_cout++ % 5) == 0)
+        if ((line_cout++ % 6) == 0)
         {
             std::cout << std::endl;
         }
         std::cout << std::setw(6) << std::left << std::setfill(' ') << reg.second
                   << ":"
-                  << std::setw(10) << std::left << std::setfill(' ') << reg.first ;
+                  << std::setw(10) << std::left << std::setfill(' ') << std::hex << reg.first ;
     };
 
     std::cout << std::endl;
-    std::cout << std::setw(80) << std::left << std::setfill('-') << "-" << std::endl;
+    std::cout << std::setw(100) << std::left << std::setfill('-') << "-" << std::endl;
 }
 
 void Core::movePipe()
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
     // mem.dump();
 
-    uint32_t times{6};
+    uint32_t times{50};
     while (times--) {
         core.fetch();
         core.decode();

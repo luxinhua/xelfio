@@ -485,7 +485,7 @@ void Core::execute_jal()
 
     DecodeReg.m_pc += offset;
 
-    m_pc = DecodeReg.m_pc;
+    // m_pc = DecodeReg.m_pc;
 }
 
 void Core::execute()

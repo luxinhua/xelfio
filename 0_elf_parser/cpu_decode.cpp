@@ -276,13 +276,13 @@ void Core::decode_addi(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::to_string(m_inst.imm);
+              << std::hex << m_inst.imm;
     std::cout << " //// " ;
     std::cout << m_core_registers[m_inst.rv32i.I.rd].second
               << " = "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << " + "
-              << std::to_string(m_inst.imm);
+              << std::hex << m_inst.imm;
 }
 void Core::decode_slti(){
 
@@ -318,7 +318,11 @@ void Core::decode_auipc()
               << " "
               << m_core_registers[m_inst.rv32i.U.rd].second
               << ", "
-              << std::to_string(m_inst.imm);
+              << std::hex << m_inst.imm;
+    std::cout << " //// ";
+    std::cout << m_core_registers[m_inst.rv32i.U.rd].second
+              << "= pc + "
+              << std::hex << m_inst.imm;
 }
 void Core::decode_jal()
 {

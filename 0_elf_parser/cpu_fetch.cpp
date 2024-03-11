@@ -7,7 +7,7 @@ void Core::fetch()
 {
     std::cout << std::endl;
     std::cout << std::setw(3)  << std::left << std::setfill(' ')  << "PC:" << std::hex << m_pc << std::endl;
-    std::cout << std::setw(80) << std::left << std::setfill('-') << "-" << std::endl;
+    // std::cout << std::setw(80) << std::left << std::setfill('-') << "-" << std::endl;
 
     if (m_core_registers[zero].first != 0)
     {
