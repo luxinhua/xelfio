@@ -9,10 +9,7 @@ class Core{
 public:
     Core(Memory * memory, Stack stack, uint32_t elf_entry): m_mem{memory}, m_stack{stack}, m_pc{elf_entry}{
         m_inst.DoubleWord = 0;
-
         m_core_registers[sp].first = m_stack.m_base;
-
-
     }
     ~Core() = default;
 
@@ -69,6 +66,15 @@ private:
     void execute_jalr_inst();
     void execute_lut_inst();
 
+    void decode_add();
+    void decode_sll();
+    void decode_slt();
+    void decode_sltu();
+    void decode_xor();
+    void decode_srl();
+    void decode_sra();
+    void decode_or();
+    void decode_and();
     void decode_sb();
     void decode_sh();
     void decode_sw();
@@ -89,7 +95,7 @@ private:
     void decode_auipc();
     void decode_addi();
     void decode_slti();
-    void decode_sltu();
+    void decode_sltiu();
     void decode_xori();
     void decode_ori();
     void decode_andi();
@@ -98,6 +104,7 @@ private:
     void decode_srai();
     void decode_sub();
     void decode_jal();
+    void decode_jalr();
 
     void decode_branch_inst();
     void decode_load_inst();
@@ -132,7 +139,6 @@ public:
     struct Stage ExecuteRegNew{0};
 
     uint32_t m_pc;
-
     Instruction m_inst;
 
     enum {
@@ -205,8 +211,6 @@ public:
         std::make_pair( 0, "t5"   ),  // x30
         std::make_pair( 0, "t6"   ),  // x31
     };
-
-
 };
 
 #endif

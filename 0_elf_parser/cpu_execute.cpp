@@ -293,7 +293,7 @@ void Core::execute_beq()
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 == rs2)
+    if (int32_t(rs1) == int32_t(rs2))
     {
         auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
@@ -307,7 +307,7 @@ void Core::execute_bne()
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 != rs2)
+    if (int32_t(rs1) != int32_t(rs2))
     {
         auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
@@ -321,7 +321,7 @@ void Core::execute_blt()
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 < rs2)
+    if (int32_t(rs1) < int32_t(rs2))
     {
         auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
@@ -335,7 +335,7 @@ void Core::execute_bge()
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 > rs2)
+    if (int32_t(rs1) > int32_t(rs2))
     {
         auto offset = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                 (m_inst.rv32i.SB.imm_10_5 << 5) | \
@@ -349,7 +349,7 @@ void Core::execute_bltu()
     uint32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     uint32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 < rs2)
+    if (uint32_t(rs1) < uint32_t(rs2))
     {
         auto offset = uint32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                  (m_inst.rv32i.SB.imm_10_5 << 5) | \
@@ -363,7 +363,7 @@ void Core::execute_bgeu()
     uint32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     uint32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    if (rs1 > rs2)
+    if (uint32_t(rs1) > uint32_t(rs2))
     {
         auto offset = uint32_t(( (m_inst.rv32i.SB.imm_4_1) | \
                                  (m_inst.rv32i.SB.imm_10_5 << 5) | \
