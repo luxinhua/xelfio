@@ -938,7 +938,7 @@ LL_IGNORE_INT_VER	elf.h	/^#define LL_IGNORE_INT_VER /;"	d
 LL_NONE	elf.h	/^#define LL_NONE	/;"	d
 LL_REQUIRE_MINOR	elf.h	/^#define LL_REQUIRE_MINOR /;"	d
 LOAD	instruction.hpp	/^    LOAD   = 0x3,$/;"	e	enum:InstOpCode
-LUT	instruction.hpp	/^    LUT    = 0x37,  \/\/ U$/;"	e	enum:InstOpCode
+LUI	instruction.hpp	/^    LUI    = 0x37,  \/\/ U$/;"	e	enum:InstOpCode
 LW	instruction.hpp	/^    LW     = 0x3,   \/\/ I$/;"	e	enum:InstOpCode
 LWU	instruction.hpp	/^    LWU    = 0x3, \/\/ I$/;"	e	enum:InstOpCode
 MAGENTA	memory.cpp	/^#define MAGENTA /;"	d	file:
@@ -3447,7 +3447,7 @@ decode_ld	cpu_decode.cpp	/^void Core::decode_ld()$/;"	f	class:Core	typeref:typen
 decode_lh	cpu_decode.cpp	/^void Core::decode_lh()$/;"	f	class:Core	typeref:typename:void
 decode_lhu	cpu_decode.cpp	/^void Core::decode_lhu()$/;"	f	class:Core	typeref:typename:void
 decode_load_inst	cpu_decode.cpp	/^void Core::decode_load_inst()$/;"	f	class:Core	typeref:typename:void
-decode_lut_inst	cpu_decode.cpp	/^void Core::decode_lut_inst()$/;"	f	class:Core	typeref:typename:void
+decode_lui_inst	cpu_decode.cpp	/^void Core::decode_lui_inst()$/;"	f	class:Core	typeref:typename:void
 decode_lw	cpu_decode.cpp	/^void Core::decode_lw()$/;"	f	class:Core	typeref:typename:void
 decode_lwu	cpu_decode.cpp	/^void Core::decode_lwu()$/;"	f	class:Core	typeref:typename:void
 decode_op32_inst	cpu_decode.cpp	/^void Core::decode_op32_inst()$/;"	f	class:Core	typeref:typename:void

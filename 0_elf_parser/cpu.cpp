@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
     // mem.dump();
 
-    uint32_t times{50};
+    uint32_t times{100};
     while (times--) {
         core.fetch();
         core.decode();

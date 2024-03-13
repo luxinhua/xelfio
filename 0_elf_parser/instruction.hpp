@@ -8,7 +8,7 @@
 enum class InstOpCode : uint8_t
 {
     // RV32I base inst set
-    LUT    = 0x37,  // U
+    LUI    = 0x37,  // U
 
     AUIPC  = 0x17,  // U
 

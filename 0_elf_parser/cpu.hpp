@@ -24,6 +24,8 @@ public:
     void execute();
     void movePipe();
 
+    int64_t do_Syscall(int64_t op1, int64_t op2);
+
     void print_core_registers();
 
 private:
@@ -106,6 +108,15 @@ private:
     void decode_jal();
     void decode_jalr();
 
+    void decode_ecall();
+    void decode_ebreak();
+    void decode_csrrw() ;
+    void decode_csrrs() ;
+    void decode_csrrc() ;
+    void decode_csrrsw();
+    void decode_csrrsi();
+    void decode_csrrci();
+
     void decode_branch_inst();
     void decode_load_inst();
     void decode_store_inst();
@@ -118,7 +129,7 @@ private:
     void decode_auipc_inst();
     void decode_jal_inst();
     void decode_jalr_inst();
-    void decode_lut_inst();
+    void decode_lui_inst();
 
 public:
     Memory * m_mem;

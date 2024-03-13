@@ -283,7 +283,7 @@ void Core::execute_jalr_inst()
 
 void Core::execute_lut_inst()
 {
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << "LUT"
+    std::cout << std::setw(10) << std::left << std::setfill(' ') << "LUI"
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.rd
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.imm_31_12 << std::endl;
 }
@@ -518,7 +518,7 @@ void Core::execute()
     {
         case InstOpCode::REG    : execute_reg_inst()   ; break;
         case InstOpCode::IMM    : execute_imm_inst()   ; break;
-        case InstOpCode::LUT    : execute_lut_inst()   ; break;
+        case InstOpCode::LUI    : execute_lut_inst()   ; break;
         case InstOpCode::BRANCH : execute_branch_inst(); break;
         case InstOpCode::STORE  : execute_store_inst() ; break;
         case InstOpCode::LOAD   : execute_load_inst()  ; break;
@@ -540,4 +540,43 @@ void Core::execute()
     ExecuteRegNew.m_stall = false;
     ExecuteRegNew.m_inst = DecodeReg.m_inst;
     ExecuteRegNew.m_pc = DecodeReg.m_pc;
+}
+
+
+
+int64_t Core::do_Syscall(int64_t op1, int64_t op2) {
+  int64_t type = op2; // reg a7
+  int64_t arg1 = op1; // reg a0
+  switch (type) {
+  case 0: { // print string
+    uint32_t addr = arg1;
+    char ch = m_mem->read8(addr);
+    while (ch != '\0') {
+      printf("%c", ch);
+      ch = m_mem->read8(++addr);
+    }
+    break;
+  }
+  case 1: // print char
+    printf("%c", (char)arg1);
+    break;
+  case 2: // print num
+    printf("%d", (int32_t)arg1);
+    break;
+  case 3:
+  case 93: // exit
+    std::cout << "Program exit from an exit() system call" << std::endl;
+    exit(0);
+  case 4: // read char
+    // scanf(" %c", (char*)&op1);
+    std::cin >> op1;
+    break;
+  case 5: // read num
+    // scanf(" %lld", (int64_t*)&op1);
+    std::cin >> op1;
+    break;
+  default:
+    throw std::runtime_error("Unknown syscall\n");
+  }
+  return op1;
 }

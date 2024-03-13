@@ -1,814 +1,1304 @@
+[H[2J[3J
+PC:1012c
+Fetched :instruction  3197      at address  1012c
+Decoded :instruction  0         at address  0          : bubble
+Execute :instruction  0         at address  0          : bubble
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :0         tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :0
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
 
-Symbol table '.dynsym' contains 70 entries:
-   Num:    Value          Size Type    Bind   Vis      Ndx Name
-     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
-     1: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_@GLIBCXX_3.4.21 (2)
-     2: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4 (3)
-     3: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcED2Ev@GLIBCXX_3.4 (3)
-     4: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEE5closeEv@GLIBCXX_3.4 (3)
-     5: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEm@GLIBCXX_3.4 (3)
-     6: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4 (3)
-     7: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEPFRSt8ios_baseS0_E@GLIBCXX_3.4 (3)
-     8: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt17__throw_bad_allocv@GLIBCXX_3.4 (3)
-     9: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt13runtime_errorC1EPKc@GLIBCXX_3.4.21 (2)
-    10: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_begin_catch@CXXABI_1.3 (4)
-    11: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS4_@GLIBCXX_3.4.21 (2)
-    12: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strlen@GLIBC_2.2.5 (5)
-    13: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memcmp@GLIBC_2.2.5 (5)
-    14: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GLIBCXX_3.4 (3)
-    15: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt20__throw_length_errorPKc@GLIBCXX_3.4 (3)
-    16: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@GLIBCXX_3.4.21 (2)
-    17: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@GLIBCXX_3.4.21 (2)
-    18: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm@GLIBCXX_3.4.21 (2)
-    19: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base@GLIBCXX_3.4 (3)
-    20: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@GLIBCXX_3.4.21 (2)
-    21: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt19__throw_logic_errorPKc@GLIBCXX_3.4 (3)
-    22: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.34 (6)
-    23: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt28__throw_bad_array_new_lengthv@GLIBCXX_3.4.29 (7)
-    24: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv@GLIBCXX_3.4.21 (2)
-    25: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc@GLIBCXX_3.4.21 (2)
-    26: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_atexit@GLIBC_2.2.5 (5)
-    27: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@GLIBCXX_3.4.21 (2)
-    28: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@GLIBCXX_3.4 (3)
-    29: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _Znwm@GLIBCXX_3.4 (3)
-    30: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZdlPvm@CXXABI_1.3.9 (8)
-    31: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt13runtime_errorD1Ev@GLIBCXX_3.4 (3)
-    32: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4 (3)
-    33: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEPFRSoS_E@GLIBCXX_3.4 (3)
-    34: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_@GLIBCXX_3.4.21 (2)
-    35: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEmc@GLIBCXX_3.4.21 (2)
-    36: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcED1Ev@GLIBCXX_3.4 (3)
-    37: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv@GLIBCXX_3.4.21 (2)
-    38: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_@GLIBCXX_3.4.21 (2)
-    39: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __stack_chk_fail@GLIBC_2.4 (9)
-    40: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw@GLIBCXX_3.4 (3)
-    41: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_@GLIBCXX_3.4.21 (2)
-    42: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv@GLIBCXX_3.4.21 (2)
-    43: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSi4readEPcl@GLIBCXX_3.4 (3)
-    44: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv@GLIBCXX_3.4.21 (2)
-    45: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEj@GLIBCXX_3.4 (3)
-    46: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSi5seekgElSt12_Ios_Seekdir@GLIBCXX_3.4 (3)
-    47: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@GLIBCXX_3.4.21 (2)
-    48: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_rethrow@CXXABI_1.3 (4)
-    49: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt24__throw_out_of_range_fmtPKcz@GLIBCXX_3.4.20 (10)
-    50: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_h@GLIBCXX_3.4 (3)
-    51: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt8ios_base4InitC1Ev@GLIBCXX_3.4 (3)
-    52: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_SetfillIS3_E@GLIBCXX_3.4 (3)
-    53: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode@GLIBCXX_3.4.21 (2)
-    54: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memmove@GLIBC_2.2.5 (5)
-    55: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_end_catch@CXXABI_1.3 (4)
-    56: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __gxx_personality_v0@CXXABI_1.3 (4)
-    57: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEt@GLIBCXX_3.4 (3)
-    58: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEi@GLIBCXX_3.4 (3)
-    59: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTable
-    60: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _Unwind_Resume@GCC_3.0 (11)
-    61: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcEC1Ev@GLIBCXX_3.4 (3)
-    62: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm@GLIBCXX_3.4.21 (2)
-    63: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
-    64: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
-    65: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm@GLIBCXX_3.4.21 (2)
-    66: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt8ios_base4InitD1Ev@GLIBCXX_3.4 (3)
-    67: 0000000000000000     0 FUNC    WEAK   DEFAULT  UND __cxa_finalize@GLIBC_2.2.5 (5)
-    68: 00000000000058e6   325 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
-    69: 0000000000018040   272 OBJECT  GLOBAL DEFAULT   27 _ZSt4cout@GLIBCXX_3.4 (3)
+PC:10130
+Fetched :instruction  6f418193  at address  10130
+Decoded :instruction  3197      at address  1012c      : auiipc gp, 3000 //// gp = pc + 3000
+Execute :instruction  0         at address  0          : bubble
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :0         tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :0
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
 
-Symbol table '.symtab' contains 738 entries:
-   Num:    Value          Size Type    Bind   Vis      Ndx Name
-     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
-     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS Scrt1.o
-     2: 000000000000038c    32 OBJECT  LOCAL  DEFAULT    4 __abi_tag
-     3: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
-     4: 00000000000027d0     0 FUNC    LOCAL  DEFAULT   16 deregister_tm_clones
-     5: 0000000000002800     0 FUNC    LOCAL  DEFAULT   16 register_tm_clones
-     6: 0000000000002840     0 FUNC    LOCAL  DEFAULT   16 __do_global_dtors_aux
-     7: 0000000000018150     1 OBJECT  LOCAL  DEFAULT   27 completed.0
-     8: 0000000000017bc0     0 OBJECT  LOCAL  DEFAULT   23 __do_global_dtors_aux_fini_array_entry
-     9: 0000000000002880     0 FUNC    LOCAL  DEFAULT   16 frame_dummy
-    10: 0000000000017b78     0 OBJECT  LOCAL  DEFAULT   22 __frame_dummy_init_array_entry
-    11: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS elfer.cpp
-    12: 0000000000018151     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    13: 0000000000002b73    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    14: 0000000000002bc9    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I__ZN5Elfer4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    15: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS elf_header.cpp
-    16: 0000000000018152     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    17: 0000000000010008     1 OBJECT  LOCAL  DEFAULT   18 _ZN6__pstl9execution2v1L3seqE
-    18: 0000000000010009     1 OBJECT  LOCAL  DEFAULT   18 _ZN6__pstl9execution2v1L3parE
-    19: 000000000001000a     1 OBJECT  LOCAL  DEFAULT   18 _ZN6__pstl9execution2v1L9par_unseqE
-    20: 000000000001000b     1 OBJECT  LOCAL  DEFAULT   18 _ZN6__pstl9execution2v1L5unseqE
-    21: 00000000000047ce    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    22: 0000000000004824    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I__ZN9ElfHeader4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    23: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS main.cpp
-    24: 0000000000018153     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    25: 0000000000006448    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    26: 000000000000649e    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I_main
-    27: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS program_header_table.cpp
-    28: 0000000000018154     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    29: 0000000000008c36    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    30: 0000000000008c8c    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I__ZN13ProgramHeader4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmt
-    31: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS section.cpp
-    32: 0000000000018155     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    33: 0000000000009a14    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    34: 0000000000009a6a    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I_section.cpp
-    35: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS section_header_table.cpp
-    36: 0000000000018156     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    37: 000000000000c44d    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    38: 000000000000c4a3    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I__ZN13SectionHeader11get_sh_nameEv
-    39: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS segment.cpp
-    40: 0000000000018157     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    41: 000000000000f1b8    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    42: 000000000000f20e    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I_segment.cpp
-    43: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS symbol.cpp
-    44: 0000000000018158     1 OBJECT  LOCAL  DEFAULT   27 _ZStL8__ioinit
-    45: 000000000000f368    86 FUNC    LOCAL  DEFAULT   16 _Z41__static_initialization_and_destruction_0ii
-    46: 000000000000f3be    25 FUNC    LOCAL  DEFAULT   16 _GLOBAL__sub_I__ZN6Symbol11set_st_nameEj
-    47: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
-    48: 0000000000015ac8     0 OBJECT  LOCAL  DEFAULT   20 __FRAME_END__
-    49: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS 
-    50: 00000000000108b4     0 NOTYPE  LOCAL  DEFAULT   19 __GNU_EH_FRAME_HDR
-    51: 0000000000017bc8     0 OBJECT  LOCAL  DEFAULT   24 _DYNAMIC
-    52: 0000000000017dd8     0 OBJECT  LOCAL  DEFAULT   25 _GLOBAL_OFFSET_TABLE_
-    53: 00000000000060fa   111 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE8allocateEmPKv
-    54: 0000000000006236    30 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE8max_sizeEv
-    55: 000000000000df76    22 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8_M_beginEv
-    56: 0000000000006a88    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE12_Vector_implC1Ev
-    57: 0000000000009672   114 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEmiEl
-    58: 000000000000f082    33 FUNC    WEAK   DEFAULT   16 _ZNSt11_Tuple_implILm0EJRKjEEC2EOS2_
-    59: 000000000000f326    22 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11get_st_infoEv
-    60: 0000000000006562    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EEC1Ev
-    61: 000000000000cb92    76 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE5beginEv
-    62: 0000000000004708    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader22getProgramHeaderOffsetEv
-    63: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSERKS4_@GLIBCXX_3.4.21
-    64: 000000000000eab9   103 FUNC    WEAK   DEFAULT   16 _ZSt12__relocate_aIP13SectionHeaderS1_SaIS0_EET0_T_S4_S3_RT1_
-    65: 0000000000009d8c  1357 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader4dumpEjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-    66: 000000000000e8e4    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE7_S_leftEPKSt18_Rb_tree_node_base
-    67: 000000000000f0d2    30 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI6SymbolE8max_sizeEv
-    68: 000000000000d932    30 FUNC    WEAK   DEFAULT   16 _ZNSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1EPSt18_Rb_tree_node_base
-    69: 000000000000ed96    30 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13SectionHeaderEE8max_sizeERKS1_
-    70: 000000000000f2e6    20 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11get_st_nameEv
-    71: 00000000000046f2    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader8getEntryEv
-    72: 0000000000006622    31 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE13_Rb_tree_implISC_Lb1EED1Ev
-    73: 000000000000c4bc    39 FUNC    WEAK   DEFAULT   16 _ZNSt11char_traitsIcE2ltERKcS2_
-    74: 00000000000075db    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP7SectionEvT_S2_
-    75: 0000000000007407    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP13ProgramHeaderEvT_S2_
-    76: 0000000000006702    79 FUNC    WEAK   DEFAULT   16 _ZN18SectionHeaderTableC1Ev
-    77: 000000000000efec    18 FUNC    WEAK   DEFAULT   16 _ZSt12__niter_baseIP6SymbolET_S2_
-    78: 000000000000a2da   289 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmtt
-    79: 000000000000588d    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA24_KcEOT_RNSt16remove_referenceIS3_E4typeE
-    80: 0000000000006822    31 FUNC    WEAK   DEFAULT   16 _ZN8SectionsD2Ev
-    81: 000000000000759a    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SectionEC1Ev
-    82: 00000000000076f6    19 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb1EE9__destroyIP13SectionHeaderEEvT_S4_
-    83: 0000000000005c48    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE19_M_get_Tp_allocatorEv
-    84: 0000000000006582    31 FUNC    WEAK   DEFAULT   16 _ZN18ProgramHeaderTableC2Ev
-    85: 0000000000005b8a   190 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE19_M_range_initializeIPKS7_EEvT_SD_St20forward_iterator_tag
-    86: 00000000000078fc    35 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev
-    87: 0000000000006a88    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE12_Vector_implC2Ev
-    88: 00000000000098d6   103 FUNC    WEAK   DEFAULT   16 _ZSt12__relocate_aIP13ProgramHeaderS1_SaIS0_EET0_T_S4_S3_RT1_
-    89: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4
-    90: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcED2Ev@GLIBCXX_3.4
-    91: 000000000000d3e0    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIR6SymbolEOT_RNSt16remove_referenceIS2_E4typeE
-    92: 0000000000006fae    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE17_Vector_impl_dataC2Ev
-    93: 0000000000005ce0    26 FUNC    WEAK   DEFAULT   16 _ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-    94: 0000000000008ca5    44 FUNC    WEAK   DEFAULT   16 _ZSt4leftRSt8ios_base
-    95: 0000000000006baa    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEED1Ev
-    96: 0000000000006b26    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EED2Ev
-    97: 000000000000ceae   102 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE4backEv
-    98: 000000000000f064    30 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI13SectionHeaderE8max_sizeEv
-    99: 0000000000005f04    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE17_Vector_impl_dataC1Ev
-   100: 000000000000979f    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE14_S_do_relocateEPS0_S3_S3_RS1_St17integral_constantIbLb1EE
-   101: 000000000000d08d    38 FUNC    WEAK   DEFAULT   16 _ZSteqRKSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESB_
-   102: 000000000000709a    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEED2Ev
-   103: 000000000000e8ac    34 FUNC    WEAK   DEFAULT   16 _ZNKSt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE9_M_valptrEv
-   104: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEE5closeEv@GLIBCXX_3.4
-   105: 0000000000005b0e    70 FUNC    WEAK   DEFAULT   16 _ZNKSt16initializer_listISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE3endEv
-   106: 0000000000006542    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EEC1Ev
-   107: 0000000000008d61   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA4_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   108: 0000000000007473    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP13SectionHeaderEvT_S2_
-   109: 0000000000006822    31 FUNC    WEAK   DEFAULT   16 _ZN8SectionsD1Ev
-   110: 00000000000046dc    21 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader10getVersionEv
-   111: 000000000000c7de    38 FUNC    WEAK   DEFAULT   16 _ZStneRKSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESB_
-   112: 0000000000006254    62 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1ERKS6_
-   113: 00000000000077fb    19 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb1EE9__destroyIP7SectionEEvT_S4_
-   114: 0000000000009771    46 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13ProgramHeaderEE8allocateERS1_m
-   115: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEm@GLIBCXX_3.4
-   116: 0000000000018018     0 NOTYPE  GLOBAL DEFAULT   26 _edata
-   117: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4
-   118: 0000000000007b80  1122 FUNC    GLOBAL DEFAULT   16 _ZN13ProgramHeader4dumpEv
-   119: 0000000000005a6c    42 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1ERKS8_
-   120: 000000000000d8a0   105 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEEmiEl
-   121: 0000000000006582    31 FUNC    WEAK   DEFAULT   16 _ZN18ProgramHeaderTableC1Ev
-   122: 0000000000006a40    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EED2Ev
-   123: 0000000000005554    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA18_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   124: 0000000000006ad4    81 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EED1Ev
-   125: 0000000000004913    49 FUNC    WEAK   DEFAULT   16 _ZStaNRSt13_Ios_FmtflagsS_
-   126: 000000000000e5f0    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE12_M_rightmostEv
-   127: 0000000000005a96    98 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EED1Ev
-   128: 000000000000e7e2    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE11_M_leftmostEv
-   129: 0000000000007184    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolED1Ev
-   130: 0000000000009a84    20 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_nameEv
-   131: 00000000000065c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE12_Vector_implD2Ev
-   132: 000000000000e390    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE6_M_endEv
-   133: 000000000000e58a    79 FUNC    WEAK   DEFAULT   16 _ZNKSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE13_M_const_castEv
-   134: 0000000000005d30    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE13_M_deallocateEPS7_m
-   135: 000000000000d430   439 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE17_M_realloc_insertIJRS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_
-   136: 000000000000581e    21 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEEdeEv
-   137: 000000000000e9c1   105 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE11_S_max_sizeERKS1_
-   138: 0000000000005516    62 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIiPKcEC1IiLb1EEEOT_RKS1_
-   139: 0000000000006522    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE12_Vector_implD2Ev
-   140: 000000000000576a    80 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE3endEv
-   141: 0000000000004734    21 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader8getFlagsEv
-   142: 0000000000005f04    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE17_Vector_impl_dataC2Ev
-   143: 0000000000009af0    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_sizeEv
-   144: 00000000000055e4    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev
-   145: 0000000000018000     0 NOTYPE  WEAK   DEFAULT   26 data_start
-   146: 0000000000006dd0    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE12_Vector_implC2Ev
-   147: 000000000000733c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SegmentED1Ev
-   148: 000000000000d294   213 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE4findERS1_
-   149: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEPFRSt8ios_baseS0_E@GLIBCXX_3.4
-   150: 000000000000d9da    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRKSt21piecewise_construct_tEOT_RNSt16remove_referenceIS3_E4typeE
-   151: 0000000000010000     4 OBJECT  GLOBAL DEFAULT   18 _IO_stdin_used
-   152: 000000000000d9b0    42 FUNC    WEAK   DEFAULT   16 _ZNSt11_Tuple_implILm0EJRKjEEC2ES1_
-   153: 0000000000006682    31 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEED2Ev
-   154: 00000000000099f6    30 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI13ProgramHeaderE8max_sizeEv
-   155: 0000000000007152    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE17_Vector_impl_dataC1Ev
-   156: 0000000000002b50    35 FUNC    GLOBAL DEFAULT   16 _ZN5Elfer4dumpEv
-   157: 000000000000e462    30 FUNC    WEAK   DEFAULT   16 _ZNSt10_Head_baseILm0ERKjLb0EEC2ES1_
-   158: 0000000000009604    55 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE11_M_allocateEm
-   159: 00000000000069be    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13ProgramHeaderED2Ev
-   160: 000000000000d5e8   102 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE4backEv
-   161: 00000000000066c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EEC1Ev
-   162: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt17__throw_bad_allocv@GLIBCXX_3.4
-   163: 000000000000e646   412 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE24_M_get_insert_unique_posERS1_
-   164: 000000000000da10   127 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE14_M_create_nodeIJRKSt21piecewise_construct_tSt5tupleIJRS1_EESJ_IJEEEEEPSt13_Rb_tree_nodeIS8_EDpOT_
-   165: 0000000000007647    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP7SegmentEvT_S2_
-   166: 0000000000006a40    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EED1Ev
-   167: 000000000000cc2e    63 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxneIP6SymbolSt6vectorIS1_SaIS1_EEEEbRKNS_17__normal_iteratorIT_T0_EESB_
-   168: 0000000000004696    25 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader9getEIdentEv
-   169: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt13runtime_errorC1EPKc@GLIBCXX_3.4.21
-   170: 000000000000ccb9    61 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13SectionHeaderEE9constructIS0_JRS0_EEEvRS1_PT_DpOT0_
-   171: 00000000000068a2    31 FUNC    WEAK   DEFAULT   16 _ZN8SegmentsC2Ev
-   172: 00000000000058e6   325 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
-   173: 0000000000005833    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA10_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   174: 0000000000010701     1 OBJECT  UNIQUE DEFAULT   18 _ZSt19piecewise_construct
-   175: 0000000000007132    31 FUNC    WEAK   DEFAULT   16 _ZNSaI6SymbolEC1Ev
-   176: 000000000000cbde    80 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE3endEv
-   177: 000000000000f352    22 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12get_st_shndxEv
-   178: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_begin_catch@CXXABI_1.3
-   179: 0000000000007606    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SegmentEC1Ev
-   180: 00000000000067e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SectionSaIS0_EEC1Ev
-   181: 000000000000ec36   105 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE11_S_max_sizeERKS1_
-   182: 0000000000004aa8   183 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1IiPKcLb1EEEOS_IT_T0_E
-   183: 00000000000056d6    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EED1Ev
-   184: 0000000000005cfa    54 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC1ERKS8_
-   185: 0000000000005857    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA21_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   186: 0000000000000000     0 FUNC    WEAK   DEFAULT  UND __cxa_finalize@GLIBC_2.2.5
-   187: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS4_@GLIBCXX_3.4.21
-   188: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND strlen@GLIBC_2.2.5
-   189: 000000000000eede   203 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE9constructISA_JRKSt21piecewise_construct_tSt5tupleIJRS3_EESH_IJEEEEEvPT_DpOT0_
-   190: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memcmp@GLIBC_2.2.5
-   191: 0000000000005503    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA14_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   192: 0000000000006dfc    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SegmentED2Ev
-   193: 0000000000007432    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderEC1Ev
-   194: 000000000000e0fc   239 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI6SymbolSaIS0_EE12_M_check_lenEmPKc
-   195: 000000000000f2a4    31 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12set_st_otherEh
-   196: 000000000000d64e    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEEC2ERKS2_
-   197: 000000000000703c    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP13SectionHeaderS0_EvT_S2_RSaIT0_E
-   198: 0000000000006b26    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EED1Ev
-   199: 0000000000006802    31 FUNC    WEAK   DEFAULT   16 _ZN8SectionsC2Ev
-   200: 000000000000e7f8    72 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRS1_S4_Lb1EEEOT_OT0_
-   201: 0000000000006315   307 FUNC    GLOBAL DEFAULT   16 main
-   202: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GLIBCXX_3.4
-   203: 0000000000007615    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI7SegmentEE10deallocateERS1_PS0_m
-   204: 000000000000eeb4    42 FUNC    WEAK   DEFAULT   16 _ZNSt5tupleIJRKjEEC2EOS2_
-   205: 000000000000f244    31 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12set_st_valueEm
-   206: 00000000000069be    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13ProgramHeaderED1Ev
-   207: 000000000000774c    58 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE11_M_put_nodeEPSt13_Rb_tree_nodeIS8_E
-   208: 00000000000057fa    36 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEEppEv
-   209: 00000000000046b0    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader7getTypeEv
-   210: 000000000000b0f8   564 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable14getStringTableEv
-   211: 000000000000ebd0    72 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRPSt13_Rb_tree_nodeIS_IKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS1_Lb1EEEOT_OT0_
-   212: 000000000000f228    27 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11set_st_nameEj
-   213: 0000000000009076    76 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE5beginEv
-   214: 000000000000effe   101 FUNC    WEAK   DEFAULT   16 _ZSt14__relocate_a_1I6SymbolS0_ENSt9enable_ifIXsrSt24__is_bitwise_relocatableIT_vE5valueEPS3_E4typeES5_S5_S5_RSaIT0_E
-   215: 00000000000055ae    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA23_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   216: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt20__throw_length_errorPKc@GLIBCXX_3.4
-   217: 000000000000e07c    30 FUNC    WEAK   DEFAULT   16 _ZNSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EPKSt18_Rb_tree_node_base
-   218: 0000000000005eb0    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvT_S9_
-   219: 0000000000005a6c    42 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2ERKS8_
-   220: 00000000000052df   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA16_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   221: 0000000000018008     0 OBJECT  GLOBAL HIDDEN    26 __dso_handle
-   222: 0000000000006d1a    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SectionED2Ev
-   223: 000000000000963b    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE11_S_relocateEPS0_S3_S3_RS1_
-   224: 0000000000008f74    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA5_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   225: 00000000000048e2    49 FUNC    WEAK   DEFAULT   16 _ZStoRRSt13_Ios_FmtflagsS_
-   226: 0000000000006dd0    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE12_Vector_implC1Ev
-   227: 0000000000006cee    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE12_Vector_implC2Ev
-   228: 000000000000d950    79 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE11lower_boundERS1_
-   229: 0000000000009b1c    21 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_infoEv
-   230: 0000000000004a72    35 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev
-   231: 0000000000006e1c    77 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EED1Ev
-   232: 000000000000d7ef    67 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxmiIP13SectionHeaderSt6vectorIS1_SaIS1_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS9_SC_
-   233: 0000000000004a48    41 FUNC    WEAK   DEFAULT   16 _ZNSt5arrayIhLm16EEixEm
-   234: 0000000000006c54    81 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EED2Ev
-   235: 0000000000006303    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEOT_RNSt16remove_referenceISA_E4typeE
-   236: 00000000000094c0   239 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13ProgramHeaderSaIS0_EE12_M_check_lenEmPKc
-   237: 000000000000ea2a    18 FUNC    WEAK   DEFAULT   16 _ZNKSt12_Vector_baseI13SectionHeaderSaIS0_EE19_M_get_Tp_allocatorEv
-   238: 00000000000065e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EEC2Ev
-   239: 0000000000006d3a    77 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EED1Ev
-   240: 000000000000cca7    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIR13SectionHeaderEOT_RNSt16remove_referenceIS2_E4typeE
-   241: 000000000000e95d    46 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI6SymbolEE8allocateERS1_m
-   242: 000000000000e480    43 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE11_M_get_nodeEv
-   243: 000000000000918b    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIR13ProgramHeaderEOT_RNSt16remove_referenceIS2_E4typeE
-   244: 0000000000005a4c    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implD1Ev
-   245: 000000000000749e    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEC1Ev
-   246: 0000000000005a96    98 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EED2Ev
-   247: 0000000000006642    31 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EEC2Ev
-   248: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@GLIBCXX_3.4.21
-   249: 000000000000983e    18 FUNC    WEAK   DEFAULT   16 _ZNKSt12_Vector_baseI13ProgramHeaderSaIS0_EE19_M_get_Tp_allocatorEv
-   250: 00000000000066e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EEC1Ev
-   251: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@GLIBCXX_3.4.21
-   252: 0000000000005dbd   135 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE17_S_check_init_lenEmRKS8_
-   253: 00000000000048d0    18 FUNC    WEAK   DEFAULT   16 _ZStcoSt13_Ios_Fmtflags
-   254: 000000000000471e    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader22getSectionHeaderOffsetEv
-   255: 000000000000720e    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SectionEC2Ev
-   256: 0000000000006702    79 FUNC    WEAK   DEFAULT   16 _ZN18SectionHeaderTableC2Ev
-   257: 000000000000783b    19 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb1EE9__destroyIP7SegmentEEvT_S4_
-   258: 000000000000542e    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIPKcEOT_RNSt16remove_referenceIS2_E4typeE
-   259: 0000000000004c5f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA17_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   260: 000000000000ca7d   108 FUNC    WEAK   DEFAULT   16 _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_S5_
-   261: 000000000000ae26   547 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable22loadSectionStringTableENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEt
-   262: 0000000000007184    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolED2Ev
-   263: 000000000000efce    30 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI6SymbolEE8max_sizeERKS1_
-   264: 000000000000d12c    33 FUNC    WEAK   DEFAULT   16 _ZNSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2ERKSt17_Rb_tree_iteratorIS8_E
-   265: 000000000000c830    33 FUNC    WEAK   DEFAULT   16 _ZNKSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEdeEv
-   266: 000000000000995b    18 FUNC    WEAK   DEFAULT   16 _ZSt12__niter_baseIP13ProgramHeaderET_S2_
-   267: 0000000000018010     8 OBJECT  WEAK   HIDDEN    26 DW.ref.__gxx_personality_v0
-   268: 00000000000071ce    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE19_M_get_Tp_allocatorEv
-   269: 000000000000ee44   111 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE8allocateEmPKv
-   270: 0000000000006622    31 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE13_Rb_tree_implISC_Lb1EED2Ev
-   271: 00000000000047b8    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader26getSectionStringTableIndexEv
-   272: 0000000000007786    52 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolE10deallocateEPS1_m
-   273: 0000000000005578    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA20_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   274: 0000000000007441    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13SectionHeaderEE10deallocateERS1_PS0_m
-   275: 0000000000004760    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader24getProgramHeaderItemSizeEv
-   276: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm@GLIBCXX_3.4.21
-   277: 000000000000efbc    18 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx16__aligned_membufISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE7_M_addrEv
-   278: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base@GLIBCXX_3.4
-   279: 000000000000e09a    97 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolE9constructIS1_JRS1_EEEvPT_DpOT0_
-   280: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@GLIBCXX_3.4.21
-   281: 00000000000066c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EEC2Ev
-   282: 0000000000005d8e    47 FUNC    WEAK   DEFAULT   16 _ZSt10__distanceIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENSt15iterator_traitsIT_E15difference_typeESB_SB_St26random_access_iterator_tag
-   283: 0000000000005af8    21 FUNC    WEAK   DEFAULT   16 _ZNKSt16initializer_listISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE5beginEv
-   284: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt19__throw_logic_errorPKc@GLIBCXX_3.4
-   285: 00000000000065a2    31 FUNC    WEAK   DEFAULT   16 _ZN18ProgramHeaderTableD2Ev
-   286: 0000000000006d1a    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SectionED1Ev
-   287: 000000000000e35a    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE14_S_do_relocateEPS0_S3_S3_RS1_St17integral_constantIbLb1EE
-   288: 000000000000c650    60 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE2atEm
-   289: 000000000000749e    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEC2Ev
-   290: 000000000000f3d8     0 FUNC    GLOBAL HIDDEN    17 _fini
-   291: 000000000000535f    37 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
-   292: 000000000000d3ba    38 FUNC    WEAK   DEFAULT   16 _ZSteqRKSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESB_
-   293: 0000000000005cbc    22 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
-   294: 0000000000006522    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE12_Vector_implD1Ev
-   295: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.34
-   296: 00000000000069de    98 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EED1Ev
-   297: 0000000000008e61   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA6_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   298: 000000000000ecca   101 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolE8allocateEmPKv
-   299: 0000000000008ce1   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA5_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   300: 0000000000004a18    47 FUNC    WEAK   DEFAULT   16 _ZSt3minImERKT_S2_S2_
-   301: 000000000000474a    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader16getElfHeaderSizeEv
-   302: 00000000000096e4    38 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13ProgramHeaderSaIS0_EE8max_sizeEv
-   303: 0000000000009b5e   558 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmm
-   304: 0000000000006ed2    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE17_Vector_impl_dataC1Ev
-   305: 000000000000e3a6   188 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE14_M_lower_boundEPSt13_Rb_tree_nodeIS8_EPSt18_Rb_tree_node_baseRS1_
-   306: 0000000000006f4e    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE19_M_get_Tp_allocatorEv
-   307: 0000000000006752    79 FUNC    WEAK   DEFAULT   16 _ZN18SectionHeaderTableD2Ev
-   308: 00000000000073c6    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderEC2Ev
-   309: 00000000000066e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EEC2Ev
-   310: 0000000000009a98    21 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_typeEv
-   311: 000000000000b8d8   564 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable14getSymbolTableEv
-   312: 0000000000004edf   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA32_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   313: 000000000000e910    38 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI6SymbolSaIS0_EE8max_sizeEv
-   314: 0000000000006baa    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEED2Ev
-   315: 000000000000f33c    22 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12get_st_otherEv
-   316: 0000000000009b32    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader16get_sh_addralignEv
-   317: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt28__throw_bad_array_new_lengthv@GLIBCXX_3.4.29
-   318: 0000000000005a2c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev
-   319: 0000000000006c34    31 FUNC    WEAK   DEFAULT   16 _ZNSaI6SymbolED1Ev
-   320: 00000000000067e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SectionSaIS0_EEC2Ev
-   321: 0000000000005d80    14 FUNC    WEAK   DEFAULT   16 _ZSt19__iterator_categoryIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_
-   322: 0000000000005cfa    54 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implC2ERKS8_
-   323: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv@GLIBCXX_3.4.21
-   324: 0000000000002e9c  2392 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader4dumpEv
-   325: 0000000000006b6e    59 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE13_Rb_tree_implISC_Lb1EEC2Ev
-   326: 000000000000ea54   101 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderE8allocateEmPKv
-   327: 0000000000007982    18 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx16__aligned_membufISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE7_M_addrEv
-   328: 00000000000076af    19 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb1EE9__destroyIP13ProgramHeaderEEvT_S4_
-   329: 000000000000730a    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE17_Vector_impl_dataC1Ev
-   330: 00000000000074c3    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE7_S_leftEPSt18_Rb_tree_node_base
-   331: 0000000000007194    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE13_M_deallocateEPS0_m
-   332: 000000000000c7c0    30 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEE3endEv
-   333: 000000000000f0a4    46 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IJRS0_EJEEESt21piecewise_construct_tSt5tupleIJDpT_EESB_IJDpT0_EE
-   334: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc@GLIBCXX_3.4.21
-   335: 0000000000006662    31 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEEC1Ev
-   336: 00000000000055e4    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2Ev
-   337: 0000000000004a72    35 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev
-   338: 000000000000e606    64 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRS1_Lb1EEERKS1_OT_
-   339: 0000000000007260    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SectionED2Ev
-   340: 0000000000008fbc    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA13_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   341: 00000000000072bc    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP7SectionS0_EvT_S2_RSaIT0_E
-   342: 00000000000067c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EEC1Ev
-   343: 0000000000005869    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA22_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   344: 0000000000007994   492 FUNC    GLOBAL DEFAULT   16 _ZN13ProgramHeader4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmt
-   345: 0000000000004b5f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA14_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   346: 000000000000cf90    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEEC1ERKS2_
-   347: 0000000000004f5f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA29_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   348: 000000000000ed2f   103 FUNC    WEAK   DEFAULT   16 _ZSt12__relocate_aIP6SymbolS1_SaIS0_EET0_T_S4_S3_RT1_
-   349: 0000000000006882    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SegmentSaIS0_EEC1Ev
-   350: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_atexit@GLIBC_2.2.5
-   351: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@GLIBCXX_3.4.21
-   352: 000000000000cfb2    18 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEE4baseEv
-   353: 0000000000008faa    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA6_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   354: 000000000000784e    18 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE21_M_get_Node_allocatorEv
-   355: 0000000000006205    18 FUNC    WEAK   DEFAULT   16 _ZSt11__addressofISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEPT_RS8_
-   356: 000000000000f2c4    33 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12set_st_shndxEt
-   357: 0000000000007386    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE19_M_get_Tp_allocatorEv
-   358: 00000000000053f2    31 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD1Ev
-   359: 0000000000005c5a    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEES7_EvT_S9_RSaIT0_E
-   360: 00000000000077ba    19 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb1EE9__destroyIP6SymbolEEvT_S4_
-   361: 0000000000006bca    61 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EED2Ev
-   362: 0000000000006c34    31 FUNC    WEAK   DEFAULT   16 _ZNSaI6SymbolED2Ev
-   363: 0000000000007152    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE17_Vector_impl_dataC2Ev
-   364: 0000000000006642    31 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EEC1Ev
-   365: 0000000000006d88    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SectionSaIS0_EED1Ev
-   366: 00000000000077ce    45 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SectionE10deallocateEPS1_m
-   367: 000000000000e462    30 FUNC    WEAK   DEFAULT   16 _ZNSt10_Head_baseILm0ERKjLb0EEC1ES1_
-   368: 0000000000009868   110 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderE8allocateEmPKv
-   369: 0000000000005b54    53 FUNC    WEAK   DEFAULT   16 _ZSt8distanceIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENSt15iterator_traitsIT_E15difference_typeESB_SB_
-   370: 000000000000d832    55 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE11_M_allocateEm
-   371: 000000000000d12c    33 FUNC    WEAK   DEFAULT   16 _ZNSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1ERKSt17_Rb_tree_iteratorIS8_E
-   372: 0000000000007672    61 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderE10deallocateEPS1_m
-   373: 000000000000919d    61 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13ProgramHeaderEE9constructIS0_JRS0_EEEvRS1_PT_DpOT0_
-   374: 000000000000eb4e   112 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEE9constructIS9_JRKSt21piecewise_construct_tSt5tupleIJRS2_EESH_IJEEEEEvRSB_PT_DpOT0_
-   375: 0000000000006eb2    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13ProgramHeaderEC1Ev
-   376: 0000000000005c88    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEEC1ERKS9_
-   377: 000000000000edc6   101 FUNC    WEAK   DEFAULT   16 _ZSt14__relocate_a_1I13SectionHeaderS0_ENSt9enable_ifIXsrSt24__is_bitwise_relocatableIT_vE5valueEPS3_E4typeES5_S5_S5_RSaIT0_E
-   378: 00000000000065e2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EEC1Ev
-   379: 000000000000f082    33 FUNC    WEAK   DEFAULT   16 _ZNSt11_Tuple_implILm0EJRKjEEC1EOS2_
-   380: 00000000000027a0    38 FUNC    GLOBAL DEFAULT   16 _start
-   381: 00000000000051df   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA15_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   382: 000000000000970a    56 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13ProgramHeaderSaIS0_EE4sizeEv
-   383: 00000000000066a2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE12_Vector_implD1Ev
-   384: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@GLIBCXX_3.4
-   385: 0000000000007882    42 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEE7destroyIS9_EEvRSB_PT_
-   386: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _Znwm@GLIBCXX_3.4
-   387: 000000000000c78c    21 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEEdeEv
-   388: 0000000000006f8e    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13SectionHeaderEC1Ev
-   389: 000000000000558a    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA11_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   390: 00000000000043aa   748 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader13str_e_versionB5cxx11Ev
-   391: 0000000000006992    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE12_Vector_implC2Ev
-   392: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZdlPvm@CXXABI_1.3.9
-   393: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt13runtime_errorD1Ev@GLIBCXX_3.4
-   394: 000000000000e306    38 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13SectionHeaderSaIS0_EE8max_sizeEv
-   395: 00000000000093b8   102 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE4backEv
-   396: 0000000000006dfc    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SegmentED1Ev
-   397: 0000000000009152    36 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEppEv
-   398: 000000000000a472  1631 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable4dumpEv
-   399: 000000000000bdac  1697 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable15dumpSymbolTableEv
-   400: 000000000000e5da    22 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE4sizeEv
-   401: 000000000000f310    22 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11get_st_sizeEv
-   402: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4
-   403: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEPFRSoS_E@GLIBCXX_3.4
-   404: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_@GLIBCXX_3.4.21
-   405: 000000000000c852   288 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEEixERS9_
-   406: 000000000000f0f0    71 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IJRS0_EJLm0EEJEJEEERSt5tupleIJDpT_EERSA_IJDpT1_EESt12_Index_tupleIJXspT0_EEESJ_IJXspT2_EEE
-   407: 00000000000053f2    31 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
-   408: 0000000000009aae    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader12get_sh_flagsEv
-   409: 000000000000d0da    39 FUNC    WEAK   DEFAULT   16 _ZNKSt4lessIjEclERKjS2_
-   410: 000000000000d64e    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEEC1ERKS2_
-   411: 00000000000057ba    63 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxneIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEEEbRKNS_17__normal_iteratorIT_T0_EESI_
-   412: 000000000000e98b    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE14_S_do_relocateEPS0_S3_S3_RS1_St17integral_constantIbLb1EE
-   413: 0000000000005384   109 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx11char_traitsIcE6lengthEPKc
-   414: 000000000000eca0    18 FUNC    WEAK   DEFAULT   16 _ZNKSt12_Vector_baseI6SymbolSaIS0_EE19_M_get_Tp_allocatorEv
-   415: 0000000000005fd1    46 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE8allocateERS8_m
-   416: 000000000000e86c    64 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRS1_Lb1EEEOT_RKS1_
-   417: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEmc@GLIBCXX_3.4.21
-   418: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcED1Ev@GLIBCXX_3.4
-   419: 000000000000d102    42 FUNC    WEAK   DEFAULT   16 _ZNSt5tupleIJRKjEEC2ILb1ELb1EEES1_
-   420: 000000000000c7a2    30 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEE5beginEv
-   421: 000000000000d014    80 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE3endEv
-   422: 00000000000068e2    87 FUNC    WEAK   DEFAULT   16 _ZN5ElferC2Ev
-   423: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv@GLIBCXX_3.4.21
-   424: 000000000000780e    45 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SegmentE10deallocateEPS1_m
-   425: 0000000000006542    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EEC2Ev
-   426: 0000000000006802    31 FUNC    WEAK   DEFAULT   16 _ZN8SectionsC1Ev
-   427: 00000000000046c6    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader10getMachineEv
-   428: 0000000000006eb2    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13ProgramHeaderEC2Ev
-   429: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_@GLIBCXX_3.4.21
-   430: 00000000000071e0    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP6SymbolS0_EvT_S2_RSaIT0_E
-   431: 000000000000df8c    22 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE6_M_endEv
-   432: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __stack_chk_fail@GLIBC_2.4
-   433: 0000000000002000     0 FUNC    GLOBAL HIDDEN    12 _init
-   434: 00000000000066a2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE12_Vector_implD2Ev
-   435: 0000000000007114    30 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8_M_beginEv
-   436: 00000000000065c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE12_Vector_implD1Ev
-   437: 0000000000007518    22 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE9_M_mbeginEv
-   438: 00000000000075a9    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI7SectionEE10deallocateERS1_PS0_m
-   439: 0000000000006086    62 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE10deallocateEPS8_m
-   440: 000000000000e32c    46 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13SectionHeaderEE8allocateERS1_m
-   441: 000000000000c768    36 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEEppEv
-   442: 000000000000478c    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader24getSectionHeaderItemSizeEv
-   443: 0000000000018018     0 OBJECT  GLOBAL HIDDEN    26 __TMC_END__
-   444: 0000000000006602    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EEC1Ev
-   445: 000000000000d9b0    42 FUNC    WEAK   DEFAULT   16 _ZNSt11_Tuple_implILm0EJRKjEEC1ES1_
-   446: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw@GLIBCXX_3.4
-   447: 0000000000006682    31 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEED1Ev
-   448: 00000000000068c2    31 FUNC    WEAK   DEFAULT   16 _ZN8SegmentsD1Ev
-   449: 000000000000ecb2    24 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI6SymbolE11_M_max_sizeEv
-   450: 000000000000ccf6   439 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE17_M_realloc_insertIJRS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_
-   451: 000000000000de38    83 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE6_S_keyEPKSt13_Rb_tree_nodeIS8_E
-   452: 000000000000b584   852 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable15dumpStringTableEv
-   453: 000000000000868c   272 FUNC    GLOBAL DEFAULT   16 _ZN18ProgramHeaderTable4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmtt
-   454: 00000000000068e2    87 FUNC    WEAK   DEFAULT   16 _ZN5ElferC1Ev
-   455: 000000000000d102    42 FUNC    WEAK   DEFAULT   16 _ZNSt5tupleIJRKjEEC1ILb1ELb1EEES1_
-   456: 000000000000b04a   173 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable11str_sh_nameB5cxx11Ej
-   457: 000000000000d9ec    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardISt5tupleIJRKjEEEOT_RNSt16remove_referenceIS4_E4typeE
-   458: 000000000000d36a    80 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE3endEv
-   459: 000000000000e05e    30 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE6_S_keyEPKSt18_Rb_tree_node_base
-   460: 000000000000f264    31 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11set_st_sizeEm
-   461: 000000000000706a    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEC1Ev
-   462: 0000000000008ee1   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA13_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   463: 0000000000006fe0    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderED1Ev
-   464: 000000000000f1a3    21 FUNC    WEAK   DEFAULT   16 _ZNSt10_Head_baseILm0ERKjLb0EE7_M_headERS2_
-   465: 000000000000941e    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEC1ERKS2_
-   466: 00000000000049c0    44 FUNC    WEAK   DEFAULT   16 _ZSt3decRSt8ios_base
-   467: 000000000000aad2   852 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable22dumpSectionStringTableEv
-   468: 0000000000006fae    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE17_Vector_impl_dataC1Ev
-   469: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_@GLIBCXX_3.4.21
-   470: 000000000000d700   239 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13SectionHeaderSaIS0_EE12_M_check_lenEmPKc
-   471: 000000000000722e    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE17_Vector_impl_dataC1Ev
-   472: 0000000000008f61    19 FUNC    WEAK   DEFAULT   16 _ZSt7setfillIcESt8_SetfillIT_ES1_
-   473: 000000000000eeb4    42 FUNC    WEAK   DEFAULT   16 _ZNSt5tupleIJRKjEEC1EOS2_
-   474: 0000000000004776    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader23getProgramHeaderItemNumEv
-   475: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv@GLIBCXX_3.4.21
-   476: 0000000000004bdf   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA18_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   477: 000000000000a3fc   118 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable23getSectionHeaderByIndexEj
-   478: 000000000000993d    30 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13ProgramHeaderEE8max_sizeERKS1_
-   479: 0000000000008f98    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA7_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   480: 000000000000d064    41 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEE11lower_boundERS9_
-   481: 00000000000090c2    80 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE3endEv
-   482: 0000000000009176    21 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEdeEv
-   483: 00000000000064e2    63 FUNC    WEAK   DEFAULT   16 _ZNSt15_Rb_tree_header8_M_resetEv
-   484: 0000000000006072    19 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2ERKS9_
-   485: 000000000000e1eb    67 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxmiIP6SymbolSt6vectorIS1_SaIS1_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS9_SC_
-   486: 0000000000006034    61 FUNC    WEAK   DEFAULT   16 _ZNSt12_Destroy_auxILb0EE9__destroyIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEvT_SB_
-   487: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSi4readEPcl@GLIBCXX_3.4
-   488: 0000000000006992    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE12_Vector_implC1Ev
-   489: 0000000000006862    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EEC2Ev
-   490: 00000000000072aa    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE19_M_get_Tp_allocatorEv
-   491: 000000000000708a    15 FUNC    WEAK   DEFAULT   16 _ZNSt20_Rb_tree_key_compareISt4lessIjEEC1Ev
-   492: 00000000000048a4    22 FUNC    WEAK   DEFAULT   16 _ZStanSt13_Ios_FmtflagsS_
-   493: 0000000000018040   272 OBJECT  GLOBAL DEFAULT   27 _ZSt4cout@GLIBCXX_3.4
-   494: 00000000000069de    98 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EED2Ev
-   495: 000000000000d3f2    61 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI6SymbolEE9constructIS0_JRS0_EEEvRS1_PT_DpOT0_
-   496: 0000000000006882    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SegmentSaIS0_EEC2Ev
-   497: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4dataEv@GLIBCXX_3.4.21
-   498: 0000000000005604    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEED2Ev
-   499: 000000000000dfa2   188 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE14_M_lower_boundEPKSt13_Rb_tree_nodeIS8_EPKSt18_Rb_tree_node_baseRS1_
-   500: 000000000000f185    30 FUNC    WEAK   DEFAULT   16 _ZNSt11_Tuple_implILm0EJRKjEE7_M_headERS2_
-   501: 00000000000067c2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EEC2Ev
-   502: 0000000000007606    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SegmentEC2Ev
-   503: 0000000000006254    62 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2ERKS6_
-   504: 000000000000589f    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA16_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   505: 000000000000e936    39 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI6SymbolSaIS0_EE4sizeEv
-   506: 000000000000ea3c    24 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI13SectionHeaderE11_M_max_sizeEv
-   507: 0000000000005440   195 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_
-   508: 000000000000505f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA12_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   509: 0000000000009b48    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader14get_sh_entsizeEv
-   510: 000000000000e265    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE11_S_relocateEPS0_S3_S3_RS1_
-   511: 0000000000005845    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA12_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   512: 0000000000004cdf   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA20_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   513: 000000000000ec18    30 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx16__aligned_membufISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE6_M_ptrEv
-   514: 0000000000006ab4    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13SectionHeaderED1Ev
-   515: 000000000000c68c    76 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE5beginEv
-   516: 0000000000005411    29 FUNC    WEAK   DEFAULT   16 _ZNSt14__array_traitsIhLm16EE6_S_refERA16_Khm
-   517: 000000000000cc6e    36 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEEppEv
-   518: 0000000000006ca6    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EED2Ev
-   519: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEj@GLIBCXX_3.4
-   520: 0000000000006d88    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SectionSaIS0_EED2Ev
-   521: 0000000000006292   113 FUNC    WEAK   DEFAULT   16 _ZSt10_ConstructISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEJRKS7_EEvPT_DpOT0_
-   522: 0000000000006562    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EEC2Ev
-   523: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSi5seekgElSt12_Ios_Seekdir@GLIBCXX_3.4
-   524: 0000000000009742    47 FUNC    WEAK   DEFAULT   16 _ZSt3maxImERKT_S2_S2_
-   525: 0000000000006169   156 FUNC    WEAK   DEFAULT   16 _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEPS9_EET0_T_SE_SD_
-   526: 0000000000006ff0    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE13_M_deallocateEPS0_m
-   527: 000000000000ebbe    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRPSt18_Rb_tree_node_baseEOT_RNSt16remove_referenceIS3_E4typeE
-   528: 000000000000d682   126 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderE9constructIS1_JRS1_EEEvPT_DpOT0_
-   529: 00000000000091da   478 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE17_M_realloc_insertIJRS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_
-   530: 0000000000006f8e    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13SectionHeaderEC2Ev
-   531: 000000000000e606    64 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRS1_Lb1EEERKS1_OT_
-   532: 000000000000eb20    46 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEE8allocateERSB_m
-   533: 000000000000e8fa    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8_S_rightEPKSt18_Rb_tree_node_base
-   534: 0000000000018000     0 NOTYPE  GLOBAL DEFAULT   26 __data_start
-   535: 000000000000cf14    88 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13SectionHeaderSaIS0_EE14_M_range_checkEm
-   536: 00000000000073c6    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderEC1Ev
-   537: 00000000000056d6    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EED2Ev
-   538: 0000000000018160     0 NOTYPE  GLOBAL DEFAULT   27 _end
-   539: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@GLIBCXX_3.4.21
-   540: 000000000000559c    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA25_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   541: 0000000000009440    18 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEE4baseEv
-   542: 0000000000007944    62 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE10deallocateEPSB_m
-   543: 000000000000587b    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA15_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   544: 000000000000e840    44 FUNC    WEAK   DEFAULT   16 _ZNSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEmmEv
-   545: 0000000000006f04    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderED2Ev
-   546: 000000000000d90a    39 FUNC    WEAK   DEFAULT   16 _ZNKSt6vectorI13SectionHeaderSaIS0_EE4sizeEv
-   547: 000000000000734c    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE13_M_deallocateEPS0_m
-   548: 000000000000770a    66 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE15_M_destroy_nodeEPSt13_Rb_tree_nodeIS8_E
-   549: 0000000000005f68   105 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE11_S_max_sizeERKS8_
-   550: 000000000000288a   710 FUNC    GLOBAL DEFAULT   16 _ZN5Elfer4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-   551: 000000000000e07c    30 FUNC    WEAK   DEFAULT   16 _ZNSt23_Rb_tree_const_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1EPKSt18_Rb_tree_node_base
-   552: 0000000000004d5f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA11_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   553: 0000000000009ac4    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_addrEv
-   554: 0000000000005cd2    14 FUNC    WEAK   DEFAULT   16 _ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
-   555: 00000000000050df   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA21_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   556: 000000000000b32c   600 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable15loadStringTableENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-   557: 0000000000005eda    42 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1ERKS7_
-   558: 0000000000007398    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP7SegmentS0_EvT_S2_RSaIT0_E
-   559: 00000000000078ac    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEE10deallocateERSB_PSA_m
-   560: 000000000000693a    87 FUNC    WEAK   DEFAULT   16 _ZN5ElferD1Ev
-   561: 0000000000006842    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE12_Vector_implD1Ev
-   562: 0000000000006072    19 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1ERKS9_
-   563: 0000000000006cee    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE12_Vector_implC1Ev
-   564: 00000000000070aa   106 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E
-   565: 0000000000005eda    42 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2ERKS7_
-   566: 0000000000009112    63 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxneIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEEbRKNS_17__normal_iteratorIT_T0_EESB_
-   567: 000000000000efa9    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRPSt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEOT_RNSt16remove_referenceISD_E4typeE
-   568: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_rethrow@CXXABI_1.3
-   569: 000000000000e4ac   222 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE17_M_construct_nodeIJRKSt21piecewise_construct_tSt5tupleIJRS1_EESJ_IJEEEEEvPSt13_Rb_tree_nodeIS8_EDpOT_
-   570: 000000000000c728    63 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxneIP13SectionHeaderSt6vectorIS1_SaIS1_EEEEbRKNS_17__normal_iteratorIT_T0_EESB_
-   571: 000000000000e22e    55 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE11_M_allocateEm
-   572: 00000000000064b8    41 FUNC    WEAK   DEFAULT   16 _ZNSt15_Rb_tree_headerC2Ev
-   573: 000000000000f2fa    22 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol12get_st_valueEv
-   574: 000000000000d670    18 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEE4baseEv
-   575: 0000000000006c08    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE12_Vector_implC2Ev
-   576: 0000000000007260    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SectionED1Ev
-   577: 000000000000ee2c    24 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE11_M_max_sizeEv
-   578: 000000000000cfc4    80 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE5beginEv
-   579: 0000000000006e6a    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SegmentSaIS0_EED1Ev
-   580: 000000000000515f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA22_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   581: 000000000000c4e3   196 FUNC    WEAK   DEFAULT   16 _ZNSt11char_traitsIcE7compareEPKcS2_m
-   582: 0000000000018018     0 NOTYPE  GLOBAL DEFAULT   27 __bss_start
-   583: 0000000000005caa    18 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEE4baseEv
-   584: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZSt24__throw_out_of_range_fmtPKcz@GLIBCXX_3.4.20
-   585: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_h@GLIBCXX_3.4
-   586: 000000000000720e    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SectionEC1Ev
-   587: 0000000000007920    35 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE7destroyISA_EEvPT_
-   588: 000000000000752e    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolEC2Ev
-   589: 0000000000005624   178 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC2ESt16initializer_listIS7_ERKS8_
-   590: 000000000000d869    54 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE11_S_relocateEPS0_S3_S3_RS1_
-   591: 00000000000067a2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE12_Vector_implD1Ev
-   592: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt8ios_base4InitC1Ev@GLIBCXX_3.4
-   593: 0000000000009850    24 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorI13ProgramHeaderE11_M_max_sizeEv
-   594: 00000000000055d2    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA29_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   595: 0000000000009ada    22 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader13get_sh_offsetEv
-   596: 000000000000702a    18 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EE19_M_get_Tp_allocatorEv
-   597: 0000000000004ddf   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA25_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   598: 000000000000f167    30 FUNC    WEAK   DEFAULT   16 _ZSt12__get_helperILm0ERKjJEERT0_RSt11_Tuple_implIXT_EJS2_DpT1_EE
-   599: 0000000000007270    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE13_M_deallocateEPS0_m
-   600: 000000000000f155    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRKjEOT_RNSt16remove_referenceIS2_E4typeE
-   601: 000000000000759a    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SectionEC2Ev
-   602: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_SetfillIS3_E@GLIBCXX_3.4
-   603: 0000000000006602    31 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EEC2Ev
-   604: 000000000000f284    31 FUNC    GLOBAL DEFAULT   16 _ZN6Symbol11set_st_infoEh
-   605: 000000000000d9fe    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardISt5tupleIJEEEOT_RNSt16remove_referenceIS2_E4typeE
-   606: 00000000000058b1    53 FUNC    WEAK   DEFAULT   16 _ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
-   607: 000000000000756f    42 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP6SymbolEvT_S2_
-   608: 0000000000008fce   168 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE12emplace_backIJRS0_EEES4_DpOT_
-   609: 000000000000e29c   105 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEEmiEl
-   610: 000000000000706a    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEC2Ev
-   611: 000000000000730a    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE17_Vector_impl_dataC2Ev
-   612: 0000000000006bca    61 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EED1Ev
-   613: 0000000000006862    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EEC1Ev
-   614: 000000000000525f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA24_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   615: 000000000000487b    22 FUNC    WEAK   DEFAULT   16 _ZnwmPv
-   616: 000000000000693a    87 FUNC    WEAK   DEFAULT   16 _ZN5ElferD2Ev
-   617: 00000000000037f4  1456 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader10str_e_typeB5cxx11Ev
-   618: 000000000000c9f5   136 FUNC    WEAK   DEFAULT   16 _ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_
-   619: 0000000000006ad4    81 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13SectionHeaderSaIS0_EED2Ev
-   620: 0000000000006f60    46 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyIP13ProgramHeaderS0_EvT_S2_RSaIT0_E
-   621: 000000000000f137    30 FUNC    WEAK   DEFAULT   16 _ZSt3getILm0EJRKjEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERS6_
-   622: 0000000000006752    79 FUNC    WEAK   DEFAULT   16 _ZN18SectionHeaderTableD1Ev
-   623: 000000000000c6d8    80 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE3endEv
-   624: 0000000000005a3c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEED2Ev
-   625: 000000000000495a   102 FUNC    WEAK   DEFAULT   16 _ZNSt8ios_base4setfESt13_Ios_FmtflagsS0_
-   626: 000000000000752e    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI6SymbolEC1Ev
-   627: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode@GLIBCXX_3.4.21
-   628: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND memmove@GLIBC_2.2.5
-   629: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __cxa_end_catch@CXXABI_1.3
-   630: 000000000000e8ce    22 FUNC    WEAK   DEFAULT   16 _ZNKSt10_Select1stISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEclERKS8_
-   631: 0000000000006b6e    59 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE13_Rb_tree_implISC_Lb1EEC1Ev
-   632: 000000000000cf6c    36 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EEixEm
-   633: 0000000000005604    31 FUNC    WEAK   DEFAULT   16 _ZNSaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEED1Ev
-   634: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND __gxx_personality_v0@CXXABI_1.3
-   635: 0000000000005e7b    53 FUNC    WEAK   DEFAULT   16 _ZSt22__uninitialized_copy_aIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEPS7_S7_ET0_T_SC_SB_RSaIT1_E
-   636: 0000000000006c54    81 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EED1Ev
-   637: 00000000000074ad    22 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8_S_rightEPSt18_Rb_tree_node_base
-   638: 00000000000078de    30 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx16__aligned_membufISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE6_M_ptrEv
-   639: 00000000000076c2    52 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderE10deallocateEPS1_m
-   640: 000000000000708a    15 FUNC    WEAK   DEFAULT   16 _ZNSt20_Rb_tree_key_compareISt4lessIjEEC2Ev
-   641: 000000000000bb0c   672 FUNC    GLOBAL DEFAULT   16 _ZN18SectionHeaderTable15loadSymbolTableENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-   642: 0000000000002be2   698 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader4loadENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-   643: 0000000000009452   110 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderE9constructIS1_JRS1_EEEvPT_DpOT0_
-   644: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEt@GLIBCXX_3.4
-   645: 0000000000006842    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EE12_Vector_implD2Ev
-   646: 0000000000005fff    53 FUNC    WEAK   DEFAULT   16 _ZSt18uninitialized_copyIPKSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEPS7_ET0_T_SC_SB_
-   647: 0000000000005f36    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE10deallocateERS8_PS7_m
-   648: 0000000000006f04    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13ProgramHeaderED1Ev
-   649: 0000000000006ca6    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EED1Ev
-   650: 000000000000d14e   326 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS1_EESJ_IJEEEEESt17_Rb_tree_iteratorIS8_ESt23_Rb_tree_const_iteratorIS8_EDpOT_
-   651: 0000000000005440   195 FUNC    WEAK   DEFAULT   16 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
-   652: 000000000000d932    30 FUNC    WEAK   DEFAULT   16 _ZNSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EPSt18_Rb_tree_node_base
-   653: 000000000000caea   168 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI6SymbolSaIS0_EE12emplace_backIJRS0_EEES4_DpOT_
-   654: 000000000000571e    76 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE5beginEv
-   655: 000000000000cc92    21 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx17__normal_iteratorIP6SymbolSt6vectorIS1_SaIS1_EEEdeEv
-   656: 00000000000068c2    31 FUNC    WEAK   DEFAULT   16 _ZN8SegmentsD2Ev
-   657: 0000000000006217    31 FUNC    WEAK   DEFAULT   16 _ZSt8_DestroyISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvPT_
-   658: 000000000000c972   131 FUNC    WEAK   DEFAULT   16 _ZNKSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEE5countERS9_
-   659: 0000000000005624   178 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EEC1ESt16initializer_listIS7_ERKS8_
-   660: 000000000000e86c    64 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRS1_Lb1EEEOT_RKS1_
-   661: 000000000000de8c   234 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE14_M_insert_nodeEPSt18_Rb_tree_node_baseSG_PSt13_Rb_tree_nodeIS8_E
-   662: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSolsEi@GLIBCXX_3.4
-   663: 000000000000ebd0    72 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC1IRPSt13_Rb_tree_nodeIS_IKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS1_Lb1EEEOT_OT0_
-   664: 0000000000007132    31 FUNC    WEAK   DEFAULT   16 _ZNSaI6SymbolEC2Ev
-   665: 000000000000753d    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI6SymbolEE10deallocateERS1_PS0_m
-   666: 0000000000007fe2  1706 FUNC    GLOBAL DEFAULT   16 _ZN13ProgramHeader10str_p_typeB5cxx11Ev
-   667: 000000000000d0b4    38 FUNC    WEAK   DEFAULT   16 _ZNKSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEE8key_compEv
-   668: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_deregisterTMCloneTable
-   669: 000000000000709a    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEED1Ev
-   670: 000000000000c804    44 FUNC    WEAK   DEFAULT   16 _ZNSt17_Rb_tree_iteratorISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEppEv
-   671: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _Unwind_Resume@GCC_3.0
-   672: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSaIcEC1Ev@GLIBCXX_3.4
-   673: 0000000000005e44    55 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE11_M_allocateEm
-   674: 00000000000048ba    22 FUNC    WEAK   DEFAULT   16 _ZStorSt13_Ios_FmtflagsS_
-   675: 0000000000006662    31 FUNC    WEAK   DEFAULT   16 _ZNSt3mapIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIjESaISt4pairIKjS5_EEEC2Ev
-   676: 0000000000003da4  1541 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader13str_e_machineB5cxx11Ev
-   677: 00000000000072ea    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SegmentEC1Ev
-   678: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm@GLIBCXX_3.4.21
-   679: 00000000000060e2    24 FUNC    WEAK   DEFAULT   16 _ZNK9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE11_M_max_sizeEv
-   680: 0000000000005c88    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIPSt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt6vectorIS8_SaIS8_EEEC2ERKS9_
-   681: 0000000000007432    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderEC2Ev
-   682: 00000000000078fc    35 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED1Ev
-   683: 000000000000722e    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE17_Vector_impl_dataC2Ev
-   684: 0000000000004944    22 FUNC    WEAK   DEFAULT   16 _ZStorSt13_Ios_OpenmodeS_
-   685: 00000000000064b8    41 FUNC    WEAK   DEFAULT   16 _ZNSt15_Rb_tree_headerC1Ev
-   686: 000000000000f0f0    71 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1IJRS0_EJLm0EEJEJEEERSt5tupleIJDpT_EERSA_IJDpT1_EESt12_Index_tupleIJXspT0_EEESJ_IJXspT2_EEE
-   687: 0000000000006fe0    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI13SectionHeaderED2Ev
-   688: 000000000000edb4    18 FUNC    WEAK   DEFAULT   16 _ZSt12__niter_baseIP13SectionHeaderET_S2_
-   689: 000000000000941e    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEC2ERKS2_
-   690: 0000000000006d3a    77 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EED2Ev
-   691: 00000000000068a2    31 FUNC    WEAK   DEFAULT   16 _ZN8SegmentsC1Ev
-   692: 0000000000006ed2    50 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE17_Vector_impl_dataC2Ev
-   693: 0000000000004e5f   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA23_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   694: 0000000000005a2c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC1Ev
-   695: 0000000000006c08    43 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI6SymbolSaIS0_EE12_Vector_implC1Ev
-   696: 00000000000065a2    31 FUNC    WEAK   DEFAULT   16 _ZN18ProgramHeaderTableD1Ev
-   697: 00000000000095af    84 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxxmiIP13ProgramHeaderSt6vectorIS1_SaIS1_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS9_SC_
-   698: 0000000000006e6a    72 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI7SegmentSaIS0_EED2Ev
-   699: 00000000000067a2    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SectionSaIS0_EE12_Vector_implD2Ev
-   700: 000000000000879c  1178 FUNC    GLOBAL DEFAULT   16 _ZN18ProgramHeaderTable4dumpEv
-   701: 0000000000005516    62 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIiPKcEC2IiLb1EEEOT_RKS1_
-   702: 000000000000483d    62 FUNC    WEAK   DEFAULT   16 _ZNSt11char_traitsIcE6lengthEPKc
-   703: 0000000000006e1c    77 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI7SegmentSaIS0_EED2Ev
-   704: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
-   705: 0000000000008f86    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA4_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   706: 00000000000097d5   105 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13ProgramHeaderSaIS0_EE11_S_max_sizeERKS1_
-   707: 000000000000da90   936 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS8_ERS1_
-   708: 000000000000d9a0    15 FUNC    WEAK   DEFAULT   16 _ZNKSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE8key_compEv
-   709: 00000000000047a2    22 FUNC    GLOBAL DEFAULT   16 _ZN9ElfHeader23getSectionHeaderItemNumEv
-   710: 000000000000996d   136 FUNC    WEAK   DEFAULT   16 _ZSt14__relocate_a_1I13ProgramHeaderS0_ENSt9enable_ifIXsrSt24__is_bitwise_relocatableIT_vE5valueEPS3_E4typeES5_S5_S5_RSaIT0_E
-   711: 0000000000004891    19 FUNC    WEAK   DEFAULT   16 _ZdlPvS_
-   712: 0000000000005566    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA17_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   713: 000000000000733c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorI7SegmentED2Ev
-   714: 0000000000007860    34 FUNC    WEAK   DEFAULT   16 _ZNSt13_Rb_tree_nodeISt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE9_M_valptrEv
-   715: 0000000000000000     0 NOTYPE  WEAK   DEFAULT  UND _ITM_registerTMCloneTable
-   716: 000000000000c5a8   168 FUNC    WEAK   DEFAULT   16 _ZNSt6vectorI13SectionHeaderSaIS0_EE12emplace_backIJRS0_EEES4_DpOT_
-   717: 00000000000049ec    44 FUNC    WEAK   DEFAULT   16 _ZSt3hexRSt8ios_base
-   718: 0000000000006f14    57 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseI13ProgramHeaderSaIS0_EE13_M_deallocateEPS0_m
-   719: 000000000000e7f8    72 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIPSt18_Rb_tree_node_baseS1_EC2IRS1_S4_Lb1EEEOT_OT0_
-   720: 00000000000074da    61 FUNC    WEAK   DEFAULT   16 _ZNSt8_Rb_treeIjSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESt10_Select1stIS8_ESt4lessIjESaIS8_EE12_M_drop_nodeEPSt13_Rb_tree_nodeIS8_E
-   721: 00000000000055c0    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIRA32_KcEOT_RNSt16remove_referenceIS3_E4typeE
-   722: 0000000000004fdf   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA10_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   723: 00000000000073d5    50 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaI13ProgramHeaderEE10deallocateERS1_PS0_m
-   724: 0000000000005d6a    22 FUNC    WEAK   DEFAULT   16 _ZNKSt16initializer_listISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE4sizeEv
-   725: 000000000000f0a4    46 FUNC    WEAK   DEFAULT   16 _ZNSt4pairIKjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC1IJRS0_EJEEESt21piecewise_construct_tSt5tupleIJDpT_EESB_IJDpT0_EE
-   726: 0000000000009b06    21 FUNC    GLOBAL DEFAULT   16 _ZN13SectionHeader11get_sh_linkEv
-   727: 0000000000008cd1    16 FUNC    WEAK   DEFAULT   16 _ZSt4setwi
-   728: 0000000000008de1   128 FUNC    WEAK   DEFAULT   16 _ZSt9make_pairIiRA7_KcESt4pairINSt25__strip_reference_wrapperINSt5decayIT_E4typeEE6__typeENS4_INS5_IT0_E4typeEE6__typeEEOS6_OSB_
-   729: 0000000000006ab4    31 FUNC    WEAK   DEFAULT   16 _ZNSaI13SectionHeaderED2Ev
-   730: 0000000000004a95    18 FUNC    WEAK   DEFAULT   16 _ZSt7forwardIiEOT_RNSt16remove_referenceIS0_E4typeE
-   731: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm@GLIBCXX_3.4.21
-   732: 000000000000cf90    33 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx17__normal_iteratorIP13SectionHeaderSt6vectorIS1_SaIS1_EEEC2ERKS2_
-   733: 0000000000005a4c    31 FUNC    WEAK   DEFAULT   16 _ZNSt12_Vector_baseISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEESaIS7_EE12_Vector_implD2Ev
-   734: 0000000000005a3c    15 FUNC    WEAK   DEFAULT   16 _ZN9__gnu_cxx13new_allocatorISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEED1Ev
-   735: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND _ZNSt8ios_base4InitD1Ev@GLIBCXX_3.4
-   736: 00000000000072ea    31 FUNC    WEAK   DEFAULT   16 _ZNSaI7SegmentEC2Ev
-   737: 00000000000060c4    30 FUNC    WEAK   DEFAULT   16 _ZNSt16allocator_traitsISaISt4pairIjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEE8max_sizeERKS8_
+PC:10134
+Fetched :instruction  1a018513  at address  10134
+Decoded :instruction  6f418193  at address  10130      : addi gp, gp, 6f4 //// gp = gp + 6f4
+Execute :instruction  3197      at address  1012c      : AUIPC     3         3
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :1312c     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :0
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10138
+Fetched :instruction  76018613  at address  10138
+Decoded :instruction  1a018513  at address  10134      : addi a0, gp, 1a0 //// a0 = gp + 1a0
+Execute :instruction  6f418193  at address  10130      : ADDI      3         3         6f4
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :0
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1013c
+Fetched :instruction  40a60633  at address  1013c
+Decoded :instruction  76018613  at address  10138      : addi a2, gp, 760 //// a2 = gp + 760
+Execute :instruction  1a018513  at address  10134      : ADDI      a         3         1a0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :139c0     a1    :0
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10140
+Fetched :instruction  593       at address  10140
+Decoded :instruction  40a60633  at address  1013c      : SUB  a2, a2, a0 //// a2 = a2 - a0
+Execute :instruction  76018613  at address  10138      : ADDI      c         3         760
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :139c0     a1    :0
+a2    :13f80     a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10144
+Fetched :instruction  269000ef  at address  10144
+Decoded :instruction  593       at address  10140      : addi a1, zero, 0 //// a1 = zero + 0
+Execute :instruction  40a60633  at address  1013c      : SUB       c         c         a
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :139c0     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10148
+Fetched :instruction  1517      at address  10148
+Decoded :instruction  269000ef  at address  10144      : jal ra, offset(4d200) //// ra = pc + 4 ; pc = pc + 4d200
+Execute :instruction  593       at address  10140      : ADDI      b         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :139c0     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1014c
+Fetched :instruction  c7c50513  at address  1014c
+Decoded :instruction  1517      at address  10148      : auiipc a0, 1000 //// a0 = pc + 1000
+Execute :instruction  269000ef  at address  10144      : JAL       1         0         0         26900     0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :139c0     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10150
+Fetched :instruction  50863     at address  10150
+Decoded :instruction  c7c50513  at address  1014c      : addi a0, a0, fffffc7c //// a0 = a0 + fffffc7c
+Execute :instruction  1517      at address  10148      : AUIPC     a         1
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :11148     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10154
+Fetched :instruction  2517      at address  10154
+Decoded :instruction  50863     at address  10150      : beq a0, zero, 8) //// int32 a0 == int32 zero ? pc = pc + 8
+Execute :instruction  c7c50513  at address  1014c      : ADDI      a         a         c7c
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :10dc4     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10158
+Fetched :instruction  d9850513  at address  10158
+Decoded :instruction  2517      at address  10154      : auiipc a0, 2000 //// a0 = pc + 2000
+Execute :instruction  50863     at address  10150      : BEQ       a         0         8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :10dc4     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1015c
+Fetched :instruction  469000ef  at address  1015c
+Decoded :instruction  d9850513  at address  10158      : addi a0, a0, fffffd98 //// a0 = a0 + fffffd98
+Execute :instruction  2517      at address  10154      : AUIPC     a         2
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :12154     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10160
+Fetched :instruction  1b1000ef  at address  10160
+Decoded :instruction  469000ef  at address  1015c      : jal ra, offset(8d200) //// ra = pc + 4 ; pc = pc + 8d200
+Execute :instruction  d9850513  at address  10158      : ADDI      a         a         d98
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10148     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :11eec     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10164
+Fetched :instruction  12503     at address  10164
+Decoded :instruction  1b1000ef  at address  10160      : jal ra, offset(36200) //// ra = pc + 4 ; pc = pc + 36200
+Execute :instruction  469000ef  at address  1015c      : JAL       1         0         0         46900     0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10160     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :11eec     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10168
+Fetched :instruction  810593    at address  10168
+Decoded :instruction  12503     at address  10164      : lw a0, sp, 0 //// a0 = sp + 0; // get 32 bit data and int extend
+Execute :instruction  1b1000ef  at address  10160      : JAL       1         0         0         1b100     0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10164     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :11eec     a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1016c
+Fetched :instruction  613       at address  1016c
+Decoded :instruction  810593    at address  10168      : addi a1, sp, 8 //// a1 = sp + 8
+Execute :instruction  12503     at address  10164      : LW        a         2         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10164     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :0
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10170
+Fetched :instruction  6c000ef   at address  10170
+Decoded :instruction  613       at address  1016c      : addi a2, zero, 0 //// a2 = zero + 0
+Execute :instruction  810593    at address  10168      : ADDI      b         2         8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10164     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :5c0       a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10174
+Fetched :instruction  f75ff06f  at address  10174
+Decoded :instruction  6c000ef   at address  10170      : jal ra, offset(d800) //// ra = pc + 4 ; pc = pc + d800
+Execute :instruction  613       at address  1016c      : ADDI      c         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10164     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10178
+Fetched :instruction  ff010113  at address  10178
+Decoded :instruction  f75ff06f  at address  10174      : jal zero, offset(fffeebfe) //// zero = pc + 4 ; pc = pc + fffeebfe
+Execute :instruction  6c000ef   at address  10170      : JAL       1         0         0         6c00      0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1017c
+Fetched :instruction  813023    at address  1017c
+Decoded :instruction  ff010113  at address  10178      : addi sp, sp, fffffff0 //// sp = sp + fffffff0
+Execute :instruction  f75ff06f  at address  10174      : JAL       0         0         0         f75ff     0
+----------------------------------------------------------------------------------------------------
+zero  :10178     ra    :10174     sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10180
+Fetched :instruction  1d81c783  at address  10180
+Decoded :instruction  813023    at address  1017c      : sd s0, sp //// s0 = sp + 0
+Execute :instruction  ff010113  at address  10178      : ADDI      2         2         ff0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10184
+Fetched :instruction  113423    at address  10184
+Decoded :instruction  1d81c783  at address  10180      : lbu a5, gp, 1d8 //// a5 = gp + 1d8; // get 16 bit data and int extend
+Execute :instruction  813023    at address  1017c      : SD        2         8         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10188
+Fetched :instruction  2079263   at address  10188
+Decoded :instruction  113423    at address  10184      : sd ra, sp //// ra = sp + 8
+Execute :instruction  1d81c783  at address  10180      : LBU       f         3         1d8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1018c
+Fetched :instruction  793       at address  1018c
+Decoded :instruction  2079263   at address  10188      : bne a5, zero, 22) //// int32 a5 != int32 zero ? pc = pc + 22
+Execute :instruction  113423    at address  10184      : SD        2         1         8         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10190
+Fetched :instruction  78a63     at address  10190
+Decoded :instruction  793       at address  1018c      : addi a5, zero, 0 //// a5 = zero + 0
+Execute :instruction  2079263   at address  10188      : BNE       f         0         34
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10194
+Fetched :instruction  13537     at address  10194
+Decoded :instruction  78a63     at address  10190      : beq a5, zero, a) //// int32 a5 == int32 zero ? pc = pc + a
+Execute :instruction  793       at address  1018c      : ADDI      f         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10198
+Fetched :instruction  50513     at address  10198
+Decoded :instruction  13537     at address  10194      : lui a, 13000 /// a0 = 13000
+Execute :instruction  78a63     at address  10190      : BEQ       f         0         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1019c
+Fetched :instruction  97        at address  1019c
+Decoded :instruction  50513     at address  10198      : addi a0, a0, 0 //// a0 = a0 + 0
+Execute :instruction  13537     at address  10194      : LUI       a         13
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101a0
+Fetched :instruction  e7        at address  101a0
+Decoded :instruction  97        at address  1019c      : auiipc ra, 0 //// ra = pc + 0
+Execute :instruction  50513     at address  10198      : ADDI      a         a         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :10174     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101a4
+Fetched :instruction  100793    at address  101a4
+Decoded :instruction  e7        at address  101a0      : jalr ra, label(0) //// ra = pc + 4 ; pc = zero + 0
+Execute :instruction  97        at address  1019c      : AUIPC     1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :1019c     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101a8
+Fetched :instruction  1cf18c23  at address  101a8
+Decoded :instruction  100793    at address  101a4      : addi a5, zero, 1 //// a5 = zero + 1
+Execute :instruction  e7        at address  101a0      : JALR      1         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :1019c     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101ac
+Fetched :instruction  813083    at address  101ac
+Decoded :instruction  1cf18c23  at address  101a8      : sb a5, gp //// a5 = gp + 1d8
+Execute :instruction  100793    at address  101a4      : ADDI      f         0         1
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :1019c     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101b0
+Fetched :instruction  13403     at address  101b0
+Decoded :instruction  813083    at address  101ac      : ld ra, sp, 8 //// ra = sp + 8; // get 32 bit data and int extend
+Execute :instruction  1cf18c23  at address  101a8      : SB        3         f         18        e
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :1019c     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101b4
+Fetched :instruction  1010113   at address  101b4
+Decoded :instruction  13403     at address  101b0      : ld s0, sp, 0 //// s0 = sp + 0; // get 32 bit data and int extend
+Execute :instruction  813083    at address  101ac      : LD        1         2         8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101b8
+Fetched :instruction  8067      at address  101b8
+Decoded :instruction  1010113   at address  101b4      : addi sp, sp, 10 //// sp = sp + 10
+Execute :instruction  13403     at address  101b0      : LD        8         2         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101bc
+Fetched :instruction  793       at address  101bc
+Decoded :instruction  8067      at address  101b8      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  1010113   at address  101b4      : ADDI      2         2         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101c0
+Fetched :instruction  78c63     at address  101c0
+Decoded :instruction  793       at address  101bc      : addi a5, zero, 0 //// a5 = zero + 0
+Execute :instruction  8067      at address  101b8      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :1         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101c4
+Fetched :instruction  13537     at address  101c4
+Decoded :instruction  78c63     at address  101c0      : beq a5, zero, c) //// int32 a5 == int32 zero ? pc = pc + c
+Execute :instruction  793       at address  101bc      : ADDI      f         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101c8
+Fetched :instruction  1e018593  at address  101c8
+Decoded :instruction  13537     at address  101c4      : lui a, 13000 /// a0 = 13000
+Execute :instruction  78c63     at address  101c0      : BEQ       f         0         12
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101cc
+Fetched :instruction  50513     at address  101cc
+Decoded :instruction  1e018593  at address  101c8      : addi a1, gp, 1e0 //// a1 = gp + 1e0
+Execute :instruction  13537     at address  101c4      : LUI       a         13
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :80000008
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101d0
+Fetched :instruction  317       at address  101d0
+Decoded :instruction  50513     at address  101cc      : addi a0, a0, 0 //// a0 = a0 + 0
+Execute :instruction  1e018593  at address  101c8      : ADDI      b         3         1e0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101d4
+Fetched :instruction  67        at address  101d4
+Decoded :instruction  317       at address  101d0      : auiipc t1, 0 //// t1 = pc + 0
+Execute :instruction  50513     at address  101cc      : ADDI      a         a         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :0         t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101d8
+Fetched :instruction  8067      at address  101d8
+Decoded :instruction  67        at address  101d4      : jalr zero, label(0) //// zero = pc + 4 ; pc = zero + 0
+Execute :instruction  317       at address  101d0      : AUIPC     6         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101dc
+Fetched :instruction  ff010113  at address  101dc
+Decoded :instruction  8067      at address  101d8      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  67        at address  101d4      : JALR      0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101e0
+Fetched :instruction  113423    at address  101e0
+Decoded :instruction  ff010113  at address  101dc      : addi sp, sp, fffffff0 //// sp = sp + fffffff0
+Execute :instruction  8067      at address  101d8      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101e4
+Fetched :instruction  813023    at address  101e4
+Decoded :instruction  113423    at address  101e0      : sd ra, sp //// ra = sp + 8
+Execute :instruction  ff010113  at address  101dc      : ADDI      2         2         ff0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101e8
+Fetched :instruction  1010413   at address  101e8
+Decoded :instruction  813023    at address  101e4      : sd s0, sp //// s0 = sp + 0
+Execute :instruction  113423    at address  101e0      : SD        2         1         8         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101ec
+Fetched :instruction  127b7     at address  101ec
+Decoded :instruction  1010413   at address  101e8      : addi s0, sp, 10 //// s0 = sp + 10
+Execute :instruction  813023    at address  101e4      : SD        2         8         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101f0
+Fetched :instruction  1b078513  at address  101f0
+Decoded :instruction  127b7     at address  101ec      : lui f, 12000 /// a5 = 12000
+Execute :instruction  1010413   at address  101e8      : ADDI      8         2         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101f4
+Fetched :instruction  4c000ef   at address  101f4
+Decoded :instruction  1b078513  at address  101f0      : addi a0, a5, 1b0 //// a0 = a5 + 1b0
+Execute :instruction  127b7     at address  101ec      : LUI       f         12
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101f8
+Fetched :instruction  9c000ef   at address  101f8
+Decoded :instruction  4c000ef   at address  101f4      : jal ra, offset(9800) //// ra = pc + 4 ; pc = pc + 9800
+Execute :instruction  1b078513  at address  101f0      : ADDI      a         f         1b0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :1b0       a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:101fc
+Fetched :instruction  793       at address  101fc
+Decoded :instruction  9c000ef   at address  101f8      : jal ra, offset(13800) //// ra = pc + 4 ; pc = pc + 13800
+Execute :instruction  4c000ef   at address  101f4      : JAL       1         0         0         4c00      0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :101f8     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :1b0       a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10200
+Fetched :instruction  78513     at address  10200
+Decoded :instruction  793       at address  101fc      : addi a5, zero, 0 //// a5 = zero + 0
+Execute :instruction  9c000ef   at address  101f8      : JAL       1         0         0         9c00      0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :101fc     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :1b0       a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10204
+Fetched :instruction  813083    at address  10204
+Decoded :instruction  78513     at address  10200      : addi a0, a5, 0 //// a0 = a5 + 0
+Execute :instruction  793       at address  101fc      : ADDI      f         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :101fc     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :1b0       a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10208
+Fetched :instruction  13403     at address  10208
+Decoded :instruction  813083    at address  10204      : ld ra, sp, 8 //// ra = sp + 8; // get 32 bit data and int extend
+Execute :instruction  78513     at address  10200      : ADDI      a         f         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :101fc     sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1020c
+Fetched :instruction  1010113   at address  1020c
+Decoded :instruction  13403     at address  10208      : ld s0, sp, 0 //// s0 = sp + 0; // get 32 bit data and int extend
+Execute :instruction  813083    at address  10204      : LD        1         2         8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10210
+Fetched :instruction  8067      at address  10210
+Decoded :instruction  1010113   at address  1020c      : addi sp, sp, 10 //// sp = sp + 10
+Execute :instruction  13403     at address  10208      : LD        8         2         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10214
+Fetched :instruction  fe010113  at address  10214
+Decoded :instruction  8067      at address  10210      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  1010113   at address  1020c      : ADDI      2         2         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10218
+Fetched :instruction  813c23    at address  10218
+Decoded :instruction  fe010113  at address  10214      : addi sp, sp, ffffffe0 //// sp = sp + ffffffe0
+Execute :instruction  8067      at address  10210      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1021c
+Fetched :instruction  2010413   at address  1021c
+Decoded :instruction  813c23    at address  10218      : sd s0, sp //// s0 = sp + 18
+Execute :instruction  fe010113  at address  10214      : ADDI      2         2         fe0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10220
+Fetched :instruction  50793     at address  10220
+Decoded :instruction  2010413   at address  1021c      : addi s0, sp, 20 //// s0 = sp + 20
+Execute :instruction  813c23    at address  10218      : SD        2         8         18        0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10224
+Fetched :instruction  fef42623  at address  10224
+Decoded :instruction  50793     at address  10220      : addi a5, a0, 0 //// a5 = a0 + 0
+Execute :instruction  2010413   at address  1021c      : ADDI      8         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10228
+Fetched :instruction  200893    at address  10228
+Decoded :instruction  fef42623  at address  10224      : sw a5, s0 //// a5 = s0 + ffffffec
+Execute :instruction  50793     at address  10220      : ADDI      f         a         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1022c
+Fetched :instruction  73        at address  1022c
+Decoded :instruction  200893    at address  10228      : addi a7, zero, 2 //// a7 = zero + 2
+Execute :instruction  fef42623  at address  10224      : SW        8         f         c         7f
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10230
+Fetched :instruction  13        at address  10230
+Decoded :instruction  73        at address  1022c      : do_syscall(arg1:a0, type:a7)
+
+Execute :instruction  200893    at address  10228      : ADDI      11        0         2
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10234
+Fetched :instruction  1813403   at address  10234
+Decoded :instruction  13        at address  10230      : addi zero, zero, 0 //// zero = zero + 0
+Execute :instruction  73        at address  1022c      : ECALL     0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10238
+Fetched :instruction  2010113   at address  10238
+Decoded :instruction  1813403   at address  10234      : ld s0, sp, 18 //// s0 = sp + 18; // get 32 bit data and int extend
+Execute :instruction  13        at address  10230      : ADDI      0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1023c
+Fetched :instruction  8067      at address  1023c
+Decoded :instruction  2010113   at address  10238      : addi sp, sp, 20 //// sp = sp + 20
+Execute :instruction  1813403   at address  10234      : LD        8         2         18
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10240
+Fetched :instruction  fe010113  at address  10240
+Decoded :instruction  8067      at address  1023c      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  2010113   at address  10238      : ADDI      2         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10244
+Fetched :instruction  813c23    at address  10244
+Decoded :instruction  fe010113  at address  10240      : addi sp, sp, ffffffe0 //// sp = sp + ffffffe0
+Execute :instruction  8067      at address  1023c      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10248
+Fetched :instruction  2010413   at address  10248
+Decoded :instruction  813c23    at address  10244      : sd s0, sp //// s0 = sp + 18
+Execute :instruction  fe010113  at address  10240      : ADDI      2         2         fe0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1024c
+Fetched :instruction  fea43423  at address  1024c
+Decoded :instruction  2010413   at address  10248      : addi s0, sp, 20 //// s0 = sp + 20
+Execute :instruction  813c23    at address  10244      : SD        2         8         18        0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10250
+Fetched :instruction  893       at address  10250
+Decoded :instruction  fea43423  at address  1024c      : sd a0, s0 //// a0 = s0 + ffffffe8
+Execute :instruction  2010413   at address  10248      : ADDI      8         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10254
+Fetched :instruction  73        at address  10254
+Decoded :instruction  893       at address  10250      : addi a7, zero, 0 //// a7 = zero + 0
+Execute :instruction  fea43423  at address  1024c      : SD        8         a         8         7f
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :2
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10258
+Fetched :instruction  13        at address  10258
+Decoded :instruction  73        at address  10254      : do_syscall(arg1:a0, type:a7)
+
+Execute :instruction  893       at address  10250      : ADDI      11        0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1025c
+Fetched :instruction  1813403   at address  1025c
+Decoded :instruction  13        at address  10258      : addi zero, zero, 0 //// zero = zero + 0
+Execute :instruction  73        at address  10254      : ECALL     0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10260
+Fetched :instruction  2010113   at address  10260
+Decoded :instruction  1813403   at address  1025c      : ld s0, sp, 18 //// s0 = sp + 18; // get 32 bit data and int extend
+Execute :instruction  13        at address  10258      : ADDI      0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10264
+Fetched :instruction  8067      at address  10264
+Decoded :instruction  2010113   at address  10260      : addi sp, sp, 20 //// sp = sp + 20
+Execute :instruction  1813403   at address  1025c      : LD        8         2         18
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10268
+Fetched :instruction  fe010113  at address  10268
+Decoded :instruction  8067      at address  10264      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  2010113   at address  10260      : ADDI      2         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1026c
+Fetched :instruction  813c23    at address  1026c
+Decoded :instruction  fe010113  at address  10268      : addi sp, sp, ffffffe0 //// sp = sp + ffffffe0
+Execute :instruction  8067      at address  10264      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10270
+Fetched :instruction  2010413   at address  10270
+Decoded :instruction  813c23    at address  1026c      : sd s0, sp //// s0 = sp + 18
+Execute :instruction  fe010113  at address  10268      : ADDI      2         2         fe0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10274
+Fetched :instruction  50793     at address  10274
+Decoded :instruction  2010413   at address  10270      : addi s0, sp, 20 //// s0 = sp + 20
+Execute :instruction  813c23    at address  1026c      : SD        2         8         18        0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10278
+Fetched :instruction  fef407a3  at address  10278
+Decoded :instruction  50793     at address  10274      : addi a5, a0, 0 //// a5 = a0 + 0
+Execute :instruction  2010413   at address  10270      : ADDI      8         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1027c
+Fetched :instruction  100893    at address  1027c
+Decoded :instruction  fef407a3  at address  10278      : sb a5, s0 //// a5 = s0 + ffffffef
+Execute :instruction  50793     at address  10274      : ADDI      f         a         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10280
+Fetched :instruction  73        at address  10280
+Decoded :instruction  100893    at address  1027c      : addi a7, zero, 1 //// a7 = zero + 1
+Execute :instruction  fef407a3  at address  10278      : SB        8         f         f         7f
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :0
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10284
+Fetched :instruction  13        at address  10284
+Decoded :instruction  73        at address  10280      : do_syscall(arg1:a0, type:a7)
+
+Execute :instruction  100893    at address  1027c      : ADDI      11        0         1
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10288
+Fetched :instruction  1813403   at address  10288
+Decoded :instruction  13        at address  10284      : addi zero, zero, 0 //// zero = zero + 0
+Execute :instruction  73        at address  10280      : ECALL     0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1028c
+Fetched :instruction  2010113   at address  1028c
+Decoded :instruction  1813403   at address  10288      : ld s0, sp, 18 //// s0 = sp + 18; // get 32 bit data and int extend
+Execute :instruction  13        at address  10284      : ADDI      0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10290
+Fetched :instruction  8067      at address  10290
+Decoded :instruction  2010113   at address  1028c      : addi sp, sp, 20 //// sp = sp + 20
+Execute :instruction  1813403   at address  10288      : LD        8         2         18
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7fffffe0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10294
+Fetched :instruction  ff010113  at address  10294
+Decoded :instruction  8067      at address  10290      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  2010113   at address  1028c      : ADDI      2         2         20
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:10298
+Fetched :instruction  813423    at address  10298
+Decoded :instruction  ff010113  at address  10294      : addi sp, sp, fffffff0 //// sp = sp + fffffff0
+Execute :instruction  8067      at address  10290      : JALR      0         1         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:1029c
+Fetched :instruction  1010413   at address  1029c
+Decoded :instruction  813423    at address  10298      : sd s0, sp //// s0 = sp + 8
+Execute :instruction  ff010113  at address  10294      : ADDI      2         2         ff0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102a0
+Fetched :instruction  300893    at address  102a0
+Decoded :instruction  1010413   at address  1029c      : addi s0, sp, 10 //// s0 = sp + 10
+Execute :instruction  813423    at address  10298      : SD        2         8         8         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102a4
+Fetched :instruction  73        at address  102a4
+Decoded :instruction  300893    at address  102a0      : addi a7, zero, 3 //// a7 = zero + 3
+Execute :instruction  1010413   at address  1029c      : ADDI      8         2         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :1
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102a8
+Fetched :instruction  13        at address  102a8
+Decoded :instruction  73        at address  102a4      : do_syscall(arg1:a0, type:a7)
+
+Execute :instruction  300893    at address  102a0      : ADDI      11        0         3
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :3
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102ac
+Fetched :instruction  813403    at address  102ac
+Decoded :instruction  13        at address  102a8      : addi zero, zero, 0 //// zero = zero + 0
+Execute :instruction  73        at address  102a4      : ECALL     0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :3
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102b0
+Fetched :instruction  1010113   at address  102b0
+Decoded :instruction  813403    at address  102ac      : ld s0, sp, 8 //// s0 = sp + 8; // get 32 bit data and int extend
+Execute :instruction  13        at address  102a8      : ADDI      0         0         0
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :80000000  s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :3
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102b4
+Fetched :instruction  8067      at address  102b4
+Decoded :instruction  1010113   at address  102b0      : addi sp, sp, 10 //// sp = sp + 10
+Execute :instruction  813403    at address  102ac      : LD        8         2         8
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :7ffffff0  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :3
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
+
+PC:102b8
+Fetched :instruction  fe010113  at address  102b8
+Decoded :instruction  8067      at address  102b4      : jalr zero, label(0) //// zero = pc + 4 ; pc = ra + 0
+Execute :instruction  1010113   at address  102b0      : ADDI      2         2         10
+----------------------------------------------------------------------------------------------------
+zero  :0         ra    :0         sp    :80000000  gp    :13820     tp    :0         t0    :0
+t1    :101d0     t2    :0         s0    :0         s1    :0         a0    :0         a1    :13a00
+a2    :0         a3    :0         a4    :0         a5    :0         a6    :0         a7    :3
+s2    :0         s3    :0         s4    :0         s5    :0         s6    :0         s7    :0
+s8    :0         s9    :0         s10   :0         s11   :0         t3    :0         t4    :0
+t5    :0         t6    :0
+----------------------------------------------------------------------------------------------------
