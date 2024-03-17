@@ -5,134 +5,104 @@ using namespace std;
 
 void Core::decode_beq()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " == "
-              << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " == "
+    //           << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_bne()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " != "
-              << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " != "
+    //           << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_blt()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " < "
-              << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " < "
+    //           << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_bge()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " > "
-              << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "int32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " > "
+    //           << "int32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_bltu()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " < "
-              << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " < "
+    //           << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_bgeu()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | \
-                                (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                                (m_inst.rv32i.SB.imm_11 << 11) | \
-                                (m_inst.rv32i.SB.imm_12 << 12) ) << 19) >> 19;
-
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.SB.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.SB.rs2].second
               << ", "
-              << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
-              << " > "
-              << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
-              << " ? "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs1].second
+    //           << " > "
+    //           << "uint32 " << m_core_registers[m_inst.rv32i.SB.rs2].second
+    //           << " ? "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_branch_inst()
 {
-    m_inst.imm = int32_t(( (m_inst.rv32i.SB.imm_4_1) | (m_inst.rv32i.SB.imm_10_5 << 5) | \
-                        (m_inst.rv32i.SB.imm_11 << 11) | (m_inst.rv32i.SB.imm_12 << 12) ) << 19 ) >> 19;
+    m_inst.imm = int32_t((m_inst.rv32i.SB.imm_4_1 | (m_inst.rv32i.SB.imm_10_5 << 4) |
+                         (m_inst.rv32i.SB.imm_11 << 10) | (m_inst.rv32i.SB.imm_12 << 11))) << 20 >> 19;
 
     switch (m_inst.rv32i.S.func3)
     {
@@ -157,11 +127,11 @@ void Core::decode_lb()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 8 bit data, int extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 8 bit data, int extend";
 
 }
 void Core::decode_lh()
@@ -174,11 +144,11 @@ void Core::decode_lh()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 16 bit data and int extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 16 bit data and int extend";
 }
 void Core::decode_lw()
 {
@@ -190,11 +160,11 @@ void Core::decode_lw()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 32 bit data and int extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 32 bit data and int extend";
 }
 void Core::decode_lbu()
 {
@@ -206,11 +176,11 @@ void Core::decode_lbu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 16 bit data and int extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 16 bit data and int extend";
 }
 void Core::decode_lhu()
 {
@@ -222,11 +192,11 @@ void Core::decode_lhu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 16 bit data and uint extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 16 bit data and uint extend";
 }
 void Core::decode_lwu()
 {
@@ -238,11 +208,11 @@ void Core::decode_lwu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " = "
-              << std::hex << m_inst.imm << "; // get 32 bit data and uint extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " = "
+    //           << std::hex << m_inst.imm << "; // get 32 bit data and uint extend";
 }
 void Core::decode_ld()
 {
@@ -254,11 +224,11 @@ void Core::decode_ld()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
-              << std::hex << m_inst.imm << "; // get 32 bit data and int extend";
+            << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
+    //           << std::hex << m_inst.imm << "; // get 32 bit data and int extend";
 }
 void Core::decode_load_inst()
 {
@@ -287,13 +257,13 @@ void Core::decode_sb(){
               << ", "
               << m_core_registers[m_inst.rv32i.S.rs1].second;
 
-    std::cout << " //// ";
+    // std::cout << " //// ";
 
-    std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.S.rs1].second
-              << " + "
-              << std::hex << m_inst.imm;
+    // std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.S.rs1].second
+    //           << " + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_sh(){
     // S-type
@@ -304,13 +274,13 @@ void Core::decode_sh(){
               << ", "
               << m_core_registers[m_inst.rv32i.S.rs1].second;
 
-    std::cout << " //// ";
+    // std::cout << " //// ";
 
-    std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.S.rs1].second
-              << " + "
-              << std::hex << m_inst.imm;
+    // std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.S.rs1].second
+    //           << " + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_sw(){
     // S-type
@@ -321,34 +291,33 @@ void Core::decode_sw(){
               << ", "
               << m_core_registers[m_inst.rv32i.S.rs1].second;
 
-    std::cout << " //// ";
+    // std::cout << " //// ";
 
-    std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.S.rs1].second
-              << " + "
-              << std::hex << m_inst.imm;
+    // std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.S.rs1].second
+    //           << " + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_sd(){
-    // S-type
-    // lw rs2, offset(rs1)  , read word 64bit > rs2
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.S.rs2].second
               << ", "
               << m_core_registers[m_inst.rv32i.S.rs1].second;
 
-    std::cout << " //// ";
+    // std::cout << " //// ";
 
-    std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.S.rs1].second
-              << " + "
-              << std::hex << m_inst.imm;
+    // std::cout << m_core_registers[m_inst.rv32i.S.rs2].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.S.rs1].second
+    //           << " + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_store_inst()
 {
-    m_inst.imm = int32_t((m_inst.rv32i.S.imm_4_0 | (m_inst.rv32i.S.imm_11_5 << 5)) << 20) >> 20;
+    m_inst.imm = int32_t((m_inst.rv32i.SB.imm_4_1 | (m_inst.rv32i.SB.imm_10_5 << 4) |
+                         (m_inst.rv32i.SB.imm_11 << 10) | (m_inst.rv32i.SB.imm_12 << 11))) << 20 >> 19;
 
     switch (m_inst.rv32i.S.func3)
     {
@@ -368,13 +337,13 @@ void Core::decode_addi(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " + "
-              << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_slti(){
     std::cout << m_inst.opName
@@ -383,15 +352,15 @@ void Core::decode_slti(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << " int32_t " << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " < "
-              << " int32_t " << std::hex << m_inst.imm
-              << " ? "
-              << m_core_registers[m_inst.rv32i.I.rd].second << "=1 "
-              << ": "
-              << m_core_registers[m_inst.rv32i.I.rd].second << "=0 ";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << " int32_t " << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " < "
+    //           << " int32_t " << std::hex << m_inst.imm
+    //           << " ? "
+    //           << m_core_registers[m_inst.rv32i.I.rd].second << "=1 "
+    //           << ": "
+    //           << m_core_registers[m_inst.rv32i.I.rd].second << "=0 ";
 }
 void Core::decode_sltiu(){
     std::cout << m_inst.opName
@@ -400,15 +369,15 @@ void Core::decode_sltiu(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << " uint32_t " << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " < "
-              << " uint32_t " << std::hex << m_inst.imm
-              << " ? "
-              << m_core_registers[m_inst.rv32i.I.rd].second << "=1 "
-              << ": "
-              << m_core_registers[m_inst.rv32i.I.rd].second << "=0 ";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << " uint32_t " << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " < "
+    //           << " uint32_t " << std::hex << m_inst.imm
+    //           << " ? "
+    //           << m_core_registers[m_inst.rv32i.I.rd].second << "=1 "
+    //           << ": "
+    //           << m_core_registers[m_inst.rv32i.I.rd].second << "=0 ";
 }
 void Core::decode_xori(){
     std::cout << m_inst.opName
@@ -417,13 +386,13 @@ void Core::decode_xori(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " | "
-              << std::hex << m_inst.imm << " // arithmetic or";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " | "
+    //           << std::hex << m_inst.imm << " // arithmetic or";
 }
 void Core::decode_ori(){
     std::cout << m_inst.opName
@@ -432,13 +401,13 @@ void Core::decode_ori(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " | "
-              << std::hex << m_inst.imm << " // logical or";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " | "
+    //           << std::hex << m_inst.imm << " // logical or";
 }
 void Core::decode_andi(){
     std::cout << m_inst.opName
@@ -447,13 +416,13 @@ void Core::decode_andi(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " & "
-              << std::hex << m_inst.imm << " // logical and";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " & "
+    //           << std::hex << m_inst.imm << " // logical and";
 }
 void Core::decode_slli(){
     std::cout << m_inst.opName
@@ -462,13 +431,13 @@ void Core::decode_slli(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " << "
-              << std::hex << m_inst.imm << " // logical shift left ";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " << "
+    //           << std::hex << m_inst.imm << " // logical shift left ";
 }
 void Core::decode_srli(){
     std::cout << m_inst.opName
@@ -477,13 +446,13 @@ void Core::decode_srli(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " >> "
-              << std::hex << m_inst.imm << " // logical right left ";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " >> "
+    //           << std::hex << m_inst.imm << " // logical right left ";
 }
 void Core::decode_srai(){
     std::cout << m_inst.opName
@@ -492,13 +461,13 @@ void Core::decode_srai(){
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.I.rs1].second
-              << " >> "
-              << std::hex << m_inst.imm << " // arithmetic right left ";
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.I.rs1].second
+    //           << " >> "
+    //           << std::hex << m_inst.imm << " // arithmetic right left ";
 }
 void Core::decode_imm_inst()
 {
@@ -537,12 +506,12 @@ void Core::decode_add()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " + "
-              << m_core_registers[m_inst.rv32i.R.rs2].second;
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " + "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second;
 }
 void Core::decode_sub()
 {
@@ -553,12 +522,12 @@ void Core::decode_sub()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " - "
-              << m_core_registers[m_inst.rv32i.R.rs2].second;
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " - "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second;
 }
 void Core::decode_sll()
 {
@@ -569,12 +538,12 @@ void Core::decode_sll()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " << "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical shift left ";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " << "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical shift left ";
 }
 void Core::decode_slt()
 {
@@ -585,14 +554,14 @@ void Core::decode_slt()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << " int32_t " << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " < "
-              << " int32_t " << m_core_registers[m_inst.rv32i.R.rs2].second
-              << " ? "
-              << m_core_registers[m_inst.rv32i.R.rd].second << "=1 "
-              << ": "
-              << m_core_registers[m_inst.rv32i.R.rd].second << "=0 ";
+    // std::cout << " //// " ;
+    // std::cout << " int32_t " << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " < "
+    //           << " int32_t " << m_core_registers[m_inst.rv32i.R.rs2].second
+    //           << " ? "
+    //           << m_core_registers[m_inst.rv32i.R.rd].second << "=1 "
+    //           << ": "
+    //           << m_core_registers[m_inst.rv32i.R.rd].second << "=0 ";
 }
 void Core::decode_sltu()
 {
@@ -603,14 +572,14 @@ void Core::decode_sltu()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << " uint32_t " << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " < "
-              << " uint32_t " << m_core_registers[m_inst.rv32i.R.rs2].second
-              << " ? "
-              << m_core_registers[m_inst.rv32i.R.rd].second << "=1 "
-              << ": "
-              << m_core_registers[m_inst.rv32i.R.rd].second << "=0 ";
+    // std::cout << " //// " ;
+    // std::cout << " uint32_t " << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " < "
+    //           << " uint32_t " << m_core_registers[m_inst.rv32i.R.rs2].second
+    //           << " ? "
+    //           << m_core_registers[m_inst.rv32i.R.rd].second << "=1 "
+    //           << ": "
+    //           << m_core_registers[m_inst.rv32i.R.rd].second << "=0 ";
 }
 void Core::decode_xor()
 {
@@ -621,12 +590,12 @@ void Core::decode_xor()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " ^ "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // arithmetic or ";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " ^ "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // arithmetic or ";
 }
 void Core::decode_srl()
 {
@@ -637,12 +606,12 @@ void Core::decode_srl()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " >> "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical shift right ";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " >> "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical shift right ";
 }
 void Core::decode_sra()
 {
@@ -653,12 +622,12 @@ void Core::decode_sra()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " >> "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // arithmetic shift left";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " >> "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // arithmetic shift left";
 }
 void Core::decode_or()
 {
@@ -669,12 +638,12 @@ void Core::decode_or()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " | "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical or ";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " | "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical or ";
 }
 void Core::decode_and()
 {
@@ -685,12 +654,12 @@ void Core::decode_and()
               << m_core_registers[m_inst.rv32i.R.rs1].second
               << ", "
               << m_core_registers[m_inst.rv32i.R.rs2].second;
-    std::cout << " //// " ;
-    std::cout << m_core_registers[m_inst.rv32i.R.rd].second
-              << " = "
-              << m_core_registers[m_inst.rv32i.R.rs1].second
-              << " | "
-              << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical and ";
+    // std::cout << " //// " ;
+    // std::cout << m_core_registers[m_inst.rv32i.R.rd].second
+    //           << " = "
+    //           << m_core_registers[m_inst.rv32i.R.rs1].second
+    //           << " | "
+    //           << m_core_registers[m_inst.rv32i.R.rs2].second << " // logical and ";
 }
 
 void Core::decode_reg_inst()
@@ -699,35 +668,31 @@ void Core::decode_reg_inst()
     {
         case 0:
             switch (m_inst.rv32i.R.func7) {
-                case 0    : m_inst.opName = "ADD " ; decode_add(); break;
-                case 0x20 : m_inst.opName = "SUB " ; decode_sub(); break;
+                case 0    : m_inst.opName = "add " ; decode_add(); break;
+                case 0x20 : m_inst.opName = "sub " ; decode_sub(); break;
             }
             break;
-        case 1:   m_inst.opName = "SLL "  ; decode_sll();  break;
-        case 2:   m_inst.opName = "SLT "  ; decode_slt();  break;
-        case 3:   m_inst.opName = "SLTU"  ; decode_sltu(); break;
-        case 4:   m_inst.opName = "XOR "  ; decode_xor();  break;
+        case 1:   m_inst.opName = "sll"   ; decode_sll();  break;
+        case 2:   m_inst.opName = "slt "  ; decode_slt();  break;
+        case 3:   m_inst.opName = "sltu"  ; decode_sltu(); break;
+        case 4:   m_inst.opName = "xor "  ; decode_xor();  break;
         case 5:
             switch (m_inst.rv32i.R.func7) {
-                case 0    : m_inst.opName = "SRL " ; decode_srl();  break;
-                case 0x20 : m_inst.opName = "SRA " ; decode_sra(); break;
+                case 0    : m_inst.opName = "srl" ;  decode_srl();  break;
+                case 0x20 : m_inst.opName = "sra " ; decode_sra(); break;
             }
             break;
-        case 6:  m_inst.opName = "OR  "  ; decode_or();  break;
-        case 7:  m_inst.opName = "AND "  ; decode_and(); break;
+        case 6:  m_inst.opName = "or"   ; decode_or();  break;
+        case 7:  m_inst.opName = "and"  ; decode_and(); break;
         default:
             std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "REG";
             break;
     }
 }
-
 void Core::decode_fence_inst()
 {
 
 }
-
-
-
 void Core::decode_ecall(){
     // a0 = reg[a0]
     // a7 = reg[a7]
@@ -777,16 +742,57 @@ void Core::decode_system_inst()
     }
 }
 
+void Core::decode_addiw()
+{
+    std::cout << m_inst.opName
+              << " "
+              << m_core_registers[m_inst.rv32i.I.rd].second
+              << ", "
+              << m_core_registers[m_inst.rv32i.I.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm);
+}
+void Core::decode_slliw()
+{
+    std::cout << m_inst.opName
+              << " "
+              << m_core_registers[m_inst.rv32i.I.rd].second
+              << ", "
+              << m_core_registers[m_inst.rv32i.I.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm);
+}
+void Core::decode_srliw()
+{
+    std::cout << m_inst.opName
+              << " "
+              << m_core_registers[m_inst.rv32i.I.rd].second
+              << ", "
+              << m_core_registers[m_inst.rv32i.I.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm);
+}
+void Core::decode_sraiw()
+{
+    std::cout << m_inst.opName
+              << " "
+              << m_core_registers[m_inst.rv32i.I.rd].second
+              << ", "
+              << m_core_registers[m_inst.rv32i.I.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm);
+}
+
 void Core::decode_imm32_inst()
 {
     switch (m_inst.rv32i.R.func3)
     {
-        case 0:  m_inst.opName = "addiw"  ;     break;
-        case 1:  m_inst.opName = "slltw"  ;     break;
+        case 0:  m_inst.opName = "addiw"  ;  decode_addiw();   break;
+        case 1:  m_inst.opName = "slliw"  ;  decode_slliw();   break;
         case 5:
             switch (m_inst.rv32i.R.func7) {
-                case 0    : m_inst.opName = "srliw"  ; break;
-                case 0x20 : m_inst.opName = "sraiw"  ; break;
+                case 0    : m_inst.opName = "srliw"  ; decode_srliw();  break;
+                case 0x20 : m_inst.opName = "sraiw"  ; decode_sraiw();  break;
             }
             break;
         default:
@@ -823,17 +829,17 @@ void Core::decode_auipc()
               << " "
               << m_core_registers[m_inst.rv32i.U.rd].second
               << ", "
-              << std::hex << m_inst.imm;
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.U.rd].second
-              << " = pc + "
-              << std::hex << m_inst.imm;
+              << std::dec << int32_t(m_inst.imm);
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.U.rd].second
+    //           << " = pc + "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 void Core::decode_auipc_inst()
 {
-    m_inst.opName = "auiipc";
+    m_inst.opName = "auipc";
 
-    m_inst.imm = uint32_t(m_inst.rv32i.U.imm_31_12 << 12);
+    m_inst.imm = uint32_t(m_inst.rv32i.U.imm_31_12);
 
     decode_auipc();
 }
@@ -842,20 +848,20 @@ void Core::decode_jal()
 {
     std::cout << m_inst.opName
               << " "
-              << m_core_registers[m_inst.rv32i.I.rd].second
-              << ", offset("
-              << std::hex << m_inst.imm << ")"; // offset range + - 1MB
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.UJ.rd].second << " = pc + 4 ; "
-              << "pc = pc + " << std::hex << m_inst.imm;
+              << m_core_registers[m_inst.rv32i.UJ.rd].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm); // offset range + - 1MB
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.UJ.rd].second << " = pc + 4 ; "
+    //           << "pc = pc + " << std::dec << int32_t(m_inst.imm);
 }
 
 void Core::decode_jal_inst()
 {
     m_inst.opName = "jal";
 
-    m_inst.imm = int32_t(m_inst.rv32i.UJ.imm_10_1 | (m_inst.rv32i.UJ.imm_11 << 11) | \
-                         (m_inst.rv32i.UJ.imm_19_12 << 12) | (m_inst.rv32i.UJ.imm_20 << 20) << 12) >> 11;
+    m_inst.imm = int32_t((m_inst.rv32i.UJ.imm_10_1 ) | (m_inst.rv32i.UJ.imm_11 << 10) | \
+                         (m_inst.rv32i.UJ.imm_19_12 << 11) | (m_inst.rv32i.UJ.imm_20 << 19)) << 12 >> 11;
 
     decode_jal();
 }
@@ -865,11 +871,13 @@ void Core::decode_jalr()
     std::cout << m_inst.opName
               << " "
               << m_core_registers[m_inst.rv32i.I.rd].second
+              << ", "
+              << m_core_registers[m_inst.rv32i.I.rs1].second
               << ", label("
               << std::hex << m_inst.imm << ")";
-    std::cout << " //// ";
-    std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = pc + 4 ; "
-              << "pc = " + m_core_registers[m_inst.rv32i.I.rs1].second << " + " << std::hex << m_inst.imm;
+    // std::cout << " //// ";
+    // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = pc + 4 ; "
+    //           << "pc = " + m_core_registers[m_inst.rv32i.I.rs1].second << " + " << std::dec << int32_t(m_inst.imm);
 }
 
 void Core::decode_jalr_inst()
@@ -884,31 +892,27 @@ void Core::decode_jalr_inst()
 void Core::decode_lui_inst()
 {
     m_inst.opName = "lui";
-    m_inst.imm = uint32_t(m_inst.rv32i.U.imm_31_12 << 12);
+
+    m_inst.imm = int32_t(m_inst.rv32i.U.imm_31_12);
 
     std::cout << m_inst.opName
               << " "
-              << m_inst.rv32i.U.rd
+              << m_core_registers[m_inst.rv32i.U.rd].second
               << ", "
-              << m_inst.imm;
-    std::cout << " /// ";
-    std::cout << m_core_registers[m_inst.rv32i.U.rd].second
-              << " = "
-              << std::hex << m_inst.imm;
+              << std::dec << uint32_t(m_inst.imm);
+    // std::cout << " /// ";
+    // std::cout << m_core_registers[m_inst.rv32i.U.rd].second
+    //           << " = "
+    //           << std::dec << int32_t(m_inst.imm);
 }
 
 void Core::decode()
 {
-    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Decoded" << ":";
+
+
 
     m_inst = FetchReg.m_inst;
     // m_pc = FetchReg.m_pc;
-
-    std::cout << std::setw(13) << std::left << std::setfill(' ') << "instruction" ;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_inst.DoubleWord;
-    std::cout << std::setw(12) << std::left << std::setfill(' ') << "at address" ;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << FetchReg.m_pc ;
-    std::cout << " : ";
 
     if (FetchReg.m_stall)
     {
@@ -922,6 +926,13 @@ void Core::decode()
         DecodeReg.m_bubble = true;
         return ;
     }
+
+    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Decoded" << ":";
+    std::cout << std::setw(8) << std::right << std::setfill('0') << FetchReg.m_pc ;
+    std::cout << std::setw(13) << std::right << std::setfill(' ') << " instruction " ;
+    std::cout << std::setw(8) << std::right << std::setfill('0') << m_inst.DoubleWord;
+
+    std::cout << " : ";
 
     switch (static_cast<InstOpCode>(m_inst.common.opcode))
     {

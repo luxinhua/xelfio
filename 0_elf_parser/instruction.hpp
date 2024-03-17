@@ -110,7 +110,6 @@ struct Instruction
             };
         } common;
         union{
-
             struct{
                 uint32_t opcode : 7;
                 uint32_t rd     : 5;
@@ -152,11 +151,12 @@ struct Instruction
             struct{
                 uint32_t opcode    : 7;
                 uint32_t rd        : 5;
-                uint32_t imm_19_12 : 20;
-                uint32_t imm_11    : 20;
-                uint32_t imm_10_1  : 20;
-                uint32_t imm_20    : 20;
+                uint32_t imm_19_12 : 8;
+                uint32_t imm_11    : 1;
+                uint32_t imm_10_1  : 10;
+                uint32_t imm_20    : 1;
             } UJ;
+            uint32_t Data;
         }rv32i;
         union{
             struct{

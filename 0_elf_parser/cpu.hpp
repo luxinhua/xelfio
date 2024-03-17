@@ -29,6 +29,14 @@ public:
     void print_core_registers();
 
 private:
+    void execute_addiw();
+    void execute_slliw();
+    void execute_srliw();
+    void execute_sraiw();
+    void execute_sb();
+    void execute_sh();
+    void execute_sw();
+    void execute_sd();
     void execute_lb() ;
     void execute_lh() ;
     void execute_lw() ;
@@ -46,13 +54,19 @@ private:
     void execute_addi();
     void execute_slti();
     void execute_sltu();
+    void execute_sltiu();
     void execute_xori();
     void execute_ori();
     void execute_andi();
     void execute_slli();
+    void execute_srli();
     void execute_srai();
+    void execute_add();
     void execute_sub();
     void execute_jal();
+    void execute_sll ();
+    void execute_slt ();
+    void execute_xor ();
 
     void execute_branch_inst();
     void execute_load_inst();
@@ -68,6 +82,10 @@ private:
     void execute_jalr_inst();
     void execute_lut_inst();
 
+    void decode_addiw();
+    void decode_slliw();
+    void decode_srliw();
+    void decode_sraiw();
     void decode_add();
     void decode_sll();
     void decode_slt();

@@ -6,8 +6,8 @@
       "-g",
       "address.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/address.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/address.cpp"
   },
   {
     "arguments": [
@@ -16,8 +16,8 @@
       "-g",
       "cpu.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/cpu.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/cpu.cpp"
   },
   {
     "arguments": [
@@ -26,8 +26,8 @@
       "-g",
       "cpu_decode.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/cpu_decode.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/cpu_decode.cpp"
   },
   {
     "arguments": [
@@ -36,8 +36,8 @@
       "-g",
       "cpu_execute.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/cpu_execute.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/cpu_execute.cpp"
   },
   {
     "arguments": [
@@ -46,8 +46,8 @@
       "-g",
       "cpu_fetch.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/cpu_fetch.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/cpu_fetch.cpp"
   },
   {
     "arguments": [
@@ -56,8 +56,8 @@
       "-g",
       "elfer.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/elfer.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/elfer.cpp"
   },
   {
     "arguments": [
@@ -66,8 +66,8 @@
       "-g",
       "elf_header.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/elf_header.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/elf_header.cpp"
   },
   {
     "arguments": [
@@ -76,8 +76,8 @@
       "-g",
       "memory.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/memory.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/memory.cpp"
   },
   {
     "arguments": [
@@ -86,8 +86,8 @@
       "-g",
       "program_header_table.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/program_header_table.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/program_header_table.cpp"
   },
   {
     "arguments": [
@@ -96,8 +96,8 @@
       "-g",
       "section.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/section.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/section.cpp"
   },
   {
     "arguments": [
@@ -106,8 +106,8 @@
       "-g",
       "section_header_table.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/section_header_table.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/section_header_table.cpp"
   },
   {
     "arguments": [
@@ -116,8 +116,8 @@
       "-g",
       "segment.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/segment.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/segment.cpp"
   },
   {
     "arguments": [
@@ -126,7 +126,7 @@
       "-g",
       "symbol.cpp"
     ],
-    "directory": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser",
-    "file": "/data/xinhualu/repo/0_xhlu/0_pppppppp/0_project/0_elf_parser/symbol.cpp"
+    "directory": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser",
+    "file": "/home/xinhualu/.xhlu_test/0_project/0_elf_parser/symbol.cpp"
   }
 ]

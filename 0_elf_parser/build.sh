@@ -22,7 +22,7 @@ riscv64-unknown-elf-gcc -march=rv64i -mabi=lp64 helloworld.c lib.c -o helloworld
 riscv64-unknown-elf-objdump -D helloworld.out > helloworld.dump
 cd ..
 
-./a.out
+./a.out | grep "Decoded"
 
 
 

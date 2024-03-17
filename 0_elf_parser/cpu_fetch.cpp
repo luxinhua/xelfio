@@ -28,11 +28,11 @@ void Core::fetch()
     /** read pc m_inst */
     m_inst.DoubleWord = m_mem->read32(m_pc);
 
-    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Fetched" << ":";
-    std::cout << std::setw(13) << std::left << std::setfill(' ') << "instruction" ;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_inst.DoubleWord;
-    std::cout << std::setw(12) << std::left << std::setfill(' ') << "at address" ;
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << m_pc ;
+    std::cout << std::setw(8) << std::left << std::setfill(' ') << "Fetched" << ": ";
+
+    std::cout << std::setw(8) << std::right << std::setfill('0') << m_pc ;
+    std::cout << std::setw(13) << std::right << std::setfill(' ') << " instruction " ;
+    std::cout << std::setw(8) << std::right << std::setfill('0') << m_inst.DoubleWord;
     std::cout << std::endl;
 
     FetchRegNew.m_bubble = false;
