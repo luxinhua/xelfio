@@ -31,6 +31,15 @@ Memory Pages:
   0x11000-0x12000
   0x12000-0x13000
   0x13000-0x14000
+xhlu addr 0x139d0, val 0x0
+xhlu addr 0x139d1, val 0x0
+xhlu addr 0x139d2, val 0x0
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr --- 0x139d0  value 0x0 
 xhlu addr 0x1012c, val 0x97
 xhlu addr 0x1012d, val 0x31
 xhlu addr 0x1012e, val 0x0
@@ -473,6 +482,24 @@ xhlu addr 0x10bdf, val 0xfe
 Fetched instruction 0xfed76ae3 at address 0x10bdc
 Decoded 0x10bd8 instruction 0x01070713 as addi a4,a4,16
 Execute: 10bd8,  sd
+xhlu addr 0x139c0, val 0x0
+xhlu addr 0x139c1, val 0x0
+xhlu addr 0x139c2, val 0x0
+xhlu addr 0x139c3, val 0x0
+xhlu addr 0x139c4, val 0x0
+xhlu addr 0x139c5, val 0x0
+xhlu addr 0x139c6, val 0x0
+xhlu addr 0x139c7, val 0x0
+xhlu read addr 0x139c0  value 0x0 
+xhlu addr 0x139d0, val 0x0
+xhlu addr 0x139d1, val 0x0
+xhlu addr 0x139d2, val 0x0
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x139c0  value 0x0 
 Memory Access: 10bcc,  sd
 WriteBack: 10bcc add
 -------------------------- CPU STATE -------------------------
@@ -496,6 +523,24 @@ rs2 = 13f80
 Decoded 0x10bdc instruction 0xfed76ae3 as bltu a4,a3,-12
 Execute: 10bdc,  addi
   Forward Data a4 to Decode op1
+xhlu addr 0x139c8, val 0x0
+xhlu addr 0x139c9, val 0x0
+xhlu addr 0x139ca, val 0x0
+xhlu addr 0x139cb, val 0x0
+xhlu addr 0x139cc, val 0x0
+xhlu addr 0x139cd, val 0x0
+xhlu addr 0x139ce, val 0x0
+xhlu addr 0x139cf, val 0x0
+xhlu read addr 0x139c8  value 0x0 
+xhlu addr 0x139d0, val 0x0
+xhlu addr 0x139d1, val 0x0
+xhlu addr 0x139d2, val 0x0
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x139c8  value 0x0 
 Memory Access: 10bd0,  sd
 WriteBack: 10bd0 sd
 -------------------------- CPU STATE -------------------------
@@ -1261,6 +1306,24 @@ xhlu addr 0x11fbf, val 0x31
 Fetched instruction 0x3147a683 at address 0x11fbc
 Decoded 0x11fb8 instruction 0xf99ff06f as jal 00,-104
 Execute: 11fb8,  addi
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x139d0  value 0x13c68 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x139d0  value 0x13c68 
 Memory Access: 11fac,  sd
 WriteBack: 11fac addi
 -------------------------- CPU STATE -------------------------
@@ -1556,6 +1619,20 @@ Fetched instruction 0x00000513 at address 0x11fa4
 Decoded 0x11fa0 instruction 0x00b7b023 as sd a1,0(a5)
 Execute: 11fa0,  add
   Forward Data a5 to Decode op1
+xhlu addr 0x13c70, val 0x1
+xhlu addr 0x13c71, val 0x0
+xhlu addr 0x13c72, val 0x0
+xhlu addr 0x13c73, val 0x0
+xhlu read addr 0x13c70  value 0x1 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x13c70  value 0x13c68 
 Memory Access: 11f94,  sw
 WriteBack: 11f94 addiw
 -------------------------- CPU STATE -------------------------
@@ -1596,6 +1673,24 @@ xhlu addr 0x11faf, val 0x44
 Fetched instruction 0x44818813 at address 0x11fac
 Decoded 0x11fa8 instruction 0x00008067 as jalr 00,ra,0
 Execute: 11fa8,  addi
+xhlu addr 0x13c78, val 0xec
+xhlu addr 0x13c79, val 0x1e
+xhlu addr 0x13c7a, val 0x1
+xhlu addr 0x13c7b, val 0x0
+xhlu addr 0x13c7c, val 0x0
+xhlu addr 0x13c7d, val 0x0
+xhlu addr 0x13c7e, val 0x0
+xhlu addr 0x13c7f, val 0x0
+xhlu read addr 0x13c78  value 0x11eec 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x13c78  value 0x13c68 
 Memory Access: 11f9c,  sd
 WriteBack: 11f9c add
 -------------------------- CPU STATE -------------------------
@@ -1777,6 +1872,24 @@ xhlu addr 0x10b23, val 0x1
 Fetched instruction 0x01213023 at address 0x10b20
 Decoded 0x10b1c instruction 0x00013437 as lui s0,19
 Execute: 10b1c,  lui
+xhlu addr 0x7ffffff0, val 0x0
+xhlu addr 0x7ffffff1, val 0x0
+xhlu addr 0x7ffffff2, val 0x0
+xhlu addr 0x7ffffff3, val 0x0
+xhlu addr 0x7ffffff4, val 0x0
+xhlu addr 0x7ffffff5, val 0x0
+xhlu addr 0x7ffffff6, val 0x0
+xhlu addr 0x7ffffff7, val 0x0
+xhlu read addr 0x7ffffff0  value 0x0 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7ffffff0  value 0x13c68 
 Memory Access: 10b10,  sd
 WriteBack: 10b10 addi
 -------------------------- CPU STATE -------------------------
@@ -1838,6 +1951,24 @@ xhlu addr 0x10b2f, val 0x0
 Fetched instruction 0x00113c23 at address 0x10b2c
 Decoded 0x10b28 instruction 0x00440713 as addi a4,s0,4
 Execute: 10b28,  addi
+xhlu addr 0x7fffffe0, val 0x0
+xhlu addr 0x7fffffe1, val 0x0
+xhlu addr 0x7fffffe2, val 0x0
+xhlu addr 0x7fffffe3, val 0x0
+xhlu addr 0x7fffffe4, val 0x0
+xhlu addr 0x7fffffe5, val 0x0
+xhlu addr 0x7fffffe6, val 0x0
+xhlu addr 0x7fffffe7, val 0x0
+xhlu read addr 0x7fffffe0  value 0x0 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7fffffe0  value 0x13c68 
 Memory Access: 10b1c,  sd
 WriteBack: 10b1c lui
   Forward Data s0 to Decode op1
@@ -1899,6 +2030,24 @@ xhlu addr 0x10b3b, val 0x2
 Fetched instruction 0x02e78263 at address 0x10b38
 Decoded 0x10b34 instruction 0x40e78933 as sub s2,a5,a4
 Execute: 10b34,  sd
+xhlu addr 0x7ffffff8, val 0x64
+xhlu addr 0x7ffffff9, val 0x1
+xhlu addr 0x7ffffffa, val 0x1
+xhlu addr 0x7ffffffb, val 0x0
+xhlu addr 0x7ffffffc, val 0x0
+xhlu addr 0x7ffffffd, val 0x0
+xhlu addr 0x7ffffffe, val 0x0
+xhlu addr 0x7fffffff, val 0x0
+xhlu read addr 0x7ffffff8  value 0x10164 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7ffffff8  value 0x13c68 
 Memory Access: 10b28,  sd
 WriteBack: 10b28 addi
   Forward Data a4 to Decode op2
@@ -1922,6 +2071,24 @@ rs1 = 13004
 rs2 = 13004
 Decoded 0x10b38 instruction 0x02e78263 as beq a5,a4,36
 Execute: 10b38,  sub
+xhlu addr 0x7fffffe8, val 0x0
+xhlu addr 0x7fffffe9, val 0x0
+xhlu addr 0x7fffffea, val 0x0
+xhlu addr 0x7fffffeb, val 0x0
+xhlu addr 0x7fffffec, val 0x0
+xhlu addr 0x7fffffed, val 0x0
+xhlu addr 0x7fffffee, val 0x0
+xhlu addr 0x7fffffef, val 0x0
+xhlu read addr 0x7fffffe8  value 0x0 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7fffffe8  value 0x13c68 
 Memory Access: 10b2c,  sd
 WriteBack: 10b2c sd
 -------------------------- CPU STATE -------------------------
@@ -3197,6 +3364,24 @@ xhlu addr 0x101ef, val 0x0
 Fetched instruction 0x000127b7 at address 0x101ec
 Decoded 0x101e8 instruction 0x01010413 as addi s0,sp,16
 Execute: 101e8,  sd
+xhlu addr 0x7ffffff8, val 0x74
+xhlu addr 0x7ffffff9, val 0x1
+xhlu addr 0x7ffffffa, val 0x1
+xhlu addr 0x7ffffffb, val 0x0
+xhlu addr 0x7ffffffc, val 0x0
+xhlu addr 0x7ffffffd, val 0x0
+xhlu addr 0x7ffffffe, val 0x0
+xhlu addr 0x7fffffff, val 0x0
+xhlu read addr 0x7ffffff8  value 0x10174 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7ffffff8  value 0x13c68 
 Memory Access: 101dc,  sd
 WriteBack: 101dc addi
   Forward Data sp to Decode op1
@@ -3218,6 +3403,24 @@ xhlu addr 0x101f3, val 0x1b
 Fetched instruction 0x1b078513 at address 0x101f0
 Decoded 0x101ec instruction 0x000127b7 as lui a5,18
 Execute: 101ec,  addi
+xhlu addr 0x7ffffff0, val 0x0
+xhlu addr 0x7ffffff1, val 0x0
+xhlu addr 0x7ffffff2, val 0x0
+xhlu addr 0x7ffffff3, val 0x0
+xhlu addr 0x7ffffff4, val 0x0
+xhlu addr 0x7ffffff5, val 0x0
+xhlu addr 0x7ffffff6, val 0x0
+xhlu addr 0x7ffffff7, val 0x0
+xhlu read addr 0x7ffffff0  value 0x0 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7ffffff0  value 0x13c68 
 Memory Access: 101e0,  sd
 WriteBack: 101e0 sd
 -------------------------- CPU STATE -------------------------
@@ -3382,6 +3585,24 @@ Fetched instruction 0x00000893 at address 0x10250
 Decoded 0x1024c instruction 0xfea43423 as sd a0,-24(s0)
 Execute: 1024c,  addi
   Forward Data s0 to Decode op1
+xhlu addr 0x7fffffe8, val 0x0
+xhlu addr 0x7fffffe9, val 0x0
+xhlu addr 0x7fffffea, val 0x0
+xhlu addr 0x7fffffeb, val 0x80
+xhlu addr 0x7fffffec, val 0x0
+xhlu addr 0x7fffffed, val 0x0
+xhlu addr 0x7fffffee, val 0x0
+xhlu addr 0x7fffffef, val 0x0
+xhlu read addr 0x7fffffe8  value 0x80000000 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7fffffe8  value 0x13c68 
 Memory Access: 10240,  sd
 WriteBack: 10240 addi
 -------------------------- CPU STATE -------------------------
@@ -3423,6 +3644,24 @@ Fetched instruction 0x00000013 at address 0x10258
 Decoded 0x10254 instruction 0x00000073 as ecall
 Execute: 10254,  addi
   Forward Data a7 to Decode op2
+xhlu addr 0x7fffffd8, val 0xb0
+xhlu addr 0x7fffffd9, val 0x21
+xhlu addr 0x7fffffda, val 0x1
+xhlu addr 0x7fffffdb, val 0x0
+xhlu addr 0x7fffffdc, val 0x0
+xhlu addr 0x7fffffdd, val 0x0
+xhlu addr 0x7fffffde, val 0x0
+xhlu addr 0x7fffffdf, val 0x0
+xhlu read addr 0x7fffffd8  value 0x121b0 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7fffffd8  value 0x13c68 
 Memory Access: 10248,  sd
 WriteBack: 10248 addi
 -------------------------- CPU STATE -------------------------
@@ -3712,6 +3951,24 @@ xhlu addr 0x102a7, val 0x0
 Fetched instruction 0x00000073 at address 0x102a4
 Decoded 0x102a0 instruction 0x00300893 as addi a7,00,3
 Execute: 102a0,  addi
+xhlu addr 0x7fffffe8, val 0x0
+xhlu addr 0x7fffffe9, val 0x0
+xhlu addr 0x7fffffea, val 0x0
+xhlu addr 0x7fffffeb, val 0x80
+xhlu addr 0x7fffffec, val 0x0
+xhlu addr 0x7fffffed, val 0x0
+xhlu addr 0x7fffffee, val 0x0
+xhlu addr 0x7fffffef, val 0x0
+xhlu read addr 0x7fffffe8  value 0x80000000 
+xhlu addr 0x139d0, val 0x68
+xhlu addr 0x139d1, val 0x3c
+xhlu addr 0x139d2, val 0x1
+xhlu addr 0x139d3, val 0x0
+xhlu addr 0x139d4, val 0x0
+xhlu addr 0x139d5, val 0x0
+xhlu addr 0x139d6, val 0x0
+xhlu addr 0x139d7, val 0x0
+xhlu read addr 0x7fffffe8  value 0x13c68 
 Memory Access: 10294,  sd
 WriteBack: 10294 addi
 -------------------------- CPU STATE -------------------------
@@ -3754,10 +4011,10 @@ Fetched instruction 0x00813403 at address 0x102ac
 Decoded 0x102a8 instruction 0x00000013 as addi 00,00,0
 Execute: 102a8,  ecall
 Program exit from an exit() system call
-Dumping history to dump.txt...------------ STATISTICS -----------
+------------ STATISTICS -----------
 Number of Instructions: 125
-Number of Cycles: 191
-Avg Cycles per Instrcution: 1.5280
+Number of Cycles: 175
+Avg Cycles per Instrcution: 1.4000
 Branch Perdiction Accuacy: 0.5000 (Strategy: Always Not Taken)
 Number of Control Hazards: 24
 Number of Data Hazards: 57

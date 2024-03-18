@@ -230,13 +230,9 @@ void Memory::dump()
 // {
 //     auto m = Memory();
 
-//     m.write64(Address(0x2,0x3,0x00).value(), uint64_t{0x0123456789abcdef});
-//     m.write64(Address(0x2,0x3,0x10).value(), uint64_t{0x0123456789abcdef});
-//     m.write8(Address(0x3FF, 0x3FF, 0xFF0).value(), uint8_t(0x5));
+//     m.write64(0x139c8, uint64_t{0x0123456789abcdef});
 
-//     m.read64(Address(0x2,0x3,0x00).value());
-//     m.read64(Address(0x2,0x3,0x10).value());
-//     m.read64(Address(0x3FF, 0x3FF, 0xFF0).value());
+//     m.read64(0x139d0);
 
 //     m.dump();
 

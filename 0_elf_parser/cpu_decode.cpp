@@ -127,7 +127,8 @@ void Core::decode_lb()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -144,7 +145,8 @@ void Core::decode_lh()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -160,7 +162,8 @@ void Core::decode_lw()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -176,7 +179,8 @@ void Core::decode_lbu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -192,7 +196,8 @@ void Core::decode_lhu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -208,7 +213,8 @@ void Core::decode_lwu()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " = "
@@ -224,7 +230,8 @@ void Core::decode_ld()
             << ", "
             << m_core_registers[m_inst.rv32i.I.rs1].second
             << ", "
-            << std::dec << int32_t(m_inst.imm);
+            << std::dec << int32_t(m_inst.imm)
+            << std::endl;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = "
     //           << m_core_registers[m_inst.rv32i.I.rs1].second << " + "
@@ -255,7 +262,10 @@ void Core::decode_sb(){
               << " "
               << m_core_registers[m_inst.rv32i.S.rs2].second
               << ", "
-              << m_core_registers[m_inst.rv32i.S.rs1].second;
+              << m_core_registers[m_inst.rv32i.S.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm)
+              << std::endl;
 
     // std::cout << " //// ";
 
@@ -272,7 +282,10 @@ void Core::decode_sh(){
               << " "
               << m_core_registers[m_inst.rv32i.S.rs2].second
               << ", "
-              << m_core_registers[m_inst.rv32i.S.rs1].second;
+              << m_core_registers[m_inst.rv32i.S.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm)
+              << std::endl;
 
     // std::cout << " //// ";
 
@@ -289,7 +302,10 @@ void Core::decode_sw(){
               << " "
               << m_core_registers[m_inst.rv32i.S.rs2].second
               << ", "
-              << m_core_registers[m_inst.rv32i.S.rs1].second;
+              << m_core_registers[m_inst.rv32i.S.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm)
+              << std::endl;
 
     // std::cout << " //// ";
 
@@ -304,7 +320,10 @@ void Core::decode_sd(){
               << " "
               << m_core_registers[m_inst.rv32i.S.rs2].second
               << ", "
-              << m_core_registers[m_inst.rv32i.S.rs1].second;
+              << m_core_registers[m_inst.rv32i.S.rs1].second
+              << ", "
+              << std::dec << int32_t(m_inst.imm)
+              << std::endl;
 
     // std::cout << " //// ";
 
@@ -316,8 +335,10 @@ void Core::decode_sd(){
 }
 void Core::decode_store_inst()
 {
-    m_inst.imm = int32_t((m_inst.rv32i.SB.imm_4_1 | (m_inst.rv32i.SB.imm_10_5 << 4) |
-                         (m_inst.rv32i.SB.imm_11 << 10) | (m_inst.rv32i.SB.imm_12 << 11))) << 20 >> 19;
+    // m_inst.imm = int32_t((m_inst.rv32i.SB.imm_4_1 | (m_inst.rv32i.SB.imm_10_5 << 4) |
+    //                      (m_inst.rv32i.SB.imm_11 << 10) | (m_inst.rv32i.SB.imm_12 << 11))) << 20 >> 19;
+
+    m_inst.imm = int32_t(m_inst.rv32i.S.imm_4_0 |(m_inst.rv32i.S.imm_11_5 << 5)) << 20 >> 20;
 
     switch (m_inst.rv32i.S.func3)
     {

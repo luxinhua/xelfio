@@ -107,6 +107,7 @@ void Core::execute_branch_inst()
 
 void Core::execute_load_inst()
 {
+    m_inst.imm = int32_t(m_inst.rv32i.I.imm_11_0) << 20 >> 20;
     switch (m_inst.rv32i.I.func3)
     {
         case 0:    std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "LB"  ; execute_lb() ; break;
@@ -132,31 +133,55 @@ void Core::execute_sb()
 {
     auto address = m_core_registers[m_inst.rv32i.S.rs1].first + m_inst.imm;
     uint8_t data = m_core_registers[m_inst.rv32i.S.rs2].first;
-    m_mem->write64(address, data);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.S.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.S.rs2].first << std::endl;
+
+    m_mem->write8(address, data);
 }
 void Core::execute_sh()
 {
     auto address = m_core_registers[m_inst.rv32i.S.rs1].first + m_inst.imm;
     uint16_t data = m_core_registers[m_inst.rv32i.S.rs2].first;
-    m_mem->write64(address, data);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.S.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.S.rs2].first << std::endl;
+
+    m_mem->write16(address, data);
 }
 void Core::execute_sw()
 {
     auto address = m_core_registers[m_inst.rv32i.S.rs1].first + m_inst.imm;
     uint32_t data = m_core_registers[m_inst.rv32i.S.rs2].first;
-    m_mem->write64(address, data);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.S.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.S.rs2].first << std::endl;
+
+    m_mem->write32(address, data);
 }
 void Core::execute_sd()
 {
     auto address = m_core_registers[m_inst.rv32i.S.rs1].first + m_inst.imm;
     uint64_t data = m_core_registers[m_inst.rv32i.S.rs2].first;
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.S.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.S.rs2].first << std::endl;
+
     m_mem->write64(address, data);
+    // m_mem->dump();
 }
 
 void Core::execute_store_inst()
 {
-    m_inst.imm = int32_t((m_inst.rv32i.SB.imm_4_1 | (m_inst.rv32i.SB.imm_10_5 << 4) |
-                         (m_inst.rv32i.SB.imm_11 << 10) | (m_inst.rv32i.SB.imm_12 << 11)) << 20) >> 19;
+    m_inst.imm = int32_t(m_inst.rv32i.S.imm_4_0 |(m_inst.rv32i.S.imm_11_5 << 5)) << 20 >> 20;
 
     switch (m_inst.rv32i.S.func3)
     {
@@ -468,59 +493,52 @@ void Core::execute_lut_inst()
 }
 void Core::execute_lb()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read8(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lh()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read16(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lw()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read32(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lbu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read8(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lhu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read16(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lwu()
 {
-    auto offset = uint32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read32(address);
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_ld()
 {
-    auto offset = int32_t(m_inst.rv32i.I.imm_11_0 << 20) >> 20;
-    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + offset;
+    auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read64(address);
 
-    std::cout << "xhlu " << std::hex << address << "  " << offset << " " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "xhlu " << std::hex << address << "  " << m_inst.imm << " " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
 
     m_core_registers[m_inst.rv32i.I.rd].first = data;
 }
