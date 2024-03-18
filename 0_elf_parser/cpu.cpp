@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 
     Core   core{&mem, stack, elf_entry};
 
-    uint32_t times{200};
+    uint32_t times{400};
     while (times--) {
     // while (1) {
         core.fetch();

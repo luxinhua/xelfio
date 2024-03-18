@@ -14,12 +14,16 @@ void Core::execute_beq()
 {
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
-
+    std::cout << "beq "
+              << " rs1 " << rs1
+              << " rs2 " << rs2 << std::endl;
     if (int32_t(rs1) == int32_t(rs2))
     {
         m_pc = DecodeReg.m_pc + m_inst.imm;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
+        // FetchRegNew.m_stall = true;
+        // DecodeRegNew.m_stall = true;
     }
 }
 void Core::execute_bne()
@@ -103,6 +107,8 @@ void Core::execute_branch_inst()
             std::cout << std::setw(10) << std::left << std::setfill(' ') <<   "Branch";
             break;
     }
+
+    std::cout << endl;
 }
 
 void Core::execute_load_inst()
@@ -490,6 +496,11 @@ void Core::execute_lut_inst()
     std::cout << std::setw(10) << std::left << std::setfill(' ') << "LUI"
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.rd
               << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.imm_31_12 << std::endl;
+
+    m_inst.imm = int32_t(m_inst.rv32i.U.imm_31_12);
+
+    m_core_registers[m_inst.rv32i.U.rd].first = int32_t(m_inst.imm) << 12;
+
 }
 void Core::execute_lb()
 {
