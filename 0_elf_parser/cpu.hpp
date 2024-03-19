@@ -10,6 +10,7 @@ public:
     Core(Memory * memory, Stack stack, uint32_t elf_entry): m_mem{memory}, m_stack{stack}, m_pc{elf_entry}{
         m_inst.DoubleWord = 0;
         m_core_registers[sp].first = m_stack.m_base;
+        m_pc_branch = 0;
     }
     ~Core() = default;
 
@@ -168,6 +169,7 @@ public:
     struct Stage ExecuteRegNew{0};
 
     uint32_t m_pc;
+    uint32_t m_pc_branch;
     Instruction m_inst;
 
     enum {

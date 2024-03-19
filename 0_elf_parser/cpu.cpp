@@ -26,9 +26,9 @@ void Core::print_core_registers()
 
 void Core::movePipe()
 {
-    FetchReg = FetchRegNew;
     DecodeReg = DecodeRegNew;
     ExecuteReg = ExecuteRegNew;
+    FetchReg = FetchRegNew;
 
     FetchRegNew.m_inst.DoubleWord = 0;
     FetchRegNew.m_pc = 0;
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 
     Core   core{&mem, stack, elf_entry};
 
-    uint32_t times{400};
+    uint32_t times{135};
     while (times--) {
     // while (1) {
         core.fetch();

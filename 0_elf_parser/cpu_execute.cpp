@@ -14,12 +14,11 @@ void Core::execute_beq()
 {
     int32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     int32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
-    std::cout << "beq "
-              << " rs1 " << rs1
-              << " rs2 " << rs2 << std::endl;
+
     if (int32_t(rs1) == int32_t(rs2))
     {
         m_pc = DecodeReg.m_pc + m_inst.imm;
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
         // FetchRegNew.m_stall = true;
@@ -33,7 +32,8 @@ void Core::execute_bne()
 
     if (int32_t(rs1) != int32_t(rs2))
     {
-        m_pc = DecodeReg.m_pc + m_inst.imm;
+        DecodeReg.m_pc = DecodeReg.m_pc + m_inst.imm;
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
     }
@@ -45,7 +45,8 @@ void Core::execute_blt()
 
     if (int32_t(rs1) < int32_t(rs2))
     {
-        m_pc = DecodeReg.m_pc + m_inst.imm;
+        DecodeReg.m_pc = DecodeReg.m_pc + m_inst.imm;
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
     }
@@ -58,6 +59,7 @@ void Core::execute_bge()
     if (int32_t(rs1) > int32_t(rs2))
     {
         DecodeReg.m_pc = DecodeReg.m_pc + m_inst.imm;
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
     }
@@ -67,13 +69,18 @@ void Core::execute_bltu()
     uint32_t rs1 = m_core_registers[m_inst.rv32i.SB.rs1].first;
     uint32_t rs2 = m_core_registers[m_inst.rv32i.SB.rs2].first;
 
-    std::cout << FetchReg.m_pc   << std::endl;
-    std::cout << DecodeReg.m_pc  << std::endl;
-    std::cout << ExecuteReg.m_pc << std::endl;
+    std::cout << std::hex << "uint32_t(rs1)   " << uint32_t(rs1)  << std::endl;
+    std::cout << std::hex << "uint32_t(rs2)   " << uint32_t(rs2)  << std::endl;
 
     if (uint32_t(rs1) < uint32_t(rs2))
     {
+        std::cout << std::hex << "DecodeReg.m_pc  " << DecodeReg.m_pc << std::endl;
+        std::cout << std::hex << "m_inst.imm      " << m_inst.imm  << std::endl;
+
         DecodeReg.m_pc = DecodeReg.m_pc + m_inst.imm;
+        std::cout << std::hex << "DecodeReg.m_pc  " << DecodeReg.m_pc << std::endl;
+
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
     }
@@ -86,6 +93,7 @@ void Core::execute_bgeu()
     if (uint32_t(rs1) > uint32_t(rs2))
     {
         DecodeReg.m_pc = DecodeReg.m_pc + m_inst.imm;
+        m_pc_branch = DecodeReg.m_pc;
         FetchRegNew.m_bubble = true;
         DecodeRegNew.m_bubble = true;
     }
@@ -471,6 +479,19 @@ void Core::execute_auipc_inst()
 
     execute_auipc();
 }
+void Core::execute_jal()
+{
+    std::cout << std::endl;
+
+    m_core_registers[m_inst.rv32i.UJ.rd].first = (DecodeReg.m_pc + 4) & 0xFFFFFFFF;
+
+    auto offset = int32_t((m_inst.rv32i.UJ.imm_10_1 ) | (m_inst.rv32i.UJ.imm_11 << 10) | \
+                         (m_inst.rv32i.UJ.imm_19_12 << 11) | (m_inst.rv32i.UJ.imm_20 << 19)) << 12 >> 11;
+
+    m_pc = DecodeReg.m_pc + offset;
+    FetchRegNew.m_bubble = true;
+    DecodeRegNew.m_bubble = true;
+}
 
 void Core::execute_jal_inst()
 {
@@ -493,19 +514,19 @@ void Core::execute_jalr_inst()
 
 void Core::execute_lut_inst()
 {
-    std::cout << std::setw(10) << std::left << std::setfill(' ') << "LUI"
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.rd
-              << std::setw(10) << std::left << std::setfill(' ') << std::hex << m_inst.rv32i.U.imm_31_12 << std::endl;
-
     m_inst.imm = int32_t(m_inst.rv32i.U.imm_31_12);
 
     m_core_registers[m_inst.rv32i.U.rd].first = int32_t(m_inst.imm) << 12;
-
 }
 void Core::execute_lb()
 {
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read8(address);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
@@ -514,12 +535,22 @@ void Core::execute_lh()
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read16(address);
 
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
+
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lw()
 {
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read32(address);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
@@ -528,12 +559,22 @@ void Core::execute_lbu()
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read8(address);
 
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
+
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_lhu()
 {
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read16(address);
+
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
 
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
@@ -542,6 +583,11 @@ void Core::execute_lwu()
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read32(address);
 
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
+
     m_core_registers[m_inst.rv32i.I.rd].first = data & 0xFFFFFFFF;
 }
 void Core::execute_ld()
@@ -549,7 +595,10 @@ void Core::execute_ld()
     auto address = m_core_registers[m_inst.rv32i.I.rs1].first + m_inst.imm;
     auto data = m_mem->read64(address);
 
-    std::cout << "xhlu " << std::hex << address << "  " << m_inst.imm << " " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "xhlu " << std::hex << "addr " << address << "  data " << data  <<  std::endl;
+    std::cout << "imm " << m_inst.imm << std::endl;
+    std::cout << "rs1 " << std::hex << m_core_registers[m_inst.rv32i.I.rs1].first << std::endl;
+    std::cout << "rs2 " << std::hex << m_core_registers[m_inst.rv32i.I.rd].first << std::endl;
 
     m_core_registers[m_inst.rv32i.I.rd].first = data;
 }
@@ -560,27 +609,13 @@ void Core::execute_auipc()
     m_core_registers[m_inst.rv32i.U.rd].first = (DecodeReg.m_pc + offset) & 0xFFFFFFFF;
 }
 
-void Core::execute_jal()
-{
-    std::cout << std::endl;
-
-    m_core_registers[m_inst.rv32i.UJ.rd].first = (DecodeReg.m_pc + 4) & 0xFFFFFFFF;
-
-    auto offset = int32_t((m_inst.rv32i.UJ.imm_10_1 ) | (m_inst.rv32i.UJ.imm_11 << 10) | \
-                         (m_inst.rv32i.UJ.imm_19_12 << 11) | (m_inst.rv32i.UJ.imm_20 << 19)) << 12 >> 11;
-
-    m_pc = DecodeReg.m_pc + offset;
-    FetchRegNew.m_bubble = true;
-    DecodeRegNew.m_bubble = true;
-}
-
 void Core::execute()
 {
     m_inst = DecodeReg.m_inst;
 
     if (DecodeReg.m_stall)
     {
-        ExecuteReg.m_stall = true;
+        ExecuteReg.m_bubble = true;
         return;
     }
 

@@ -894,8 +894,8 @@ void Core::decode_jalr()
               << m_core_registers[m_inst.rv32i.I.rd].second
               << ", "
               << m_core_registers[m_inst.rv32i.I.rs1].second
-              << ", label("
-              << std::hex << m_inst.imm << ")";
+              << ", "
+              << std::hex << m_inst.imm;
     // std::cout << " //// ";
     // std::cout << m_core_registers[m_inst.rv32i.I.rd].second << " = pc + 4 ; "
     //           << "pc = " + m_core_registers[m_inst.rv32i.I.rs1].second << " + " << std::dec << int32_t(m_inst.imm);
@@ -937,7 +937,7 @@ void Core::decode()
 
     if (FetchReg.m_stall)
     {
-        FetchReg.m_pc -= INST_LEN;
+        m_pc -= INST_LEN;
         return ;
     }
 
@@ -949,7 +949,7 @@ void Core::decode()
     }
 
     std::cout << std::setw(8) << std::left << std::setfill(' ') << "Decoded" << ":";
-    std::cout << std::setw(8) << std::right << std::setfill('0') << FetchReg.m_pc ;
+    std::cout << std::setw(8) << std::right << std::setfill(' ') << FetchReg.m_pc ;
     std::cout << std::setw(13) << std::right << std::setfill(' ') << " instruction " ;
     std::cout << std::setw(8) << std::right << std::setfill('0') << m_inst.DoubleWord;
 
